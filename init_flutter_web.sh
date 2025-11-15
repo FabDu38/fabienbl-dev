@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-set -euo pipefail
+# La commande ci dessus indique que le script doit être lu en bash
+set -euo pipefail # En cas de problème le script s'arrête de s'executer
 
 ### ========= PARAMÈTRES À ADAPTER =========
 PROJECT_NAME="fabien_site"
