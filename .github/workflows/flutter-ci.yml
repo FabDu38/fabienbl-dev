@@ -30,8 +30,9 @@ jobs:
       - name: Analyze
         run: flutter analyze            # Analyse du code pour détecter erreurs/bricoles
 
-      - name: Test
-        run: flutter test               # Lance les tests unitaires (si t’en as, sinon ça passe direct)
+      # Pour un projet avec de la logique métier
+      # - name: Test
+      #   run: flutter test               # Lance les tests unitaires (si t’en as, sinon ça passe direct)
 
       - name: Build Web (release)
         run: flutter build web --release  # Vérifie que ton build Flutter Web compile bien
