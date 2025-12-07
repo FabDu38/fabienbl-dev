@@ -1,0 +1,43 @@
+name: Flutter CI  # Nom du workflow, ça apparaîtra dans l’onglet Actions
+
+on:
+  push:
+    branches:
+      - "**"     # Exécute la CI sur TOUTES les branches quand tu push
+  pull_request:
+    branches:
+      - main     # Exécute aussi la CI sur les PR qui ciblent main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Machine virtuelle Linux fournie par GitHub
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4  # Récupère ton code dans la machine CI
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2  # Installe Flutter automatiquement
+        with:
+          channel: stable                # Utilise Flutter stable (le classique)
+
+      - name: Flutter version
+        run: flutter --version           # Juste pour afficher la version (log utile)
+
+      - name: Get dependencies
+        run: flutter pub get            # Récupère toutes les dépendances du projet
+
+      - name: Analyze
+        run: flutter analyze            # Analyse du code pour détecter erreurs/bricoles
+
+      - name: Test
+        run: flutter test               # Lance les tests unitaires (si t’en as, sinon ça passe direct)
+
+      - name: Build Web (release)
+        run: flutter build web --release  # Vérifie que ton build Flutter Web compile bien
+
+      - name: Upload web build artifact
+        uses: actions/upload-artifact@v4  # Enregistre le build final dans GitHub
+        with:
+          name: web-build                 # Nom de l’artefact
+          path: build/web                 # Le dossier généré par la commande build
