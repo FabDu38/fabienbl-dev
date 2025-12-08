@@ -9,8 +9,8 @@ Préparer un site personnel responsive développé avec Flutter Web, hébergé v
 - Dépôt initialisé
 - Arborescence Git propre
 - Configuration prête pour intégration du projet Flutter
+- Création du projet Flutter (`flutter create .`)
+- Mise en place de la CI (analyse + build)
 
 ## Prochaines étapes
-1. Créer le projet Flutter (`flutter create .`)
-2. Ajouter le workflow de déploiement GitHub Pages
-3. Mettre en place la CI (analyse + build)
+1.  Ajouter le workflow de déploiement GitHub Pages
