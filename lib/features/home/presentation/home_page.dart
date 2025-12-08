@@ -16,7 +16,7 @@ class HomePage extends StatelessWidget {
             ),
             SizedBox(height: 16),
             Text(
-              'Ici, bientôt, un vrai site pro.',
+              'Site actuellement en construction',
             ),
           ],
         ),
