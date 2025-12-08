@@ -9,9 +9,10 @@ on:
       - main     # Exécute aussi la CI sur les PR qui ciblent main
 
 jobs:
-  build:
-    runs-on: ubuntu-latest  # Machine virtuelle Linux fournie par GitHub
-
+  flutter-ci:
+    name: Flutter CI
+    runs-on: ubuntu-latest
+    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4  # Récupère ton code dans la machine CI
