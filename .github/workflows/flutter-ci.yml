@@ -12,7 +12,7 @@ jobs:
   flutter-ci:
     name: Flutter CI
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4  # Récupère ton code dans la machine CI
@@ -43,3 +43,19 @@ jobs:
         with:
           name: web-build                 # Nom de l’artefact
           path: build/web                 # Le dossier généré par la commande build
+          
+ # -------------------------------------------------------------------
+      #                 🚀 NETLIFY DEPLOY (PRODUCTION)
+      #   ➤ Ne s'exécute QUE quand tu pushes sur main (propre et sécurisé)
+      # -------------------------------------------------------------------
+
+      - name: Install Netlify CLI
+        if: github.ref == 'refs/heads/main'
+        run: npm install -g netlify-cli
+
+      - name: Deploy to Netlify (production)
+        if: github.ref == 'refs/heads/main'
+        run: netlify deploy --prod --dir build/web --site $NETLIFY_SITE_ID
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
