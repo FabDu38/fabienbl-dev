@@ -14,9 +14,9 @@ class AppShell extends StatelessWidget {
     final tt = Theme.of(context).textTheme;
 
     final width = MediaQuery.of(context).size.width;
-    final isWide = width >= 900;
+    final isWide = width >= contentMaxWidth;
 
-    // Conteneur “site” pour le contenu (colonne)
+    // Cadre de contenu centré
     Widget contentFrame(Widget child) {
       return Center(
         child: ConstrainedBox(
@@ -32,7 +32,9 @@ class AppShell extends StatelessWidget {
     return Scaffold(
       backgroundColor: cs.surface,
 
-      // Drawer mobile
+      // =====================
+      // DRAWER MOBILE
+      // =====================
       drawer: isWide
           ? null
           : Drawer(
@@ -57,35 +59,43 @@ class AppShell extends StatelessWidget {
               ),
             ),
 
+      // =====================
+      // BODY GLOBAL
+      // =====================
       body: Column(
         children: [
-          // =========================
-          // HEADER / NAVBAR (FULL WIDTH, alignement "web")
-          // =========================
+          // =====================
+          // HEADER / NAVBAR
+          // =====================
           Material(
             color: cs.surfaceContainerHigh,
             child: SafeArea(
               bottom: false,
               child: SizedBox(
-                width: double.infinity,
                 height: 64,
+                width: double.infinity,
                 child: Padding(
-                  // IMPORTANT : padding global de page (web)
                   padding: const EdgeInsets.symmetric(horizontal: 24),
                   child: Row(
                     children: [
-                      // Titre collé à gauche (comme ta 2e capture)
-                      Text(
-                        'Fabien Blasquez – Développeur Web',
-                        style: tt.titleLarge?.copyWith(
-                          fontWeight: FontWeight.w600,
-                          color: cs.onSurface,
+                      // TITRE — sécurisé pour mobile
+                      Expanded(
+                        child: Text(
+                          isWide
+                              ? 'Fabien Blasquez – Développeur Web'
+                              : 'Fabien Blasquez',
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: tt.titleLarge?.copyWith(
+                            fontWeight: FontWeight.w600,
+                            color: cs.onSurface,
+                          ),
                         ),
                       ),
 
-                      const Spacer(),
+                      const SizedBox(width: 12),
 
-                      // Liens collés à droite (comme ta 2e capture)
+                      // NAVIGATION
                       if (isWide) ...[
                         const NavButton(label: 'Accueil', route: '/'),
                         const SizedBox(width: 8),
@@ -110,23 +120,23 @@ class AppShell extends StatelessWidget {
             ),
           ),
 
-          // =========================
-          // BODY (colonne propre)
-          // =========================
+          // =====================
+          // CONTENU
+          // =====================
           Expanded(
             child: SingleChildScrollView(
               child: contentFrame(
                 Padding(
-                  padding: const EdgeInsets.only(top: 24, bottom: 24),
+                  padding: const EdgeInsets.symmetric(vertical: 24),
                   child: child,
                 ),
               ),
             ),
           ),
 
-          // =========================
-          // FOOTER (FULL WIDTH, style identique header)
-          // =========================
+          // =====================
+          // FOOTER
+          // =====================
           Container(
             width: double.infinity,
             padding: const EdgeInsets.symmetric(vertical: 20),
@@ -134,7 +144,9 @@ class AppShell extends StatelessWidget {
             child: Center(
               child: Text(
                 '© 2025 – Fabien Blasquez. Tous droits réservés.',
-                style: tt.bodySmall?.copyWith(color: cs.onSurfaceVariant),
+                style: tt.bodySmall?.copyWith(
+                  color: cs.onSurfaceVariant,
+                ),
               ),
             ),
           ),
@@ -165,6 +177,8 @@ class NavButton extends StatelessWidget {
       padding: const EdgeInsets.only(left: 6),
       child: InkWell(
         borderRadius: BorderRadius.circular(12),
+        splashFactory: NoSplash.splashFactory,
+        overlayColor: WidgetStateProperty.all(Colors.transparent),
         onTap: () => context.go(route),
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
