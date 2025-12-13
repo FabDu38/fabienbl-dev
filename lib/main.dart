@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'theme/app_theme.dart';
+import 'theme/theme.dart';
+import 'theme/util.dart';
 import 'core/router.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
 
@@ -13,10 +14,19 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textTheme = createTextTheme(
+      context,
+      'Inter',
+      'Inter',
+    );
+
+    final materialTheme = MaterialTheme(textTheme);
+
     return MaterialApp.router(
-      title: 'Site perso de Fabien',
       debugShowCheckedModeBanner: false,
-      theme: AppTheme.light,
+      theme: materialTheme.light(),
+      darkTheme: materialTheme.dark(),
+      themeMode: ThemeMode.system,
       routerConfig: appRouter,
     );
   }

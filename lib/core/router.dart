@@ -12,38 +12,49 @@ import '../features/legal/presentation/cgu_page.dart';
 final GoRouter appRouter = GoRouter(
   routes: [
     ShellRoute(
-      // AppShell = layout global (header, footer, etc.)
       builder: (context, state, child) => AppShell(child: child),
       routes: [
         GoRoute(
           path: '/',
           name: 'home',
-          builder: (context, state) => const HomePage(),
+          pageBuilder: (context, state) => const NoTransitionPage(
+            child: HomePage(),
+          ),
         ),
         GoRoute(
           path: '/projets',
           name: 'projects',
-          builder: (context, state) => const ProjectsPage(),
+          pageBuilder: (context, state) => const NoTransitionPage(
+            child: ProjectsPage(),
+          ),
         ),
         GoRoute(
           path: '/a-propos',
           name: 'about',
-          builder: (context, state) => const AboutPage(),
+          pageBuilder: (context, state) => const NoTransitionPage(
+            child: AboutPage(),
+          ),
         ),
         GoRoute(
           path: '/contact',
           name: 'contact',
-          builder: (context, state) => const ContactPage(),
+          pageBuilder: (context, state) => const NoTransitionPage(
+            child: ContactPage(),
+          ),
         ),
         GoRoute(
           path: '/mentions-legales',
           name: 'mentions',
-          builder: (context, state) => const MentionsLegalesPage(),
+          pageBuilder: (context, state) => const NoTransitionPage(
+            child: MentionsLegalesPage(),
+          ),
         ),
         GoRoute(
           path: '/cgu',
           name: 'cgu',
-          builder: (context, state) => const CguPage(),
+          pageBuilder: (context, state) => const NoTransitionPage(
+            child: CguPage(),
+          ),
         ),
       ],
     ),
