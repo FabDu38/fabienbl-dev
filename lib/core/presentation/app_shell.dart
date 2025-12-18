@@ -16,19 +16,6 @@ class AppShell extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
     final isWide = width >= contentMaxWidth;
 
-    // Cadre de contenu centré
-    Widget contentFrame(Widget child) {
-      return Center(
-        child: ConstrainedBox(
-          constraints: const BoxConstraints(maxWidth: contentMaxWidth),
-          child: Padding(
-            padding: const EdgeInsets.all(16),
-            child: SizedBox(width: double.infinity, child: child),
-          ),
-        ),
-      );
-    }
-
     return Scaffold(
       backgroundColor: cs.surface,
 
@@ -125,12 +112,10 @@ class AppShell extends StatelessWidget {
           // =====================
           Expanded(
             child: SingleChildScrollView(
-              child: contentFrame(
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 24),
-                  child: child,
-                ),
-              ),
+              // IMPORTANT :
+              // On ne contraint plus ici (sinon pas de sections full-bleed).
+              // Chaque page gère son propre maxWidth / padding.
+              child: child,
             ),
           ),
 

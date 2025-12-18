@@ -3,8 +3,16 @@ import 'theme/theme.dart';
 import 'theme/util.dart';
 import 'core/router.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+
+// Config globale flutter_animate
+  Animate.restartOnHotReload = true;
+  Animate.defaultDuration = 350.ms;
+  Animate.defaultCurve = Curves.easeOutCubic;
+
   usePathUrlStrategy();
   runApp(const MyApp());
 }
