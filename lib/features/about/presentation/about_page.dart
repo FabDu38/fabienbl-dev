@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../core/presentation/simple_content_page.dart';
+
 class AboutPage extends StatelessWidget {
   const AboutPage({super.key});
 
@@ -8,11 +10,9 @@ class AboutPage extends StatelessWidget {
     final tt = Theme.of(context).textTheme;
     final cs = Theme.of(context).colorScheme;
 
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+    return SimpleContentPage(
+      title: 'À propos',
       children: [
-        Text('À propos', style: tt.headlineSmall),
-        const SizedBox(height: 12),
         Text(
           "Développeur avec une solide expérience, je conçois des interfaces "
           "claires et efficaces, avec une attention particulière à la qualité et aux détails.",

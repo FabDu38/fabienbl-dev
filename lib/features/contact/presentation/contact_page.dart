@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../core/presentation/simple_content_page.dart';
+
 class ContactPage extends StatelessWidget {
   const ContactPage({super.key});
 
@@ -8,11 +10,9 @@ class ContactPage extends StatelessWidget {
     final tt = Theme.of(context).textTheme;
     final cs = Theme.of(context).colorScheme;
 
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+    return SimpleContentPage(
+      title: 'Contact',
       children: [
-        Text('Contact', style: tt.headlineSmall),
-        const SizedBox(height: 12),
         Text(
           'Tu peux me joindre facilement via email ou LinkedIn.',
           style: tt.bodyMedium?.copyWith(color: cs.onSurfaceVariant),

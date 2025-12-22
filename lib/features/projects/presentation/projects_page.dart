@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../core/presentation/simple_content_page.dart';
+
 class ProjectsPage extends StatelessWidget {
   const ProjectsPage({super.key});
 
@@ -8,11 +10,9 @@ class ProjectsPage extends StatelessWidget {
     final tt = Theme.of(context).textTheme;
     final cs = Theme.of(context).colorScheme;
 
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+    return SimpleContentPage(
+      title: 'Projets',
       children: [
-        Text('Projets', style: tt.headlineSmall),
-        const SizedBox(height: 12),
         Text(
           "Une sélection de projets (et bientôt des détails, promis).",
           style: tt.bodyMedium?.copyWith(color: cs.onSurfaceVariant),

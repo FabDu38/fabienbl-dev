@@ -6,7 +6,9 @@ class AppShell extends StatelessWidget {
 
   const AppShell({super.key, required this.child});
 
-  static const double contentMaxWidth = 900;
+  /// Largeur max éditoriale pour le contenu centré
+  /// (pages internes, sections de la home, etc.).
+  static const double contentMaxWidth = 840;
 
   @override
   Widget build(BuildContext context) {
