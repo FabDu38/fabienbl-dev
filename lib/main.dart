@@ -31,6 +31,7 @@ class MyApp extends StatelessWidget {
     final materialTheme = MaterialTheme(textTheme);
 
     return MaterialApp.router(
+      title: 'Fabien Blasquez · Développeur Flutter freelance',
       debugShowCheckedModeBanner: false,
       theme: materialTheme.light(),
       darkTheme: materialTheme.dark(),
