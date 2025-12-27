@@ -15,6 +15,8 @@ dependencies:
   google_fonts: ^6.2.1
   flutter_animate: ^4.5.0
   visibility_detector: ^0.4.0+2
+  url_launcher: ^6.3.1
+  http: ^1.2.2
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -25,3 +27,4 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
+    - assets/icons/linkedin_174857.png
