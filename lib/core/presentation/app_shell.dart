@@ -1,3 +1,4 @@
+import 'package:web/web.dart' as web;
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -171,11 +172,33 @@ class _AppShellState extends State<AppShell> {
             padding: const EdgeInsets.symmetric(vertical: 20),
             color: cs.surfaceContainerHigh,
             child: Center(
-              child: Text(
-                '© 2025 – Fabien Blasquez. Tous droits réservés.',
-                style: tt.bodySmall?.copyWith(
-                  color: cs.onSurfaceVariant,
-                ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    '© 2025 – Fabien Blasquez. Tous droits réservés.',
+                    style: tt.bodySmall?.copyWith(
+                      color: cs.onSurfaceVariant,
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  TextButton(
+                    onPressed: () {
+                      // Naviguer vers la page SEO dans le même onglet
+                      web.window.location.href = '/seo/developpeur-web-freelance.html';
+                    },
+                    style: TextButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                    ),
+                    child: Text(
+                      'Version SEO du site',
+                      style: tt.bodySmall?.copyWith(
+                        color: cs.primary,
+                        decoration: TextDecoration.underline,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
           ),

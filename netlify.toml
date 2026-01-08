@@ -1,0 +1,16 @@
+[build]
+  publish = "build/web"
+  command = "flutter build web && node scripts/copy-seo.js"
+
+# Redirections pour servir les pages SEO et le SPA Flutter
+[[redirects]]
+  from = "/seo/*"
+  to = "/seo/:splat"
+  status = 200
+  force = true
+
+# Fallback SPA pour toutes les autres routes Flutter
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projets | Développeur Web Freelance Flutter</title>
+    <meta name="description" content="Découvrez mes projets de développement : applications métier, outils professionnels et portfolio Flutter Web. Réalisations en entreprise et projets freelance.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Projets | Développeur Web Freelance Flutter">
+    <meta property="og:description" content="Découvrez mes projets de développement : applications métier, outils professionnels et portfolio Flutter Web.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fabien-blasquez.dev/seo/projets.html">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Projets | Développeur Web Freelance Flutter">
+    <meta name="twitter:description" content="Découvrez mes projets de développement : applications métier, outils professionnels et portfolio Flutter Web.">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://fabien-blasquez.dev/seo/projets.html">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Projets | Développeur Web Freelance Flutter",
+      "description": "Découvrez mes projets de développement : applications métier, outils professionnels et portfolio Flutter Web.",
+      "url": "https://fabien-blasquez.dev/seo/projets.html",
+      "inLanguage": "fr-FR",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Fabien Blasquez - Développeur Web Freelance",
+        "url": "https://fabien-blasquez.dev"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://fabien-blasquez.dev/seo/developpeur-web-freelance.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Projets",
+          "item": "https://fabien-blasquez.dev/seo/projets.html"
+        }
+      ]
+    }
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background-color: #ffffff;
+        }
+        
+        .container {
+            max-width: 840px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        header {
+            background-color: #f5f5f5;
+            padding: 24px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .site-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+        
+        nav a {
+            margin-left: 16px;
+            color: #1a1a1a;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        nav a:hover {
+            text-decoration: underline;
+        }
+        
+        main {
+            padding: 48px 0;
+        }
+        
+        h1 {
+            font-size: 36px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            color: #1a1a1a;
+        }
+        
+        h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-top: 32px;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+        }
+        
+        h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-top: 24px;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+        }
+        
+        p {
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 16px;
+            color: #4a4a4a;
+        }
+        
+        .project-card {
+            background-color: #f9f9f9;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        
+        .project-card h3 {
+            margin-top: 0;
+        }
+        
+        .project-subtitle {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 16px;
+            font-weight: 500;
+        }
+        
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 16px;
+        }
+        
+        .tag {
+            background-color: #e0e0e0;
+            padding: 6px 12px;
+            border-radius: 16px;
+            font-size: 13px;
+            font-weight: 500;
+            color: #1a1a1a;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            background-color: #e8f4f8;
+            color: #027DFD;
+            padding: 6px 12px;
+            border-radius: 12px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-left: 12px;
+        }
+        
+        .link-to-app {
+            margin-top: 32px;
+            padding: 16px;
+            background-color: #f9f9f9;
+            border-left: 4px solid #027DFD;
+            border-radius: 4px;
+        }
+        
+        .link-to-app a {
+            color: #027DFD;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .link-to-app a:hover {
+            text-decoration: underline;
+        }
+        
+        .cta-banner {
+            background: linear-gradient(135deg, #027DFD 0%, #0266cc 100%);
+            color: white;
+            padding: 20px 24px;
+            text-align: center;
+            margin: 0;
+        }
+        
+        .cta-banner-content {
+            max-width: 840px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        
+        .cta-banner-text {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0;
+        }
+        
+        .cta-banner-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        
+        .cta-banner-btn-primary {
+            background-color: white;
+            color: #027DFD;
+            padding: 10px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 15px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: inline-block;
+        }
+        
+        .cta-banner-btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .cta-banner-btn-secondary {
+            background-color: transparent;
+            color: white;
+            padding: 10px 24px;
+            border: 2px solid white;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: background-color 0.2s;
+        }
+        
+        .cta-banner-btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        nav .portfolio-link {
+            background-color: #027DFD;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-left: 16px;
+        }
+        
+        nav .portfolio-link:hover {
+            background-color: #0266cc;
+            text-decoration: none;
+        }
+        
+        footer {
+            background-color: #f5f5f5;
+            padding: 24px 0;
+            border-top: 1px solid #e0e0e0;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 28px;
+            }
+            
+            header .container {
+                flex-direction: column;
+                gap: 16px;
+            }
+            
+            nav a {
+                margin: 0 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="site-title">Fabien Blasquez – Développeur Web</div>
+            <nav>
+                <a href="/seo/developpeur-web-freelance.html">Accueil</a>
+                <a href="/seo/projets.html">Projets</a>
+                <a href="/seo/a-propos.html">À propos</a>
+                <a href="/seo/contact.html">Contact</a>
+                <a href="/seo/mentions-legales.html">Mentions légales</a>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="cta-banner">
+        <div class="cta-banner-content">
+            <p class="cta-banner-text">Découvrez la version interactive du portfolio</p>
+            <div class="cta-banner-buttons">
+                <a href="/" class="cta-banner-btn-primary">Voir le portfolio interactif</a>
+                <a href="/seo/contact.html" class="cta-banner-btn-secondary">Me contacter</a>
+            </div>
+        </div>
+    </div>
+    
+    <main>
+        <div class="container">
+            <h1>Projets</h1>
+            
+            <p>
+                Les projets présentés ici illustrent ma démarche de conception et ma façon de structurer des applications, 
+                plus qu'une vitrine exhaustive de réalisations.
+            </p>
+            
+            <div class="project-card">
+                <h3>Projets professionnels en entreprise</h3>
+                <p class="project-subtitle">Applications et outils métier</p>
+                <p>
+                    Projets réalisés en environnement entreprise, sur des applications et outils métier, du cadrage à la mise en production. 
+                    Ces projets reflètent mon expérience en environnement entreprise, sur des applications et outils métier intégrés à des contextes 
+                    industriels, organisationnels et humains réels.
+                </p>
+                <p>
+                    Ils m'ont permis de travailler sur des problématiques de fiabilité, de maintenabilité et d'évolution d'outils existants, 
+                    souvent au plus près des utilisateurs.
+                </p>
+                <p>
+                    <strong>Contexte :</strong> J'ai principalement travaillé sur des outils internes destinés aux équipes opérationnelles 
+                    (ordonnancement, logistique, bureaux d'études), des applications métier utilisées en production, et des projets nécessitant 
+                    une compréhension fine des processus existants avant toute évolution technique.
+                </p>
+                <p>
+                    <strong>Entreprises :</strong> Supplyframe (groupe Siemens), Schneider Electric, Alfa Laval, BF Web Création.
+                </p>
+                <p>
+                    <strong>Rôle :</strong> Conception, développement, évolution d'applications et responsabilité technique, en lien direct avec les équipes métiers et produit.
+                </p>
+                <div class="tags">
+                    <span class="tag">Applications métier</span>
+                    <span class="tag">Projet structuré</span>
+                    <span class="tag">Contexte industriel</span>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <h3>Portfolio professionnel</h3>
+                <p class="project-subtitle">Application Flutter Web</p>
+                <p>
+                    Application Flutter Web servant de vitrine professionnelle et de socle technique multiplateforme. 
+                    Ce projet correspond à mon site professionnel.
+                </p>
+                <p>
+                    Il a été pensé non comme un simple site statique, mais comme une application Flutter Web structurée, 
+                    servant à la fois de vitrine et de base technique pour des évolutions futures.
+                </p>
+                <p>
+                    <strong>Objectif :</strong> Travailler Flutter dans un contexte réel, avec des contraintes de lisibilité, 
+                    de maintenabilité et de déploiement, plutôt que dans un projet démonstrateur artificiel.
+                </p>
+                <p>
+                    <strong>Approche :</strong> Organisation modulaire des écrans et des sections, composants réutilisables, 
+                    navigation multi-pages, gestion du responsive, animations légères et maîtrisées. L'ensemble a été pensé pour 
+                    rester sobre, lisible et évolutif, même sur un périmètre volontairement contenu.
+                </p>
+                <p>
+                    <strong>Choix techniques :</strong> Flutter Web comme socle principal, approche multiplateforme dès la conception, 
+                    codebase unique, structuré pour évoluer vers d'autres supports (mobile, desktop).
+                </p>
+                <p>
+                    <strong>Rôle :</strong> Conception, développement et mise en production.
+                </p>
+                <div class="tags">
+                    <span class="tag">Flutter</span>
+                    <span class="tag">Web</span>
+                    <span class="tag">Multiplateforme</span>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <h3>Outil de suivi d'activités et d'objectifs</h3>
+                <p class="project-subtitle">Application Flutter — en cours de développement <span class="status-badge">En cours</span></p>
+                <p>
+                    Projet Flutter en cours visant à explorer des cas d'usage concrets autour de la structuration des données, 
+                    de la navigation et de l'évolutivité.
+                </p>
+                <div class="tags">
+                    <span class="tag">Flutter</span>
+                    <span class="tag">Multiplateforme</span>
+                    <span class="tag">En cours</span>
+                </div>
+            </div>
+            
+            <div class="link-to-app">
+                <p>
+                    <a href="/">Voir le portfolio interactif</a> – Découvrez la version Flutter Web de ce site avec des détails supplémentaires sur chaque projet, 
+                    notamment les projets professionnels en entreprise et le cas d'étude du portfolio.
+                </p>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>© 2025 – Fabien Blasquez. Tous droits réservés.</p>
+        </div>
+    </footer>
+</body>
+</html>
