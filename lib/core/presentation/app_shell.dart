@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class AppShell extends StatelessWidget {
+class AppShell extends StatefulWidget {
   final Widget child;
 
   const AppShell({super.key, required this.child});
@@ -11,12 +11,53 @@ class AppShell extends StatelessWidget {
   static const double contentMaxWidth = 840;
 
   @override
+  State<AppShell> createState() => _AppShellState();
+}
+
+class _AppShellState extends State<AppShell> {
+  final ScrollController _scrollController = ScrollController();
+  String? _currentRoute;
+
+  @override
+  void initState() {
+    super.initState();
+    // Écouter les changements de route pour remettre le scroll à 0
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _setupRouteListener();
+    });
+  }
+
+  void _setupRouteListener() {
+    final router = GoRouter.of(context);
+    _currentRoute = GoRouterState.of(context).uri.toString();
+    
+    router.routerDelegate.addListener(() {
+      final newRoute = GoRouterState.of(context).uri.toString();
+      if (newRoute != _currentRoute) {
+        _currentRoute = newRoute;
+        // Remettre le scroll à 0 après un court délai pour s'assurer que la page est chargée
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          if (_scrollController.hasClients) {
+            _scrollController.jumpTo(0);
+          }
+        });
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final cs = Theme.of(context).colorScheme;
     final tt = Theme.of(context).textTheme;
 
     final width = MediaQuery.of(context).size.width;
-    final isWide = width >= contentMaxWidth;
+    final isWide = width >= AppShell.contentMaxWidth;
 
     return Scaffold(
       backgroundColor: cs.surface,
@@ -114,10 +155,11 @@ class AppShell extends StatelessWidget {
           // =====================
           Expanded(
             child: SingleChildScrollView(
+              controller: _scrollController,
               // IMPORTANT :
               // On ne contraint plus ici (sinon pas de sections full-bleed).
               // Chaque page gère son propre maxWidth / padding.
-              child: child,
+              child: widget.child,
             ),
           ),
 
@@ -158,7 +200,9 @@ class NavButton extends StatelessWidget {
     final cs = Theme.of(context).colorScheme;
 
     final current = GoRouterState.of(context).uri.toString();
-    final isActive = current == route;
+    // Actif si la route correspond exactement ou si c'est une sous-page
+    final isActive = current == route || 
+        (current.startsWith(route) && route != '/' && current.length > route.length);
 
     return Padding(
       padding: const EdgeInsets.only(left: 6),
@@ -223,7 +267,9 @@ class DrawerItem extends StatelessWidget {
     final cs = Theme.of(context).colorScheme;
 
     final current = GoRouterState.of(context).uri.toString();
-    final isActive = current == route;
+    // Actif si la route correspond exactement ou si c'est une sous-page
+    final isActive = current == route || 
+        (current.startsWith(route) && route != '/' && current.length > route.length);
 
     return ListTile(
       selected: isActive,
