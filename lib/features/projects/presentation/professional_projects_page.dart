@@ -68,15 +68,15 @@ class _ProfessionalProjectsPageState extends State<ProfessionalProjectsPage>
               const SizedBox(height: 32),
 
               // Parcours et projets
-              _Section(
+              const _Section(
                 title: 'Parcours et projets',
                 children: [
-                  const SizedBox(height: 8),
+                  SizedBox(height: 8),
                   // Supplyframe / Siemens
                   _CompanyCard(
                     companyName: 'Supplyframe (groupe Siemens)',
                     period: '2017 à 2025',
-                    color: const Color(0xFF009999), // Bleu Siemens
+                    color: Color(0xFF009999), // Bleu Siemens
                     icon: Icons.business,
                     projects: [
                       _ProjectCard(
@@ -109,13 +109,13 @@ class _ProfessionalProjectsPageState extends State<ProfessionalProjectsPage>
                       ),
                     ],
                   ),
-                  const SizedBox(height: 24),
+                  SizedBox(height: 24),
 
                   // Schneider Electric
                   _CompanyCard(
                     companyName: 'Schneider Electric',
                     period: '2015 à 2017, 2024 à 2025',
-                    color: const Color(0xFF78BE20), // Vert Schneider
+                    color: Color(0xFF78BE20), // Vert Schneider
                     icon: Icons.bolt,
                     projects: [
                       _ProjectCard(
@@ -147,13 +147,13 @@ class _ProfessionalProjectsPageState extends State<ProfessionalProjectsPage>
                       ),
                     ],
                   ),
-                  const SizedBox(height: 24),
+                  SizedBox(height: 24),
 
                   // Alfa Laval
                   _CompanyCard(
                     companyName: 'Alfa Laval',
                     period: '2012 à 2013',
-                    color: const Color(0xFF003366), // Bleu foncé Alfa Laval
+                    color: Color(0xFF003366), // Bleu foncé Alfa Laval
                     icon: Icons.settings,
                     projects: [
                       _ProjectCard(
@@ -170,13 +170,13 @@ class _ProfessionalProjectsPageState extends State<ProfessionalProjectsPage>
                       ),
                     ],
                   ),
-                  const SizedBox(height: 24),
+                  SizedBox(height: 24),
 
                   // BF Web Création
                   _CompanyCard(
                     companyName: 'BF Web Création',
                     period: '2008 à 2013',
-                    color: const Color(0xFF6B46C1), // Violet
+                    color: Color(0xFF6B46C1), // Violet
                     icon: Icons.code,
                     projects: [
                       _ProjectCard(

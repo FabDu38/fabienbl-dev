@@ -74,7 +74,7 @@ class _PortfolioCaseStudyPageState extends State<PortfolioCaseStudyPage>
                               width: 2,
                             ),
                           ),
-                          child: Icon(
+                          child: const Icon(
                             Icons.web,
                             color: portfolioColor,
                             size: 28,
