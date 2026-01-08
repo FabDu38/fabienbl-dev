@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../core/presentation/simple_content_page.dart';
 import '../../../core/presentation/section_widgets.dart';
@@ -24,16 +25,6 @@ class ProjectsPage extends StatelessWidget {
         ),
         const SizedBox(height: 32),
         const _ProjectCard(
-          title: 'Portfolio professionnel',
-          subtitle: 'Application Flutter Web',
-          description:
-              'Application Flutter Web servant de vitrine professionnelle et de socle '
-              'technique multiplateforme.',
-          tags: ['Flutter', 'Web', 'Multiplateforme'],
-          actionType: ProjectActionType.caseStudy,
-        ),
-        const SizedBox(height: 16),
-        const _ProjectCard(
           title: 'Projets professionnels en entreprise',
           subtitle: 'Applications et outils métier',
           description:
@@ -45,6 +36,16 @@ class ProjectsPage extends StatelessWidget {
             'Contexte industriel'
           ],
           actionType: ProjectActionType.context,
+        ),
+        const SizedBox(height: 16),
+        const _ProjectCard(
+          title: 'Portfolio professionnel',
+          subtitle: 'Application Flutter Web',
+          description:
+              'Application Flutter Web servant de vitrine professionnelle et de socle '
+              'technique multiplateforme.',
+          tags: ['Flutter', 'Web', 'Multiplateforme'],
+          actionType: ProjectActionType.caseStudy,
         ),
         const SizedBox(height: 16),
         const _ProjectCard(
@@ -167,8 +168,11 @@ class _ProjectCard extends StatelessWidget {
               alignment: Alignment.centerLeft,
               child: OutlinedButton(
                 onPressed: () {
-                  // TODO: Implémenter la navigation vers la fiche détaillée ou la synthèse
-                  // selon actionType
+                  if (actionType == ProjectActionType.caseStudy) {
+                    context.go('/projets/portfolio');
+                  } else if (actionType == ProjectActionType.context) {
+                    context.go('/projets/professionnels');
+                  }
                 },
                 child: Text(
                   actionType == ProjectActionType.caseStudy

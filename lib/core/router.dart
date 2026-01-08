@@ -4,6 +4,8 @@ import 'presentation/app_shell.dart';
 
 import '../features/home/presentation/home_page.dart';
 import '../features/projects/presentation/projects_page.dart';
+import '../features/projects/presentation/portfolio_case_study_page.dart';
+import '../features/projects/presentation/professional_projects_page.dart';
 import '../features/about/presentation/about_page.dart';
 import '../features/contact/presentation/contact_page.dart';
 import '../features/legal/presentation/mentions_legales_page.dart';
@@ -26,6 +28,20 @@ final GoRouter appRouter = GoRouter(
           name: 'projects',
           pageBuilder: (context, state) => const NoTransitionPage(
             child: ProjectsPage(),
+          ),
+        ),
+        GoRoute(
+          path: '/projets/portfolio',
+          name: 'portfolio-case-study',
+          pageBuilder: (context, state) => const NoTransitionPage(
+            child: PortfolioCaseStudyPage(),
+          ),
+        ),
+        GoRoute(
+          path: '/projets/professionnels',
+          name: 'professional-projects',
+          pageBuilder: (context, state) => const NoTransitionPage(
+            child: ProfessionalProjectsPage(),
           ),
         ),
         GoRoute(
