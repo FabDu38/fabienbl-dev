@@ -56,22 +56,33 @@ flutter pub get
 
 ## Email
 
-### SimpleLogin
+### SimpleLogin — réception des emails
 
 - Adresse pro : `contact@fabien-blasquez.dev`
 - Fonctionne comme alias vers la boîte Gmail personnelle
 - Répondre depuis Gmail envoie au nom de `contact@fabien-blasquez.dev`
-- Configuration : ajout du domaine `fabien-blasquez.dev` dans SimpleLogin + entrées DNS chez Netlify
 
-### EmailJS
+**Procédure de configuration :**
 
-- Service utilisé pour le formulaire de contact côté client
+1. S'inscrire sur SimpleLogin avec l'adresse Gmail de réception
+2. Ajouter le domaine `fabien-blasquez.dev` dans SimpleLogin > Domains
+3. Ajouter les entrées DNS chez Netlify pour vérifier le domaine
+4. Ajouter les entrées DNS supplémentaires (MX, SPF, DKIM) une fois le domaine validé
+5. Créer un alias `contact@fabien-blasquez.dev`
+6. Les mails arrivent sur Gmail, les réponses partent au nom de `contact@fabien-blasquez.dev`
+
+### EmailJS — envoi depuis le formulaire de contact
+
+- Service côté client pour envoyer des emails depuis le formulaire Flutter sans backend
 - Compte EmailJS connecté au compte Gmail
-- Éléments à conserver :
-  - Service ID
-  - Template ID
-  - Public Key
-- Configuration dans le code Flutter
+
+**Procédure de configuration :**
+
+1. Créer un compte sur [emailjs.com](https://www.emailjs.com/)
+2. Créer un nouveau service, connecter le compte Gmail → récupérer le **Service ID**
+3. Créer un template d'email → récupérer le **Template ID**
+4. Récupérer la **Public Key** dans Account > API Keys
+5. Configurer ces 3 valeurs dans le code Flutter
 
 ## Google Search Console
 
@@ -79,11 +90,67 @@ flutter pub get
 - Sitemap soumis : `https://fabien-blasquez.dev/seo/sitemap.xml`
 - Indexation demandée manuellement pour chaque URL (à faire une seule fois)
 
-## Protection de la branche main
+## Procédure de push vers main
 
-- Branche `main` protégée sur GitHub
-- Toute modification passe par une PR
-- La CI doit passer avant le merge
+La branche `main` est protégée sur GitHub. Toute modification doit passer par une PR avec CI validée.
+
+### Étapes
+
+```text
+1. Créer une branche feature
+   git checkout -b feature/nom-fonctionnalite
+
+2. Développer et commiter
+   git add .
+   git commit -m "type: description courte"
+
+3. Pousser la branche
+   git push -u origin feature/nom-fonctionnalite
+
+4. Créer la PR sur GitHub
+   → Compare & pull request
+   → Rédiger un résumé du changement
+   → Relire le diff avant de valider
+
+5. Attendre la CI (Flutter CI doit passer)
+
+6. Merger la PR sur GitHub
+
+7. Revenir sur main en local
+   git checkout main
+   git pull
+   git branch -d feature/nom-fonctionnalite
+```
+
+### Règles
+
+- La CI (analyse + build) doit passer avant le merge
+- Toujours relire le diff, même en solo
+- Supprimer les branches locales et distantes après merge
+
+## Procédure de mise en production
+
+Le déploiement en production est **automatique** après merge sur `main` :
+
+```text
+Merge PR sur main
+  ↓
+GitHub Actions se déclenche
+  ↓
+flutter analyze + flutter build web --release
+  ↓
+Déploiement automatique sur Netlify
+  ↓
+Site live sur https://fabien-blasquez.dev
+```
+
+Aucune action manuelle nécessaire. Le site est mis à jour en quelques minutes après le merge.
+
+### Vérification post-déploiement
+
+- Vérifier visuellement le site sur [fabien-blasquez.dev](https://fabien-blasquez.dev)
+- Vérifier le statut du build dans GitHub Actions
+- Vérifier le déploiement dans le dashboard Netlify
 
 ## Script d'initialisation
 

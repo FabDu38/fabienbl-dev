@@ -28,7 +28,8 @@ flutter run -d chrome
 │   ├── 05_Audit_2026-08-19.md
 │   └── 06_Infrastructure.md
 ├── brainstorming/             Explorations et idées
-│   └── TODO.md
+│   ├── TODO.md
+│   └── sessions/             Sessions de brainstorming
 ├── confidentiel/              Documents business (non versionnés)
 ├── lib/                       Code Flutter
 ├── assets/                    Ressources visuelles
