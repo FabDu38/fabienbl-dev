@@ -46,7 +46,63 @@ Liaison bidirectionnelle : footer Flutter → pages SEO, pages SEO → app Flutt
 
 ## Checklist SEO
 
-Voir la checklist complète dans le Google Doc source (pages 56–58).
+### Structure & HTML
+
+- [ ] 1 seul H1 par page
+- [ ] Hiérarchie H1 → H2 → H3 logique
+- [ ] Title unique par page (≈ 50–60 caractères)
+- [ ] Meta description unique et lisible (≈ 140–160 caractères)
+
+### Contenu
+
+- [ ] 1 page = 1 intention claire
+- [ ] Contenu qui répond à une vraie question
+- [ ] Texte lisible (paragraphes courts, listes)
+- [ ] Champ sémantique cohérent (pas de répétitions)
+
+### Mots-clés
+
+- [ ] Mot-clé principal identifié par page
+- [ ] Mot-clé présent dans : Title / H1 / URL / intro
+- [ ] Pas de bourrage de mots-clés
+
+### URLs & navigation
+
+- [ ] URLs courtes et lisibles
+- [ ] Pas de paramètres inutiles
+- [ ] Navigation claire (menu compréhensible)
+
+### Maillage interne
+
+- [ ] Liens entre pages liées logiquement
+- [ ] Ancres de lien descriptives (pas "clique ici")
+- [ ] Aucune page importante orpheline
+
+### Technique
+
+- [ ] Site rapide (images optimisées)
+- [ ] Mobile OK (responsive réel)
+- [ ] HTTPS actif
+- [ ] Pas d'erreurs 404 visibles
+
+### Indexation
+
+- [ ] sitemap.xml présent
+- [ ] robots.txt propre
+- [ ] Pages inutiles non indexées
+
+### Confiance et crédibilité
+
+- [ ] Page À propos claire
+- [ ] Page Contact accessible
+- [ ] Mentions légales visibles
+- [ ] Identité claire
+
+### Objectif business
+
+- [ ] CTA clair par page
+- [ ] Objectif mesurable (contact, devis, etc.)
+- [ ] Pas de CTA concurrents multiples
 
 ## Performance
 

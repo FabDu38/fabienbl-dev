@@ -28,9 +28,9 @@ Détail : [`docs/05_Audit_2026-08-19.md`](docs/05_Audit_2026-08-19.md)
 
 ## En cours / ordre immédiat
 
-1. **P0** — Corriger le HTML Flutter (`index.html`), débloquer le zoom, uniformiser les URL, renforcer la sémantique
-2. **P1** — Footer, finitions, préciser la promesse, créer de vrais cas clients
-3. **P2** — Pages de services, mesures post-corrections
+1. **Brainstorming session 001** — Corrections et attractivité du site, place de l'IA ([`sessions/001`](brainstorming/sessions/001_Corrections_et_attractivite.md))
+2. **Brainstorming session 002** — Définition du MVP2 (découle de la session 001) ([`sessions/002`](brainstorming/sessions/002_Definition_MVP2.md))
+3. Puis exécution du MVP2 (périmètre défini par la session 002)
 
 ## Versions
 

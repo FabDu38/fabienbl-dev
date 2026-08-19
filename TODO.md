@@ -30,6 +30,16 @@ Les idées encore exploratoires restent dans [`brainstorming/TODO.md`](brainstor
 
 ---
 
+## ⏭️ Prochaine étape
+
+- [ ] **Brainstorming session 001** — Corrections et attractivité du site ([`sessions/001`](brainstorming/sessions/001_Corrections_et_attractivite.md))
+- [ ] **Brainstorming session 002** — Définition du MVP2 ([`sessions/002`](brainstorming/sessions/002_Definition_MVP2.md))
+- [ ] **Vérification opérationnelle** — S'assurer que tout fonctionne : emails (SimpleLogin + EmailJS), mise en prod (CI/CD + Netlify), domaine, HTTPS, Google Search Console
+
+> La session 001 alimente la session 002 (définition MVP2), qui structurera tout le backlog ci-dessous.
+
+---
+
 ## 🔴 Audit — P0 (critiques)
 
 > Issues de l'[audit du 19/08/2026](docs/05_Audit_2026-08-19.md).
