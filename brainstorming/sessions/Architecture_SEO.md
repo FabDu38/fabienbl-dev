@@ -1,11 +1,16 @@
 # Séance — Architecture du site et SEO
 
 > **Statut :** À démarrer  
-> **Prérequis :** préparation MVP2 ; inspection du code / du site en préversion.
+> **Prérequis :** cadrage MVP2 ; lecture de l’[audit 19/08/2026](../../docs/05_Audit_2026-08-19.md) (constats site déjà posés — pas de nouveau « tour de clic » obligatoire).
 
 ## Objectif
 
 Trancher le rôle de Flutter vs `/seo`, les URL, les pages indexables et les conséquences sur le backlog technique.
+
+## Entrées de la séance
+
+- [`docs/05_Audit_2026-08-19.md`](../../docs/05_Audit_2026-08-19.md) — P0/P1 SEO, HTML Flutter, URL
+- Code : `web/index.html`, `seo/`, `lib/core/router.dart`, pages publiques
 
 ## Sujets à explorer
 

@@ -33,8 +33,8 @@ Détail : [`docs/05_Audit_2026-08-19.md`](docs/05_Audit_2026-08-19.md)
 
 ## MVP2 — ordre immédiat
 
-1. **Préparation** (en cours) — préversion PR, vérif opérationnelle ([`TODO.md`](TODO.md))
-2. **Séances de brainstorming** — ordre dans [`brainstorming/TODO.md`](brainstorming/TODO.md) (dès architecture / SEO)
+1. **Préparation** — essentiellement faite (audit + tag `mvp1-final` + CI locale) ; optionnel : test mail contact
+2. **Séance en cours** — [Architecture & SEO](brainstorming/sessions/Architecture_SEO.md) (décisions, pas refaire l’audit visuel)
 3. **Revue préversion** puis publication (tag `V2.0.0`)
 
 ## Jalons produit

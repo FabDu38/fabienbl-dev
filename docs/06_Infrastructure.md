@@ -82,7 +82,25 @@ flutter pub get
 2. Créer un nouveau service, connecter le compte Gmail → récupérer le **Service ID**
 3. Créer un template d'email → récupérer le **Template ID**
 4. Récupérer la **Public Key** dans Account > API Keys
-5. Configurer ces 3 valeurs dans le code Flutter
+5. Configurer ces 3 valeurs dans le code Flutter (`lib/features/contact/presentation/contact_page.dart`)
+6. **Domains** (dashboard EmailJS) : autoriser au minimum `https://fabien-blasquez.dev` et `http://localhost` pour les tests locaux
+
+**Dépannage — erreur HTTP 412 en prod**
+
+Le code Flutter est en général correct ; le **412 vient presque toujours du lien Gmail ↔ EmailJS** (token OAuth expiré ou permissions insuffisantes). Le corps de la réponse ressemble souvent à `Gmail_API: Invalid grant` ou `insufficient authentication scopes`.
+
+1. [EmailJS](https://dashboard.emailjs.com/) → **Email Services** → ouvrir le service Gmail (`service_3ehoqgp` ou équivalent)
+2. **Disconnect** le compte Google, puis **Connect Account** à nouveau
+3. Lors du consentement Google, cocher **« Send email on your behalf »** (les cases sont souvent décochées par défaut)
+4. **Update Service**, puis **Test** depuis le dashboard (doit passer avant de retester le site)
+5. Si ça persiste : [Google Account](https://myaccount.google.com/permissions) → retirer l’accès EmailJS → reconnecter ; vérifier qu’aucun changement de mot de passe récent n’a invalidé le grant
+
+**Autres codes utiles**
+
+| Code | Cause probable |
+|------|----------------|
+| 403 | Clé publique incorrecte, domaine absent de l’allowlist, ou appels API depuis un script (option « non-browser » désactivée dans Account → Security) |
+| 400 | `service_id` / `template_id` / `user_id` manquant ou invalide |
 
 ## Google Search Console
 
@@ -135,7 +153,7 @@ La branche `main` est protégée sur GitHub. Toute modification doit passer par 
 - Les **petites branches** `feature/` / `fix/` fusionnent sur `main` au fil des séances (pas de branche géante).
 - Chaque push / PR déclenche **analyze + build** ; **aucun déploiement prod** automatique sur merge `main`.
 - La prod reste sur le dernier **tag de release** déployé (`mvp1-final` côté code figé ; prod live jusqu’au prochain tag `V*`).
-- **Validation** : build local, preview Netlify des PR si configurée, ou artefact CI.
+- **Validation** : surtout **en local** (`flutter run -d chrome`, `flutter build web`) pendant le MVP2 ; preview PR / prod au tag de release.
 
 ### Release en production (automatique)
 

@@ -1,4 +1,4 @@
-# Brainstorming — TODO
+﻿# Brainstorming — TODO
 
 > **Objectif :** Sessions de décision MVP2 et idées pas encore tranchées. Objectifs et périmètre global : [`docs/07_MVP2.md`](../docs/07_MVP2.md).
 

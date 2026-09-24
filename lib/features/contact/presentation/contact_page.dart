@@ -297,11 +297,18 @@ class _ContactFormState extends State<_ContactForm> {
         // Afficher un message d'erreur avec plus de détails
         debugPrint(
             'EmailJS - Erreur HTTP ${response.statusCode}: ${response.body}');
-        final errorMessage = response.statusCode == 400
-            ? 'Erreur de configuration. Vérifiez vos identifiants EmailJS.'
-            : response.statusCode == 403
-                ? 'Accès refusé. Vérifiez votre clé publique.'
-                : 'Erreur lors de l\'envoi (${response.statusCode}). Veuillez réessayer.';
+        final body = response.body.trim();
+        final errorMessage = switch (response.statusCode) {
+          400 =>
+            'Erreur de configuration. Vérifiez vos identifiants EmailJS.',
+          403 =>
+            'Accès refusé (clé publique ou domaine non autorisé dans EmailJS).',
+          412 =>
+            'Envoi indisponible pour le moment. Écrivez-moi à contact@fabien-blasquez.dev.',
+          _ => body.isNotEmpty
+              ? 'Erreur lors de l\'envoi (${response.statusCode}) : $body'
+              : 'Erreur lors de l\'envoi (${response.statusCode}). Veuillez réessayer.',
+        };
 
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
