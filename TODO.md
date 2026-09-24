@@ -43,7 +43,8 @@ Les idées encore exploratoires restent dans [`brainstorming/TODO.md`](brainstor
 - [x] Confirmer le circuit de travail (branches `feature/` ou `fix/` depuis `main`, PR ; prod sur tag `V*` uniquement)
 - [x] **Inspection site** — déjà couverte par l’[audit du 19/08/2026](docs/05_Audit_2026-08-19.md) (pas besoin de refaire un parcours « clic partout »)
 - [x] Build local : `flutter analyze` + `flutter build web --release` OK (24/09/2026)
-- [ ] **Contact prod (412)** — reconnecter Gmail dans [EmailJS](https://dashboard.emailjs.com/) (procédure : [`docs/06_Infrastructure.md`](docs/06_Infrastructure.md)) ; messages d’erreur côté UI dans `contact_page.dart`
+- [x] **Deploy prod `V1.2.1`** — secrets Netlify recréés, pipeline Actions + Netlify validés (24/09/2026, voir [`06_Infrastructure.md`](docs/06_Infrastructure.md))
+- [x] **Contact prod** — EmailJS Gmail reconnecté ; messages d’erreur UI (`contact_page.dart`) déployés en `V1.2.1`
 - [ ] **Optionnel** — GSC ; PR/preview (reportés)
 - [x] Rappel : **prod** uniquement au tag `V2.0.0` ; travail et tests en **local** pour l’instant
 

@@ -10,13 +10,13 @@
 ## État actuel
 
 - Site Flutter Web fonctionnel avec navigation (go_router)
-- Hébergement Netlify ; CI sur chaque push/PR ; **prod** uniquement sur tag `V*` (voir [`06_Infrastructure.md`](docs/06_Infrastructure.md))
+- Hébergement Netlify ; CI sur chaque push/PR ; **prod** sur tag `V*` — dernière release **`V1.2.1`** (24/09/2026, voir [`06_Infrastructure.md`](docs/06_Infrastructure.md))
 - Domaine fabien-blasquez.dev configuré avec HTTPS
 - Thème Material 3 appliqué (seed color #2BBBAD, police Inter)
 - Pages en place : Accueil, À propos, Projets, Contact, Mentions légales
 - Animations flutter_animate intégrées
 - Couche SEO statique HTML en place (`/seo`)
-- Configuration email (SimpleLogin + EmailJS)
+- Configuration email (SimpleLogin + EmailJS) ; formulaire contact opérationnel en prod (reconnexion Gmail EmailJS, sept. 2026)
 - Boîte mail contact@fabien-blasquez.dev opérationnelle
 - Google Search Console configurée, indexation demandée
 
