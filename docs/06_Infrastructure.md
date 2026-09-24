@@ -13,7 +13,7 @@
 
 ### GitHub Actions (`flutter-ci.yml`)
 
-Le workflow se déclenche sur push et PR vers `main` :
+Le workflow se déclenche sur **push** (toutes branches + tags `V*`) et sur **PR** vers `main` :
 
 1. Démarre une machine Linux
 2. Récupère le code du dépôt
@@ -21,15 +21,33 @@ Le workflow se déclenche sur push et PR vers `main` :
 4. `flutter pub get`
 5. `flutter analyze`
 6. `flutter build web --release`
-7. Déploie sur Netlify via token
+7. **Uniquement sur tag `V*`** : `netlify deploy --prod` (dossier `build/web`)
 
 ### Configuration Netlify
 
-- **Build command** : `flutter build web --release`
+- **Build command** : `flutter build web --release` (dans `netlify.toml`, si build Netlify utilisé)
 - **Publish directory** : `build/web`
-- **Déploiement auto** : désactivé côté Netlify (géré par GitHub Actions)
-- **Token Netlify** : stocké dans les secrets GitHub (ne pas versionner en clair)
-- **Site ID** : configuré dans les secrets GitHub
+- **Builds Netlify** : peuvent être en pause (« Builds are stopped ») — **normal** si la prod passe par GitHub Actions + CLI ; ce bandeau ne remplace pas les secrets GitHub
+- **Déploiement prod** : via GitHub Actions (pas un auto-deploy Git → Netlify obligatoire)
+
+### Secrets GitHub (obligatoires pour la prod)
+
+Dans le dépôt : **Settings → Secrets and variables → Actions** (secrets **repository**, pas seulement « Environments ») :
+
+| Secret | Contenu |
+|--------|---------|
+| `NETLIFY_AUTH_TOKEN` | [Personal access token](https://app.netlify.com/user/applications#personal-access-tokens) du compte propriétaire du site |
+| `NETLIFY_SITE_ID` | UUID du site **fabien-blasquez.dev** (Site configuration → General → Site details) |
+
+Sans ces deux secrets, l’étape *Deploy to Netlify* échoue avec `Unauthorized: could not retrieve project`. GitHub ne supprime pas les secrets tout seul ; une liste vide = à recréer.
+
+### Incident résolu — déploiement `V1.2.1` (24/09/2026)
+
+- **Contexte** : premier deploy prod après passage « prod uniquement sur tag `V*` » (PR #19) ; tag **`V1.2.1`** après merge contact / doc (PR #20).
+- **Symptôme** : CI OK jusqu’au build ; échec `netlify deploy --prod` → `Unauthorized: could not retrieve project`.
+- **Cause** : secrets `NETLIFY_AUTH_TOKEN` et `NETLIFY_SITE_ID` **absents** du dépôt GitHub (pas lié au bandeau « Builds are stopped » sur Netlify).
+- **Résolution** : recréation des deux secrets → **Re-run** du workflow sur le tag `V1.2.1` → prod à jour sur [fabien-blasquez.dev](https://fabien-blasquez.dev).
+- **Contrôle** : Actions verte + deploy *Published* dans Netlify ; test page `/contact`.
 
 ### Compilation locale
 
@@ -94,6 +112,8 @@ Le code Flutter est en général correct ; le **412 vient presque toujours du li
 3. Lors du consentement Google, cocher **« Send email on your behalf »** (les cases sont souvent décochées par défaut)
 4. **Update Service**, puis **Test** depuis le dashboard (doit passer avant de retester le site)
 5. Si ça persiste : [Google Account](https://myaccount.google.com/permissions) → retirer l’accès EmailJS → reconnecter ; vérifier qu’aucun changement de mot de passe récent n’a invalidé le grant
+
+**Résolution — 412 en prod (24/09/2026)** : service Gmail `service_3ehoqgp` — **Disconnect** / **Connect Account** avec permission « Send email on your behalf », **Update Service** + test EmailJS OK ; formulaire contact de nouveau fonctionnel après deploy `V1.2.1`.
 
 **Autres codes utiles**
 
@@ -168,7 +188,7 @@ GitHub Actions (analyze + build + deploy --prod)
 Site live sur https://fabien-blasquez.dev
 ```
 
-Convention alignée avec les tags existants (`V1.0.0`, `V1.1.0`, …). Le tag `mvp1-final` marque le commit MVP1 ; il ne redéploie pas tant qu’aucun nouveau `V*` n’est poussé après changement CI.
+Convention alignée avec les tags existants (`V1.0.0`, `V1.1.0`, `V1.2.0`, **`V1.2.1`** — messages contact + doc prep, 24/09/2026). Le tag `mvp1-final` marque le commit MVP1 ; il ne redéploie pas tant qu’aucun nouveau `V*` n’est poussé après changement CI.
 
 ### Vérification post-déploiement
 
