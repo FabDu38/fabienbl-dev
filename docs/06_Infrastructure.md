@@ -130,21 +130,27 @@ La branche `main` est protégée sur GitHub. Toute modification doit passer par 
 
 ## Procédure de mise en production
 
-Le déploiement en production est **automatique** après merge sur `main` :
+### Pendant le MVP2 (intégration vs production)
+
+- Les **petites branches** `feature/` / `fix/` fusionnent sur `main` au fil des séances (pas de branche géante).
+- Chaque push / PR déclenche **analyze + build** ; **aucun déploiement prod** automatique sur merge `main`.
+- La prod reste sur le dernier **tag de release** déployé (`mvp1-final` côté code figé ; prod live jusqu’au prochain tag `V*`).
+- **Validation** : build local, preview Netlify des PR si configurée, ou artefact CI.
+
+### Release en production (automatique)
+
+Le déploiement prod Netlify se déclenche **uniquement** sur push d’un **tag semver** `V*` (ex. `V2.0.0` pour la fin du MVP2) :
 
 ```text
-Merge PR sur main
+git tag V2.0.0
+git push origin V2.0.0
   ↓
-GitHub Actions se déclenche
-  ↓
-flutter analyze + flutter build web --release
-  ↓
-Déploiement automatique sur Netlify
+GitHub Actions (analyze + build + deploy --prod)
   ↓
 Site live sur https://fabien-blasquez.dev
 ```
 
-Aucune action manuelle nécessaire. Le site est mis à jour en quelques minutes après le merge.
+Convention alignée avec les tags existants (`V1.0.0`, `V1.1.0`, …). Le tag `mvp1-final` marque le commit MVP1 ; il ne redéploie pas tant qu’aucun nouveau `V*` n’est poussé après changement CI.
 
 ### Vérification post-déploiement
 

@@ -3,10 +3,12 @@ name: Flutter CI  # Nom du workflow, ça apparaîtra dans l’onglet Actions
 on:
   push:
     branches:
-      - "**"     # Exécute la CI sur TOUTES les branches quand tu push
+      - "**"
+    tags:
+      - "V*"
   pull_request:
     branches:
-      - main     # Exécute aussi la CI sur les PR qui ciblent main
+      - main
 
 jobs:
   flutter-ci:
@@ -44,17 +46,17 @@ jobs:
           name: web-build                 # Nom de l’artefact
           path: build/web                 # Le dossier généré par la commande build
           
- # -------------------------------------------------------------------
-      #                 🚀 NETLIFY DEPLOY (PRODUCTION)
-      #   ➤ Ne s'exécute QUE quand tu pushes sur main (propre et sécurisé)
+      # -------------------------------------------------------------------
+      #   PRODUCTION Netlify : uniquement sur tag de release (ex. V2.0.0)
+      #   Les merges sur main intègrent le code + CI, sans mise en prod auto.
       # -------------------------------------------------------------------
 
       - name: Install Netlify CLI
-        if: github.ref == 'refs/heads/main'
+        if: startsWith(github.ref, 'refs/tags/V')
         run: npm install -g netlify-cli
 
       - name: Deploy to Netlify (production)
-        if: github.ref == 'refs/heads/main'
+        if: startsWith(github.ref, 'refs/tags/V')
         run: netlify deploy --prod --dir build/web --site $NETLIFY_SITE_ID
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
