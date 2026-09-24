@@ -6,6 +6,8 @@ Site vitrine professionnel [fabien-blasquez.dev](https://fabien-blasquez.dev), d
 
 Site personnel responsive servant de vitrine professionnelle et de socle technique multiplateforme (web, mobile, desktop).
 
+**Phase actuelle :** MVP1 ✅ terminé — MVP2 🔵 en cours. Détail : [`PROJECT_STATUS.md`](PROJECT_STATUS.md) et backlog [`TODO.md`](TODO.md).
+
 ## Premiers pas
 
 ```bash
@@ -26,7 +28,8 @@ flutter run -d chrome
 │   ├── 03_Design.md
 │   ├── 04_SEO_Performance.md
 │   ├── 05_Audit_2026-08-19.md
-│   └── 06_Infrastructure.md
+│   ├── 06_Infrastructure.md
+│   └── 07_MVP2.md
 ├── brainstorming/             Explorations et idées
 │   ├── TODO.md
 │   └── sessions/             Sessions de brainstorming

@@ -73,21 +73,26 @@ Maintenir une activité indépendante et agile, devenir un acteur reconnu du dé
 
 ## Périmètre du site
 
-### Release 1 (prototype non référencé)
+### MVP1 — ✅ Terminé
 
 - Accueil (hero + piliers + preuve + CTA)
 - À propos (crédibilité + posture)
 - Projets (démonstration)
 - Contact (conversion)
 - Mentions légales
-- Couche SEO statique (non exposée aux moteurs)
+- Couche SEO statique (`/seo`), déploiement Netlify, CI/CD
+- Search Console connectée, base d’indexation préparée
 
-### Release 2 (version publique)
+### MVP2 — En cours
 
-- SEO activé, Analytics, consentement cookies
-- Formulaire de contact complet
+Objectif : site crédible, corrigé (audit), plus attractif, prêt pour une **version publique** renforcée. **MVP2 :** [`07_MVP2.md`](07_MVP2.md) · **Séances :** [`brainstorming/TODO.md`](../brainstorming/TODO.md) · **Tâches :** [`TODO.md`](../TODO.md). Inclut notamment :
 
-### Versions futures
+- Corrections audit (technique, accessibilité, contenu, conversion)
+- Positionnement, preuves commerciales, IA dans le discours, attractivité visuelle
+- Référencement public activé, Analytics, consentement cookies
+- Légal, performance, accessibilité, ops (selon priorisation MVP2)
+
+### Après MVP2
 
 - Blog / contenu éditorial
 - Multiplateforme (mobile, desktop)
