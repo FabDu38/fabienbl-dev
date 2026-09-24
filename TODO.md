@@ -39,14 +39,19 @@ Les idées encore exploratoires restent dans [`brainstorming/TODO.md`](brainstor
 ### Phase 1 — Préparation (exécution)
 
 - [x] **Brainstorming — Définition du MVP2** (cadrage — [`Definition_MVP2`](brainstorming/sessions/Definition_MVP2.md))
-- [ ] Poser le tag **`mvp1-final`** sur le commit MVP1 publié
-- [ ] Confirmer le circuit de travail (branches `feature/` ou `fix/` depuis `main`, PR comme d’habitude — pas de préfixe MVP2 obligatoire)
-- [ ] Vérifier la préversion (preview Netlify / PR)
-- [ ] **Vérification opérationnelle** — emails (SimpleLogin + EmailJS), mise en prod (CI/CD + Netlify), domaine, HTTPS, Google Search Console
+- [x] Poser le tag **`mvp1-final`** sur le commit MVP1 publié (`752bee4`, poussé sur origin)
+- [x] Confirmer le circuit de travail (branches `feature/` ou `fix/` depuis `main`, PR ; prod sur tag `V*` uniquement)
+- [x] **Inspection site** — déjà couverte par l’[audit du 19/08/2026](docs/05_Audit_2026-08-19.md) (pas besoin de refaire un parcours « clic partout »)
+- [x] Build local : `flutter analyze` + `flutter build web --release` OK (24/09/2026)
+- [ ] **Contact prod (412)** — reconnecter Gmail dans [EmailJS](https://dashboard.emailjs.com/) (procédure : [`docs/06_Infrastructure.md`](docs/06_Infrastructure.md)) ; messages d’erreur côté UI dans `contact_page.dart`
+- [ ] **Optionnel** — GSC ; PR/preview (reportés)
+- [x] Rappel : **prod** uniquement au tag `V2.0.0` ; travail et tests en **local** pour l’instant
 
 ### Séances de brainstorming
 
-Suivre et cocher dans [`brainstorming/TODO.md`](brainstorming/TODO.md) (fichiers dans `brainstorming/sessions/`).
+**Prochaine :** [Architecture du site et SEO](brainstorming/sessions/Architecture_SEO.md) — s’appuyer sur l’audit + le code, pas une nouvelle inspection visuelle.
+
+Suivre et cocher dans [`brainstorming/TODO.md`](brainstorming/TODO.md).
 
 ### Candidats — Audit P0 (critiques)
 

@@ -10,7 +10,7 @@
 ## État actuel
 
 - Site Flutter Web fonctionnel avec navigation (go_router)
-- Hébergement Netlify avec déploiement automatique (CI/CD GitHub Actions)
+- Hébergement Netlify ; CI sur chaque push/PR ; **prod** uniquement sur tag `V*` (voir [`06_Infrastructure.md`](docs/06_Infrastructure.md))
 - Domaine fabien-blasquez.dev configuré avec HTTPS
 - Thème Material 3 appliqué (seed color #2BBBAD, police Inter)
 - Pages en place : Accueil, À propos, Projets, Contact, Mentions légales
@@ -27,11 +27,15 @@ Points faibles : HTML Flutter quasi vide (3/10), accessibilité (3/10), preuves 
 
 Détail : [`docs/05_Audit_2026-08-19.md`](docs/05_Audit_2026-08-19.md)
 
+## Branche de travail
+
+`feature/prep-verif-prod` — phase 1 préparation MVP2.
+
 ## MVP2 — ordre immédiat
 
-1. **Préparation** — tag `mvp1-final`, branche MVP2, préversion, vérif opérationnelle ([`TODO.md`](TODO.md))
-2. **Séances de brainstorming** — ordre dans [`brainstorming/TODO.md`](brainstorming/TODO.md) (dès architecture / SEO)
-4. **Revue préversion** puis publication
+1. **Préparation** — essentiellement faite (audit + tag `mvp1-final` + CI locale) ; optionnel : test mail contact
+2. **Séance en cours** — [Architecture & SEO](brainstorming/sessions/Architecture_SEO.md) (décisions, pas refaire l’audit visuel)
+3. **Revue préversion** puis publication (tag `V2.0.0`)
 
 ## Jalons produit
 
