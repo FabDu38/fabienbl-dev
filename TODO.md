@@ -40,7 +40,7 @@ Les idées encore exploratoires restent dans [`brainstorming/TODO.md`](brainstor
 
 - [x] **Brainstorming — Définition du MVP2** (cadrage — [`Definition_MVP2`](brainstorming/sessions/Definition_MVP2.md))
 - [ ] Poser le tag **`mvp1-final`** sur le commit MVP1 publié
-- [ ] Confirmer le circuit de travail MVP2 (branche `feature/mvp2-*`, PR vers `main`)
+- [ ] Confirmer le circuit de travail (branches `feature/` ou `fix/` depuis `main`, PR comme d’habitude — pas de préfixe MVP2 obligatoire)
 - [ ] Vérifier la préversion (preview Netlify / PR)
 - [ ] **Vérification opérationnelle** — emails (SimpleLogin + EmailJS), mise en prod (CI/CD + Netlify), domaine, HTTPS, Google Search Console
 

@@ -10,7 +10,7 @@
 
 1. **Brainstorming de cadrage clos** — Le MVP2 est cadré (périmètre, enchaînement des étapes, séances thématiques). On n’organise pas de brainstorming pour des détails d’exécution Git (noms de branches, etc.).
 2. **MVP1 figé** — Le MVP1 reste terminé ; le tag **`mvp1-final`** sera posé sur le commit du MVP1 **publié** (action Git à faire, voir [`docs/07_MVP2.md`](../../docs/07_MVP2.md)).
-3. **Travail MVP2 sur branche dédiée** — Développement MVP2 via branche type `feature/mvp2-*`, intégration par PR (circuit existant).
+3. **Git inchangé** — Même circuit qu’habitude : `feature/` ou `fix/` depuis `main`, PR, merge. Pas de convention de nom de branche spécifique au MVP2.
 4. **Préparation sans séance** — Tag, branche, préversion Netlify et vérif opérationnelle = **phase d’exécution**, pas une séance de décision.
 5. **Séances différées** — Positionnement détaillé, promesse, IA, attractivité, cas clients, choix techniques précis : traités dans les séances du plan MVP2 (architecture SEO, parcours, visuel, messages, mesure), pas dans un bloc unique immédiat.
 6. **Ordre des séances** — En priorité : **architecture / SEO** → **parcours** → **direction visuelle** ; puis **messages et projets** et **mesure / surveillance** au moment des chantiers concernés.
