@@ -21,19 +21,20 @@ Le site principal est une application Flutter Web (non SEO-friendly nativement).
 
 Liaison bidirectionnelle : footer Flutter → pages SEO, pages SEO → app Flutter.
 
-## Release 1 — Non référencé
+## MVP1 — ✅ Livré (base SEO)
 
-- `noindex, nofollow` (meta + header X-Robots-Tag)
-- `robots.txt` bloquant
-- Pas de sitemap soumis
-- Pages propres mais invisibles pour Google by design
+- Couche `/seo` en HTML statique (pages, titres, métadescriptions, JSON-LD)
+- `sitemap.xml` et liaison avec l’app Flutter
+- Google Search Console configurée, demande d’indexation des URLs `/seo`
+- Stratégie de parité contenu Flutter ↔ SEO à renforcer (voir audit — **MVP2**)
 
-## Release 2 — Référencement activé
+## MVP2 — En cours (référencement public)
 
-- Retrait du noindex
-- Sitemap.xml final soumis à Google Search Console
+- Corrections P0/P1 de l’audit (HTML Flutter, URL, accessibilité)
+- Retrait du `noindex` / politique d’indexation alignée sur la version publique
 - Analytics + Consent Mode
 - Bannière cookie fonctionnelle
+- Lighthouse ≥ 90, checklist SEO complétée
 
 ## SEO technique
 

@@ -120,3 +120,6 @@ app.*.symbols
 
 # Dossier local pour données confidentielles (non versionnées)
 confidentiel/
+
+# Exports locaux (brainstorming, zip pour outils externes — non versionnés)
+exports/

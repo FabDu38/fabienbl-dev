@@ -4,7 +4,8 @@
 
 ## Phase
 
-✅ MVP1 terminé — Corrections post-audit en cours
+- **MVP1** — ✅ terminé
+- **MVP2** — 🔵 en cours (cadrage ✅ — voir [`docs/07_MVP2.md`](docs/07_MVP2.md), séances [`brainstorming/TODO.md`](brainstorming/TODO.md))
 
 ## État actuel
 
@@ -26,15 +27,18 @@ Points faibles : HTML Flutter quasi vide (3/10), accessibilité (3/10), preuves 
 
 Détail : [`docs/05_Audit_2026-08-19.md`](docs/05_Audit_2026-08-19.md)
 
-## En cours / ordre immédiat
+## MVP2 — ordre immédiat
 
-1. **Brainstorming session 001** — Corrections et attractivité du site, place de l'IA ([`sessions/001`](brainstorming/sessions/001_Corrections_et_attractivite.md))
-2. **Brainstorming session 002** — Définition du MVP2 (découle de la session 001) ([`sessions/002`](brainstorming/sessions/002_Definition_MVP2.md))
-3. Puis exécution du MVP2 (périmètre défini par la session 002)
+1. **Préparation** — tag `mvp1-final`, branche MVP2, préversion, vérif opérationnelle ([`TODO.md`](TODO.md))
+2. **Séances de brainstorming** — ordre dans [`brainstorming/TODO.md`](brainstorming/TODO.md) (dès architecture / SEO)
+4. **Revue préversion** puis publication
 
-## Versions
+## Jalons produit
 
-- **Release 1** (en cours) : site vitrine complet non référencé (noindex)
-- **Release 2** (ensuite) : SEO activé, Analytics, bannière cookie, formulaire contact
+| Jalon | Statut | Contenu livré / visé |
+|-------|--------|----------------------|
+| **MVP1** | ✅ Terminé | Site vitrine déployé (pages, contact, thème, CI/CD, couche `/seo`, Search Console branchée) |
+| **MVP2** | 🔵 En cours | Objectifs [`07_MVP2.md`](docs/07_MVP2.md) ; séances [`brainstorming/TODO.md`](brainstorming/TODO.md) |
+| **Après MVP2** | À définir | Blog, multiplateforme, backend dynamique, multilingue ([`docs/00_Vision.md`](docs/00_Vision.md)) |
 
 Backlog officiel : [`TODO.md`](TODO.md). Idées exploratoires : [`brainstorming/TODO.md`](brainstorming/TODO.md).

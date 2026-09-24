@@ -68,7 +68,9 @@ Une décision validée rejoint le document dont la responsabilité correspond à
 - `docs/03_Design.md` : charte graphique, tokens, responsive, animations ;
 - `docs/04_SEO_Performance.md` : stratégie SEO, accessibilité, performance ;
 - `docs/05_Audit_*.md` : audits datés (constats, plan d'action) ;
-- `docs/06_Infrastructure.md` : hébergement, CI/CD, déploiement, email, DNS, outils opérationnels.
+- `docs/06_Infrastructure.md` : hébergement, CI/CD, déploiement, email, DNS, outils opérationnels ;
+- `docs/07_MVP2.md` : objectifs et périmètre du MVP2 ;
+- `brainstorming/sessions/` : séances de décision MVP2 (détail par thème).
 
 Une même décision peut avoir des conséquences sur plusieurs documents, mais chaque aspect ne doit être décrit en détail qu'à un seul endroit.
 
@@ -91,8 +93,8 @@ Cette revue porte au minimum sur :
 
 ### 5. Mettre à jour le pilotage
 
-- `PROJECT_STATUS.md` indique où en est le projet aujourd'hui ;
-- `TODO.md` contient le backlog officiel et les prochaines actions ;
+- `PROJECT_STATUS.md` indique où en est le projet aujourd'hui (jalons **MVP1** terminé, **MVP2** en cours) ;
+- `TODO.md` contient le backlog officiel : section MVP1 figée (terminé), tout le reste sous **MVP2** ;
 - `brainstorming/TODO.md` conserve les idées et sujets pas encore tranchés.
 
 ### 6. Vérifier
