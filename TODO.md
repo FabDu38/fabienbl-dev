@@ -39,10 +39,15 @@ Les idées encore exploratoires restent dans [`brainstorming/TODO.md`](brainstor
 ### Phase 1 — Préparation (exécution)
 
 - [x] **Brainstorming — Définition du MVP2** (cadrage — [`Definition_MVP2`](brainstorming/sessions/Definition_MVP2.md))
-- [ ] Poser le tag **`mvp1-final`** sur le commit MVP1 publié
-- [ ] Confirmer le circuit de travail (branches `feature/` ou `fix/` depuis `main`, PR comme d’habitude — pas de préfixe MVP2 obligatoire)
-- [ ] Vérifier la préversion (preview Netlify / PR)
-- [ ] **Vérification opérationnelle** — emails (SimpleLogin + EmailJS), mise en prod (CI/CD + Netlify), domaine, HTTPS, Google Search Console
+- [x] Poser le tag **`mvp1-final`** sur le commit MVP1 publié (`752bee4`, poussé sur origin)
+- [x] Confirmer le circuit de travail (branches `feature/` ou `fix/` depuis `main`, PR ; prod sur tag `V*` uniquement)
+- [ ] Vérifier la préversion (ouvrir une PR depuis cette branche → CI verte + preview Netlify si activée)
+- [ ] **Vérification opérationnelle**
+  - [x] Build local : `flutter analyze` + `flutter build web --release` OK (24/09/2026)
+  - [x] Site public HTTPS + sitemap `/seo/sitemap.xml` répondent (200)
+  - [ ] Formulaire contact → réception mail (test manuel sur prod ou preview)
+  - [ ] Google Search Console : pas d’erreur bloquante récente (vérif manuelle)
+  - [x] Rappel : merge `main` ne déploie plus la prod (attendre `V2.0.0`)
 
 ### Séances de brainstorming
 
