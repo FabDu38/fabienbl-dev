@@ -90,12 +90,78 @@
 - [ ] Lighthouse SEO ≥ 90 (mobile) — à mesurer sur URL de préversion prod
 - [x] Contenu principal en HTML statique (formulaire seul nécessite JS)
 
-### Bascule prod (étape 8 — action manuelle GSC)
+### Bascule prod (étape 8)
 
-- [ ] Tag release (ex. `V1.5.0`) → deploy `site/dist`
-- [ ] Vérifier 301 en prod
+- [x] Tag release `V*` → deploy `site/dist` via Astro CI (`netlify deploy --prod`)
+- [x] Flutter retiré du dépôt (jalon 1)
 - [ ] Search Console : nouveau sitemap, surveillance couverture 2–4 semaines
-- [ ] PR suppression Flutter (`lib/`, `web/`, `pubspec.yaml`, `seo/`, `scripts/copy-seo.js`, job Flutter CI)
+
+### Actions manuelles — prod ou préversion
+
+À refaire après chaque tag prod important (ou sur `https://fabien-blasquez.dev` une fois le tag déployé). Préversion : URL du deploy **astro-preview** (Actions → Astro CI sur `main`), avec noindex — OK pour Lighthouse, pas pour GSC.
+
+#### Redirections 301
+
+Objectif : **une** redirection 301 vers l’URL finale, **pas** de boucle (`ERR_TOO_MANY_REDIRECTS`).
+
+**Navigateur** : barre d’adresse en navigation privée, ou extension type « Redirect Path ».
+
+**Ligne de commande (PowerShell)** — lire la première ligne `HTTP` et l’en-tête `Location` :
+
+```powershell
+curl.exe -sI "https://fabien-blasquez.dev/seo/a-propos.html"
+curl.exe -sI "https://fabien-blasquez.dev/projets"
+curl.exe -sI "https://fabien-blasquez.dev/projets/"
+```
+
+**Attendu (exemples)** :
+
+| URL testée | Code | `Location` (ou URL finale) |
+|------------|------|----------------------------|
+| `/seo/developpeur-web-freelance.html` | 301 | `https://fabien-blasquez.dev/` |
+| `/seo/a-propos.html` | 301 | `https://fabien-blasquez.dev/a-propos/` |
+| `/seo/projets.html` | 301 | `https://fabien-blasquez.dev/projets/` |
+| `/seo/contact.html` | 301 | `https://fabien-blasquez.dev/contact/` |
+| `/seo/mentions-legales.html` | 301 | `https://fabien-blasquez.dev/mentions-legales/` |
+| `/seo/sitemap.xml` | 301 | `https://fabien-blasquez.dev/sitemap-index.xml` |
+| `/projets` (sans slash) | 301 | `https://fabien-blasquez.dev/projets/` |
+| `/projets/` | **200** | (pas de 301 vers la même URL) |
+
+Liste complète : [`site/public/_redirects`](../site/public/_redirects).
+
+- [ ] Legacy `/seo/*.html` → bonnes destinations
+- [ ] Chemins sans barre finale → version avec `/`
+- [ ] Pages canoniques (`/projets/`, `/contact/`, …) en **200**
+
+#### Lighthouse
+
+1. Chrome → ouvrir l’URL (prod ou préversion).
+2. **F12** → onglet **Lighthouse** (parfois sous le menu `»`).
+3. Mode **Navigation**, appareil **Mobile** (ou Desktop si tu veux comparer).
+4. Cocher au minimum **Performance** et **SEO** (Accessibilité optionnel).
+5. **Analyser** (page chargée, pas d’onglet en arrière-plan).
+
+- [ ] **SEO** ≥ **90** (mobile) — noter le score et la page si &lt; 90
+- [ ] (Optionnel) noter Performance / Accessibilité pour suivi MVP2
+
+#### Thème clair / sombre (`prefers-color-scheme`)
+
+Le site suit le **thème système** (pas de bouton dans l’UI). Équivalent Flutter `ThemeMode.system`.
+
+**Windows** : *Paramètres → Personnalisation → Couleurs → Mode* (clair, puis sombre).
+
+**Chrome (sans changer Windows)** : F12 → **Commande** (`Ctrl+Shift+P`) → « Show Rendering » → *Emulate CSS media feature prefers-color-scheme* → `light` puis `dark`.
+
+À chaque bascule : **rafraîchir** la page (F5).
+
+Pages à parcourir rapidement :
+
+- [ ] **Accueil** — hero, cartes, CTA
+- [ ] **`/projets/`** et une sous-page (ex. `/projets/professionnels/`)
+- [ ] **`/contact/`** — formulaire, champs, bouton envoyer
+- [ ] **Header / menu mobile** — lisible, lien actif visible
+
+Critères : texte lisible, bordures visibles, pas de fond « cassé » ; accents ~`#006a62` (clair) / `#82d5ca` (sombre).
 
 ## Note MCP (étape 2)
 
