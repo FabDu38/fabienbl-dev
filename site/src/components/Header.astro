@@ -1,4 +1,6 @@
 ---
+import Icon from './Icon.astro';
+
 export interface Props {
   currentPath: string;
 }
@@ -9,8 +11,8 @@ const links = [
   { href: '/', label: 'Accueil' },
   { href: '/projets/', label: 'Projets' },
   { href: '/a-propos/', label: 'À propos' },
-  { href: '/contact/', label: 'Contact' },
 ];
+const contact = { href: '/contact/', label: 'Contact' };
 
 function isActive(href: string) {
   if (href === '/') return currentPath === '/' || currentPath === '';
@@ -18,22 +20,34 @@ function isActive(href: string) {
 }
 ---
 
-<header class="site-header">
+<header class="site-header" data-site-header>
   <div class="header-inner">
     <a class="brand" href="/">
-      <span class="brand-wide">Fabien Blasquez – Développeur Web</span>
-      <span class="brand-short" style="display:none">Fabien Blasquez</span>
+      <span class="brand-mark" aria-hidden="true">FB</span>
+      <span class="brand-text">
+        <span class="brand-name">Fabien Blasquez</span>
+        <span class="brand-role">Développeur web freelance</span>
+      </span>
     </a>
     <nav class="nav-desktop" aria-label="Navigation principale">
-      {links.map((link) => (
-        <a
-          class="nav-link"
-          href={link.href}
-          aria-current={isActive(link.href) ? 'page' : undefined}
-        >
-          {link.label}
-        </a>
-      ))}
+      {
+        links.map((link) => (
+          <a
+            class="nav-link"
+            href={link.href}
+            aria-current={isActive(link.href) ? 'page' : undefined}
+          >
+            {link.label}
+          </a>
+        ))
+      }
+      <a
+        class="nav-cta"
+        href={contact.href}
+        aria-current={isActive(contact.href) ? 'page' : undefined}
+      >
+        {contact.label}
+      </a>
     </nav>
     <button
       type="button"
@@ -43,27 +57,24 @@ function isActive(href: string) {
       aria-controls="mobile-nav"
       aria-label="Ouvrir le menu"
     >
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"></path>
-      </svg>
+      <Icon name="menu" size={22} class="icon-menu" />
+      <Icon name="close" size={22} class="icon-close" />
     </button>
   </div>
   <nav id="mobile-nav" class="mobile-nav" data-mobile-nav aria-label="Navigation mobile">
-    {links.map((link) => (
-      <a href={link.href} aria-current={isActive(link.href) ? 'page' : undefined}>
-        {link.label}
-      </a>
-    ))}
+    {
+      links.map((link) => (
+        <a href={link.href} aria-current={isActive(link.href) ? 'page' : undefined}>
+          {link.label}
+        </a>
+      ))
+    }
+    <a
+      class="mobile-cta"
+      href={contact.href}
+      aria-current={isActive(contact.href) ? 'page' : undefined}
+    >
+      {contact.label}
+    </a>
   </nav>
 </header>
-
-<style>
-  @media (max-width: 839px) {
-    .brand-wide {
-      display: none !important;
-    }
-    .brand-short {
-      display: inline !important;
-    }
-  }
-</style>

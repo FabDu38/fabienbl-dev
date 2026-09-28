@@ -2,6 +2,12 @@
 
 **Checklist complète de tes tâches** (local, PR, préversion, tag, GSC, EmailJS) : [`CHECKLIST_TACHES_FABIEN.md`](CHECKLIST_TACHES_FABIEN.md).
 
+## Règle importante
+
+- **Merge sur `main` ≠ prod.** Netlify ne doit plus builder depuis Git (`ignore` dans `netlify.toml` + *Stop builds* dans l’UI si besoin).
+- **Prod** : seulement après **`git push origin V*`** (workflow Actions → `netlify deploy --prod`).
+- Après des merges de retouches : tester la **préversion** Actions (`astro-preview`) ou le local ; publier la prod quand tu es prêt (tag).
+
 ## Déclencher la mise en prod
 
 ```bash

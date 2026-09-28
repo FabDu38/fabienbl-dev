@@ -1,0 +1,27 @@
+---
+import Icon from './Icon.astro';
+
+export interface Props {
+  title?: string;
+  text?: string;
+  hint?: string;
+  compact?: boolean;
+}
+
+const {
+  title = 'Un projet en tête ?',
+  text = 'Un premier échange pour comprendre votre besoin et voir si je suis la bonne personne pour vous accompagner.',
+  hint,
+  compact = false,
+} = Astro.props;
+---
+
+<div class:list={['cta-panel', 'reveal', { 'cta-panel--compact': compact }]}>
+  <h2>{title}</h2>
+  <p>{text}</p>
+  <a class="btn-light" href="/contact/">
+    Discuter de mon besoin
+    <Icon name="arrow-right" size={18} />
+  </a>
+  {hint && <p class="hint">{hint}</p>}
+</div>

@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import CtaPanel from '../../components/CtaPanel.astro';
 ---
 
 <BaseLayout
@@ -7,56 +9,69 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   description="Parcours, façon de travailler et compétences : Flutter, applications métier, 20 ans d'expérience."
   path="/a-propos/"
 >
-  <div class="content-page">
-    <h1 class="page-title">À propos</h1>
+  <PageHero
+    eyebrow="Développeur freelance"
+    title="À propos"
+    lead="Parcours, façon de travailler et compétences : ce qu'il faut savoir avant de travailler ensemble."
+  />
 
-    <section class="reveal">
-      <h2>Ce que je fais</h2>
-      <p style="color:var(--color-on-surface-variant);line-height:1.5">
-        Développeur freelance, Flutter est au cœur de mon travail pour concevoir des applications web,
-        mobile et desktop. Mon objectif : des solutions claires, utiles et durables, adaptées aux
-        besoins réels des PME et indépendants.
-      </p>
-      <p style="color:var(--color-on-surface-variant);line-height:1.5">
-        Mon approche privilégie la simplicité, la lisibilité et l'efficacité, côté utilisateur comme
-        côté technique.
-      </p>
-    </section>
-    <hr class="divider" />
-    <section class="reveal">
-      <h2>Parcours</h2>
-      <p style="color:var(--color-on-surface-variant);line-height:1.5">
-        Après plusieurs années en indépendant dans le développement web, j'ai évolué sur des projets
-        plus structurants au sein de grands groupes comme Schneider Electric et Siemens.
-      </p>
-      <p style="color:var(--color-on-surface-variant);line-height:1.5">
-        Chez Supplyframe (groupe Siemens), j'ai occupé un rôle de Project Leader sur des projets
-        internationaux, en lien avec les équipes produit et techniques, autour de qualité, fiabilité
-        et exploitation.
-      </p>
-    </section>
-    <hr class="divider" />
-    <section class="reveal">
-      <h2>Comment je travaille</h2>
-      <ul class="bullet-list">
-        <li>Cadrage du besoin et du contexte</li>
-        <li>Base fonctionnelle solide, pensée pour évoluer</li>
-        <li>Itérations structurées et priorisées</li>
-        <li>Mise en production et suivi dans la durée</li>
-      </ul>
-    </section>
-    <hr class="divider" />
-    <section class="reveal">
-      <h2>En quelques mots</h2>
-      <div class="chips">
-        <span class="chip">Flutter</span>
-        <span class="chip">Multiplateforme</span>
-        <span class="chip">Applications métier</span>
-        <span class="chip">UX pragmatique</span>
-        <span class="chip">Intégrations</span>
-        <span class="chip">Automatisation</span>
-        <span class="chip">Gestion de projet</span>
-      </div>
-    </section>
+  <div class="page-body">
+    <div>
+      <section class="prose-section reveal">
+        <h2>Ce que je fais</h2>
+        <div class="prose">
+          <p>
+            Développeur freelance, Flutter est au cœur de mon travail pour concevoir des applications
+            web, mobile et desktop. Mon objectif : des solutions claires, utiles et durables, adaptées
+            aux besoins réels des PME et indépendants.
+          </p>
+          <p>
+            Mon approche privilégie la simplicité, la lisibilité et l'efficacité, côté utilisateur
+            comme côté technique.
+          </p>
+        </div>
+      </section>
+
+      <section class="prose-section reveal">
+        <h2>Parcours</h2>
+        <div class="prose">
+          <p>
+            Après plusieurs années en indépendant dans le développement web, j'ai évolué sur des
+            projets plus structurants au sein de grands groupes comme Schneider Electric et Siemens.
+          </p>
+          <p>
+            Chez Supplyframe (groupe Siemens), j'ai occupé un rôle de Project Leader sur des projets
+            internationaux, en lien avec les équipes produit et techniques, autour de qualité,
+            fiabilité et exploitation.
+          </p>
+          <p><a href="/projets/professionnels/">Voir le détail de mes expériences en entreprise</a></p>
+        </div>
+      </section>
+
+      <section class="prose-section reveal">
+        <h2>Comment je travaille</h2>
+        <ol class="steps">
+          <li><strong>Cadrer</strong> Cadrage du besoin et du contexte</li>
+          <li><strong>Poser les bases</strong> Base fonctionnelle solide, pensée pour évoluer</li>
+          <li><strong>Itérer</strong> Itérations structurées et priorisées</li>
+          <li><strong>Livrer et suivre</strong> Mise en production et suivi dans la durée</li>
+        </ol>
+      </section>
+
+      <section class="prose-section reveal">
+        <h2>En quelques mots</h2>
+        <ul class="chips">
+          <li class="chip">Flutter</li>
+          <li class="chip">Multiplateforme</li>
+          <li class="chip">Applications métier</li>
+          <li class="chip">UX pragmatique</li>
+          <li class="chip">Intégrations</li>
+          <li class="chip">Automatisation</li>
+          <li class="chip">Gestion de projet</li>
+        </ul>
+      </section>
+    </div>
+
+    <CtaPanel compact />
   </div>
 </BaseLayout>

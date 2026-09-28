@@ -1,24 +1,53 @@
 ---
+import Icon from './Icon.astro';
 ---
 
-<form id="contact-form" class="card" novalidate>
-  <h2 class="page-title" style="font-size:1.25rem;margin-bottom:16px">Formulaire</h2>
-  <div class="form-field">
-    <label for="name">Nom</label>
-    <input id="name" name="name" type="text" required autocomplete="name" />
+<form id="contact-form" class="card form-card" novalidate aria-labelledby="contact-form-title">
+  <h2 id="contact-form-title">Envoyer un message</h2>
+  <p class="hint form-intro">Quelques lignes suffisent pour démarrer l'échange.</p>
+  <div class="form-row">
+    <div class="form-field">
+      <label for="name">Nom</label>
+      <input
+        id="name"
+        name="name"
+        type="text"
+        required
+        autocomplete="name"
+        placeholder="Votre nom"
+      />
+    </div>
+    <div class="form-field">
+      <label for="email">Email</label>
+      <input
+        id="email"
+        name="email"
+        type="email"
+        required
+        autocomplete="email"
+        placeholder="vous@exemple.fr"
+      />
+    </div>
   </div>
-  <div class="form-field">
-    <label for="email">Email</label>
-    <input id="email" name="email" type="email" required autocomplete="email" />
-  </div>
-  <div class="form-field">
+  <div class="form-field form-field--grow">
     <label for="message">Message</label>
-    <textarea id="message" name="message" rows="6" required></textarea>
+    <textarea
+      id="message"
+      name="message"
+      rows="6"
+      required
+      placeholder="Décrivez votre besoin, votre contexte, vos délais…"></textarea>
   </div>
-  <button type="submit" class="btn-primary">Envoyer</button>
-  <p class="hint">
-    Les données saisies servent uniquement à répondre à votre demande. Elles ne sont pas conservées
-    au-delà de l’échange.
+  <button type="submit" class="btn-primary btn-block" data-submit>
+    <span data-submit-label>Envoyer le message</span>
+    <Icon name="arrow-right" size={18} />
+  </button>
+  <p class="form-privacy">
+    <Icon name="lock" size={16} />
+    <span>
+      Les données saisies servent uniquement à répondre à votre demande. Elles ne sont pas conservées
+      au-delà de l’échange.
+    </span>
   </p>
   <div id="form-status" class="form-status" hidden role="status" aria-live="polite"></div>
 </form>
@@ -30,6 +59,14 @@
 
   const form = document.getElementById('contact-form') as HTMLFormElement;
   const statusEl = document.getElementById('form-status') as HTMLDivElement;
+  const submitBtn = form?.querySelector<HTMLButtonElement>('[data-submit]');
+  const submitLabel = form?.querySelector<HTMLSpanElement>('[data-submit-label]');
+
+  function setSending(sending: boolean) {
+    if (!submitBtn || !submitLabel) return;
+    submitBtn.disabled = sending;
+    submitLabel.textContent = sending ? 'Envoi en cours…' : 'Envoyer le message';
+  }
 
   function showStatus(message: string, type: 'error' | 'success') {
     statusEl.hidden = false;
@@ -61,6 +98,7 @@
       },
     };
 
+    setSending(true);
     try {
       const res = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
         method: 'POST',
@@ -87,6 +125,8 @@
     } catch (err) {
       console.error(err);
       showStatus('Erreur réseau. Réessayez ou contactez-moi par email.', 'error');
+    } finally {
+      setSending(false);
     }
   });
 </script>

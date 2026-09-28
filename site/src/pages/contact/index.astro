@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ContactForm from '../../components/ContactForm.astro';
+import Icon from '../../components/Icon.astro';
 ---
 
 <BaseLayout
@@ -8,31 +9,54 @@ import ContactForm from '../../components/ContactForm.astro';
   description="Contactez Fabien Blasquez : formulaire, email contact@fabien-blasquez.dev ou LinkedIn."
   path="/contact/"
 >
-  <div class="content-page">
-    <h1 class="page-title">Contact</h1>
-    <p style="color:var(--color-on-surface-variant);line-height:1.5;margin-bottom:32px">
-      Vous pouvez me joindre via le formulaire ci-dessous, ou directement par email ou LinkedIn.
-    </p>
+  <section class="contact-page">
     <div class="contact-grid">
-      <aside class="card reveal">
-        <h2 style="font-size:1.25rem;margin:0 0 24px">Me contacter directement</h2>
-        <p>
-          <a href="mailto:contact@fabien-blasquez.dev">contact@fabien-blasquez.dev</a>
+      <div class="contact-intro reveal">
+        <p class="eyebrow">Contact</p>
+        <h1>Parlons de votre projet</h1>
+        <p class="page-lead">
+          Vous pouvez me joindre via le formulaire, ou directement par email ou LinkedIn.
         </p>
-        <p style="margin-top:16px">
-          <a
-            href="https://www.linkedin.com/in/fabien-blasquez-4aa16636/"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <img src="/icons/linkedin.png" alt="" width="20" height="20" style="vertical-align:middle;margin-right:8px" />
-            LinkedIn — fabien-blasquez
-          </a>
-        </p>
-      </aside>
-      <div class="reveal">
+      </div>
+
+      <div class="contact-form-wrap reveal">
         <ContactForm />
       </div>
+
+      <aside class="contact-aside reveal" aria-labelledby="contact-direct-title">
+        <h2 id="contact-direct-title">Me contacter directement</h2>
+        <ul class="contact-methods">
+          <li>
+            <a class="contact-method" href="mailto:contact@fabien-blasquez.dev">
+              <span class="contact-method-icon"><Icon name="mail" size={22} /></span>
+              <span class="contact-method-text">
+                <span class="contact-method-label">Email</span>
+                <span class="contact-method-value">contact@fabien-blasquez.dev</span>
+              </span>
+              <Icon name="arrow-right" size={18} class="contact-method-arrow" />
+            </a>
+          </li>
+          <li>
+            <a
+              class="contact-method"
+              href="https://www.linkedin.com/in/fabien-blasquez-4aa16636/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <span class="contact-method-icon"><Icon name="linkedin" size={20} /></span>
+              <span class="contact-method-text">
+                <span class="contact-method-label">LinkedIn (nouvel onglet)</span>
+                <span class="contact-method-value">fabien-blasquez</span>
+              </span>
+              <Icon name="arrow-up-right" size={18} class="contact-method-arrow" />
+            </a>
+          </li>
+        </ul>
+        <ul class="check-list">
+          <li>Je vous réponds rapidement avec une proposition claire et des prochaines étapes.</li>
+          <li>Un accompagnement direct, du premier échange jusqu'à une solution utilisable.</li>
+        </ul>
+      </aside>
     </div>
-  </div>
+  </section>
 </BaseLayout>

@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+import CtaPanel from '../components/CtaPanel.astro';
 import { personLd, websiteLd } from '../data/jsonLd';
 
 const title = 'Développeur Web Freelance | Applications sur mesure';
@@ -13,42 +15,61 @@ const description =
   path="/"
   jsonLd={[personLd, websiteLd]}
 >
-  <section class="hero reveal">
-    <h1>Des applications sur mesure, utiles aujourd'hui et durables dans le temps.</h1>
-    <p class="lead">
-      J'accompagne vos projets de l'idée à une solution concrète et durable, adaptée aux enjeux réels
-      de votre activité.
-    </p>
-    <p class="body">
-      Freelance développeur multiplateforme avec 20 ans d'expérience, je travaille à distance sur des
-      projets web, mobile et desktop.
-    </p>
-    <a class="btn-primary" href="/contact/">Discuter de mon besoin</a>
-    <p class="hint">Un premier échange pour clarifier votre besoin et définir la suite.</p>
+  <section class="hero">
+    <div class="hero-inner reveal">
+      <p class="eyebrow eyebrow--pill">
+        <span class="eyebrow-dot" aria-hidden="true"></span>
+        Développeur freelance · 20 ans d'expérience
+      </p>
+      <h1>
+        Des applications sur mesure, <span class="text-gradient">utiles aujourd'hui</span> et durables
+        dans le temps.
+      </h1>
+      <p class="lead">
+        J'accompagne vos projets de l'idée à une solution concrète et durable, adaptée aux enjeux réels
+        de votre activité.
+      </p>
+      <p class="body">
+        Freelance développeur multiplateforme avec 20 ans d'expérience, je travaille à distance sur des
+        projets web, mobile et desktop.
+      </p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="/contact/">
+          Discuter de mon besoin
+          <Icon name="arrow-right" size={18} />
+        </a>
+        <a class="btn-secondary" href="/projets/">Voir les projets</a>
+      </div>
+      <p class="hint">Un premier échange pour clarifier votre besoin et définir la suite.</p>
+    </div>
   </section>
 
   <section class="section section--alt">
-    <div class="section-inner reveal">
-      <div class="section-header">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <p class="eyebrow">Approche</p>
         <h2>Une approche simple, orientée résultat</h2>
         <p>Du sur-mesure, de la clarté, et des outils qui restent utiles dans le temps.</p>
       </div>
-      <div class="pillars">
-        <article class="card">
+      <div class="pillars reveal">
+        <article class="card card--hover">
+          <div class="card-icon"><Icon name="target" size={24} /></div>
           <h3>Sur-mesure utile</h3>
           <p>
             Chaque solution est pensée pour répondre à un besoin précis. Pas de superflu, pas de
             complexité inutile : juste ce qui sert vraiment.
           </p>
         </article>
-        <article class="card">
+        <article class="card card--hover">
+          <div class="card-icon"><Icon name="eye" size={24} /></div>
           <h3>Clarté et simplicité</h3>
           <p>
             Un cadre clair, des échanges directs, des décisions compréhensibles. Vous savez à tout
             moment où en est le projet.
           </p>
         </article>
-        <article class="card">
+        <article class="card card--hover">
+          <div class="card-icon"><Icon name="layers" size={24} /></div>
           <h3>Pensé pour durer</h3>
           <p>
             Des bases solides, une maintenance raisonnable et des évolutions possibles sans tout
@@ -60,50 +81,62 @@ const description =
   </section>
 
   <section class="section">
-    <div class="section-inner reveal">
-      <div class="section-header">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <p class="eyebrow">Prestations</p>
         <h2>Ce que je fais concrètement</h2>
         <p>Une prestation simple à comprendre : on clarifie, on construit, puis on améliore.</p>
       </div>
-      <ul class="bullet-list">
-        <li>Conception et développement d'applications sur mesure, adaptées à vos usages réels</li>
-        <li>Accompagnement de projets numériques, de l'idée jusqu'à une solution utilisable</li>
-        <li>Suivi, évolutions et amélioration continue des outils mis en place</li>
-      </ul>
+      <ol class="steps reveal">
+        <li>
+          <strong>Concevoir et développer</strong>
+          Conception et développement d'applications sur mesure, adaptées à vos usages réels.
+        </li>
+        <li>
+          <strong>Accompagner</strong>
+          Accompagnement de projets numériques, de l'idée jusqu'à une solution utilisable.
+        </li>
+        <li>
+          <strong>Faire évoluer</strong>
+          Suivi, évolutions et amélioration continue des outils mis en place.
+        </li>
+      </ol>
     </div>
   </section>
 
   <section class="section section--alt">
-    <div class="section-inner reveal">
-      <div class="section-header">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <p class="eyebrow">Expérience</p>
         <h2>Une expérience solide, au service de projets concrets</h2>
         <p>
           Startups, PME, grands groupes : des contextes différents, le même objectif — faire simple,
           utile et durable.
         </p>
       </div>
-      <article class="card">
-        <ul class="bullet-list">
-          <li>Plus de 20 ans d'expérience dans le développement de solutions numériques</li>
-          <li>Des projets menés dans des contextes variés : startups, PME et grands groupes</li>
-          <li>Une approche pragmatique, centrée sur l'usage et la réalité du terrain</li>
-          <li>Un accompagnement direct du premier échange jusqu'à une solution utilisable</li>
-        </ul>
-      </article>
+      <div class="highlight-grid reveal">
+        <div class="stat-card">
+          <p class="stat-value">20+</p>
+          <p class="stat-label">ans d'expérience</p>
+          <p class="stat-sub">Startups · PME · grands groupes</p>
+        </div>
+        <article class="card">
+          <ul class="check-list check-list--2col">
+            <li>Plus de 20 ans d'expérience dans le développement de solutions numériques</li>
+            <li>Des projets menés dans des contextes variés : startups, PME et grands groupes</li>
+            <li>Une approche pragmatique, centrée sur l'usage et la réalité du terrain</li>
+            <li>Un accompagnement direct du premier échange jusqu'à une solution utilisable</li>
+          </ul>
+        </article>
+      </div>
     </div>
   </section>
 
-  <section class="section section--cta">
-    <div class="section-inner reveal" style="text-align:center">
-      <div class="section-header">
-        <h2>On en parle ?</h2>
-        <p>
-          Un premier échange pour comprendre votre besoin et voir si je suis la bonne personne pour
-          vous accompagner.
-        </p>
-      </div>
-      <a class="btn-primary" href="/contact/">Discuter de mon besoin</a>
-      <p class="hint">Je vous réponds rapidement avec une proposition claire et des prochaines étapes.</p>
-    </div>
+  <section class="section">
+    <CtaPanel
+      title="On en parle ?"
+      text="Un premier échange pour comprendre votre besoin et voir si je suis la bonne personne pour vous accompagner."
+      hint="Je vous réponds rapidement avec une proposition claire et des prochaines étapes."
+    />
   </section>
 </BaseLayout>

@@ -4,16 +4,33 @@
 > Références : [`08_Migration_Astro.md`](08_Migration_Astro.md), [`BASCULE_ASTRO.md`](BASCULE_ASTRO.md), [`TODO.md`](../TODO.md).  
 > **MCP navigateur :** non requis ([`09_MCP_et_outils_agent.md`](09_MCP_et_outils_agent.md)).
 
+### Où tu en es (sept. 2026)
+
+**Déjà fait (ne pas refaire)** : Astro sur `main` (PR #22), astro check (PR #23), recette locale en cours, refonte UI **approuvée**. Prod déjà en Astro (bascule anticipée) ; règle cible = **merge `main` ≠ prod**, publish au **tag `V*`**.
+
+**En attente sur `feature/mvp2-astro-retouches` (pas encore sur `main`)** :
+
+| Sur la branche (poussé) | En local seulement (à commiter) |
+|-------------------------|----------------------------------|
+| Fix 301 boucles (`0250f42`) | Refonte UI + contact viewport |
+| Netlify `ignore` (`e5c7c8a`) | Mise à jour de cette checklist |
+
+**Suite immédiate :** 1) commit + push de la refonte UI → 2) **une** PR retouches → merge (vérifier Netlify ne republie pas la prod) → 3) cocher le reste de la **Phase B** si pas déjà fait → 4) tag **`V1.5.x`** quand tu veux aligner la prod (redirects + design).
+
 ---
 
-## Phase A — Intégrer le travail dans Git
+## Phase A — Migration Astro → `main` ✅ (terminée)
 
-- [ ] Relire le diff (docs + dossier `site/` + suppression Flutter + `netlify.toml` + `astro-ci.yml`).
-- [ ] Vérifier que les changements sont sur une branche `feature/…` depuis `main` (convention MVP2).
-- [ ] Ouvrir une **PR** vers `main`, attendre que **Astro CI** soit verte.
-- [ ] Si la PR est bloquée sur **Flutter CI (Required, Expected)** : mettre à jour les checks requis sur `main` → **`Astro CI / Astro build`** uniquement ([`06_Infrastructure.md`](06_Infrastructure.md)).
-- [ ] **Merger** la PR (prod ne bouge pas tant qu’aucun tag `V*` n’est poussé).
-- [ ] *(Optionnel)* Supprimer le dépôt Git imbriqué `site/.git` s’il existe encore, pour éviter la confusion.
+- [x] PR migration Astro (#22), Flutter retiré du repo.
+- [x] CI Astro + astro check (#23).
+- [x] Protection `main` documentée (Flutter CI → Astro CI si besoin).
+
+### A bis — PR « retouches » (en cours)
+
+- [ ] Commit + push : UI + évent. cette checklist.
+- [ ] PR `feature/mvp2-astro-retouches` → `main`, **Astro CI** verte.
+- [ ] Merge : confirmer dans Netlify qu’il n’y a **pas** de publish prod auto (grâce à `ignore` ; *Stop builds* UI si besoin).
+- [ ] Publication volontaire : **`git push origin V1.5.1`** (ou autre `V*`) — pas avant que tu sois OK recette + formulaire.
 
 ---
 
@@ -62,8 +79,9 @@ Le site suit **`prefers-color-scheme`** (réglage Windows ou navigateur). Pas de
 
 ### Fidélité visuelle (point plan étape 3)
 
-- [ ] Typo / espacements « assez proches » de l’ancien Flutter pour toi (dans **clair et sombre**).
-- [ ] Noter ce qui doit être repassé en séance **Direction visuelle** (pas bloquant migration si tu acceptes une V1 Astro fidèle mais pas pixel-perfect).
+- [x] **Refonte UI 2026** : design global + contact (formulaire viewport / bouton visible) — **approuvé**.
+- [ ] Typo / espacements : valider en **clair et sombre** (Phase B thème ci-dessous).
+- [ ] Noter ce qui doit être repassé en séance **Direction visuelle** (ajustements fins, pas bloquant pour `V1.5.0` si le rendu actuel te convient).
 
 ### Accessibilité rapide (5–10 min)
 
@@ -73,6 +91,7 @@ Le site suit **`prefers-color-scheme`** (réglage Windows ou navigateur). Pas de
 
 ### Formulaire contact (local)
 
+- [x] Mise en page : formulaire + **Envoyer le message** visibles sans scroll excessif (desktop sticky / hauteur `dvh`).
 - [ ] Envoi test depuis `localhost` (si EmailJS autorise `http://localhost` dans **Domains**).
 - [ ] Si échec 403/412 : dashboard EmailJS → domaines + reconnexion Gmail ([`06_Infrastructure.md`](06_Infrastructure.md)).
 
@@ -175,4 +194,4 @@ Sur **https://fabien-blasquez.dev** :
 
 ---
 
-*Dernière mise à jour : alignée sur le jalon 1 migration Astro. Coche dans ce fichier ou dans ton outil habituel.*
+*Dernière mise à jour : sept. 2026 — refonte UI approuvée ; suite = Phase A (PR) puis B/C avant tag `V1.5.0`.*
