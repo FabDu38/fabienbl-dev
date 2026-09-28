@@ -950,15 +950,15 @@ ul.bullet-list li::marker {
   margin: 0 auto;
 }
 
-/* Retour + eyebrow : empiler (évite « Retour aux projetsEXPÉRIENCE ») */
-.page-hero-inner > .back-link,
-.page-hero-inner > .eyebrow {
-  display: flex;
-  width: fit-content;
+.page-hero-nav {
+  display: block;
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-outline-variant) 65%, transparent);
 }
 
-.page-hero-inner > .back-link {
-  margin-bottom: 20px;
+.page-hero-nav .back-link {
+  margin-bottom: 0;
 }
 
 .page-hero-inner > .eyebrow {
@@ -998,11 +998,17 @@ ul.bullet-list li::marker {
 .back-link {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   margin-bottom: 24px;
   font-size: 0.9375rem;
   font-weight: 600;
+  color: var(--color-on-surface-variant);
   text-decoration: none;
+  transition: color 0.2s;
+}
+
+.back-link:hover {
+  color: var(--color-primary);
 }
 
 .back-link svg {
