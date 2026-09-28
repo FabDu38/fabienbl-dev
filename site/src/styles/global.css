@@ -950,6 +950,21 @@ ul.bullet-list li::marker {
   margin: 0 auto;
 }
 
+/* Retour + eyebrow : empiler (évite « Retour aux projetsEXPÉRIENCE ») */
+.page-hero-inner > .back-link,
+.page-hero-inner > .eyebrow {
+  display: flex;
+  width: fit-content;
+}
+
+.page-hero-inner > .back-link {
+  margin-bottom: 20px;
+}
+
+.page-hero-inner > .eyebrow {
+  margin-bottom: 12px;
+}
+
 .page-hero h1 {
   margin: 0 0 16px;
   font-size: clamp(2rem, 4.6vw, 3rem);
