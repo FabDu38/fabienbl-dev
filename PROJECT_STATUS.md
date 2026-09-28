@@ -10,7 +10,7 @@
 ## État actuel
 
 - **Code source** : site Astro dans `site/` (jalon 1 implémenté)
-- **Production live** : encore Flutter `V1.2.1` jusqu’au tag **`V1.5.0`** (voir [`docs/BASCULE_ASTRO.md`](docs/BASCULE_ASTRO.md))
+- **Production live** : site Astro ; mises à jour volontaires au tag **`V*`** ([`docs/06_Infrastructure.md`](docs/06_Infrastructure.md))
 - **Préversion** : deploy Netlify `astro-preview` (noindex) sur push `main`
 - Domaine fabien-blasquez.dev, HTTPS, EmailJS + SimpleLogin opérationnels
 - Google Search Console : sitemap historique `/seo/sitemap.xml` (à migrer après bascule Astro)
@@ -38,5 +38,4 @@ Constats historiques sur la stack Flutter + `/seo`. Traitement révisé : migrat
 | **Bascule Astro** | 🔵 En cours | Tag type `V1.5.0`, 301, nouveau sitemap |
 | **Après MVP2** | À définir | Blog, multiplateforme, backend ([`docs/00_Vision.md`](docs/00_Vision.md)) |
 
-Backlog officiel : [`TODO.md`](TODO.md).  
-**Tes actions (jalon 1)** : [`docs/CHECKLIST_TACHES_FABIEN.md`](docs/CHECKLIST_TACHES_FABIEN.md).
+Backlog officiel : [`TODO.md`](TODO.md).

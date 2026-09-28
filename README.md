@@ -31,5 +31,5 @@ Build production : `npm run build` (sortie `site/dist/`).
 ## Déploiement
 
 - **CI :** [`.github/workflows/astro-ci.yml`](.github/workflows/astro-ci.yml)
-- **Production :** tag `V*` (ex. `V1.5.0` bascule Astro) — voir [`docs/BASCULE_ASTRO.md`](docs/BASCULE_ASTRO.md)
+- **Production :** tag `V*` → [`docs/06_Infrastructure.md`](docs/06_Infrastructure.md), recette [`docs/08_Migration_Astro.md`](docs/08_Migration_Astro.md)
 - **Préversion :** deploy Netlify `astro-preview` (noindex) sur push `main`

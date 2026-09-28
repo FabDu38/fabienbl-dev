@@ -20,7 +20,7 @@ Workflow sur **push** (branches + tags `V*`) et **PR** vers `main` :
 3. **Push `main`** : deploy Netlify **preview** (`astro-preview`) avec `X-Robots-Tag: noindex`
 4. **Tag `V*`** : `netlify deploy --prod` depuis `site/dist`
 
-Voir [`BASCULE_ASTRO.md`](BASCULE_ASTRO.md) pour la procédure de bascule.
+Bascule / tag prod : section **Déploiement** ci-dessous + recette [`08_Migration_Astro.md`](08_Migration_Astro.md) (étape 8).
 
 ### Projet Astro (`site/`)
 
