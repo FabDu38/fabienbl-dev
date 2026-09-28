@@ -5,44 +5,38 @@
 ## Phase
 
 - **MVP1** — ✅ terminé
-- **MVP2** — 🔵 en cours (cadrage ✅ — voir [`docs/07_MVP2.md`](docs/07_MVP2.md), séances [`brainstorming/TODO.md`](brainstorming/TODO.md))
+- **MVP2** — 🔵 en cours — séance Architecture/SEO ✅ ; **jalon 1 : migration Astro** en cours ([`docs/08_Migration_Astro.md`](docs/08_Migration_Astro.md))
 
 ## État actuel
 
-- Site Flutter Web fonctionnel avec navigation (go_router)
-- Hébergement Netlify ; CI sur chaque push/PR ; **prod** sur tag `V*` — dernière release **`V1.2.1`** (24/09/2026, voir [`06_Infrastructure.md`](docs/06_Infrastructure.md))
-- Domaine fabien-blasquez.dev configuré avec HTTPS
-- Thème Material 3 appliqué (seed color #2BBBAD, police Inter)
-- Pages en place : Accueil, À propos, Projets, Contact, Mentions légales
-- Animations flutter_animate intégrées
-- Couche SEO statique HTML en place (`/seo`)
-- Configuration email (SimpleLogin + EmailJS) ; formulaire contact opérationnel en prod (reconnexion Gmail EmailJS, sept. 2026)
-- Boîte mail contact@fabien-blasquez.dev opérationnelle
-- Google Search Console configurée, indexation demandée
+- **Code source** : site Astro dans `site/` (jalon 1 implémenté)
+- **Production live** : encore Flutter `V1.2.1` jusqu’au tag **`V1.5.0`** (voir [`docs/BASCULE_ASTRO.md`](docs/BASCULE_ASTRO.md))
+- **Préversion** : deploy Netlify `astro-preview` (noindex) sur push `main`
+- Domaine fabien-blasquez.dev, HTTPS, EmailJS + SimpleLogin opérationnels
+- Google Search Console : sitemap historique `/seo/sitemap.xml` (à migrer après bascule Astro)
 
 ## Audit du 19/08/2026 — Note : 6,5/10
 
-Points forts : design sobre (8/10), SEO statique solide (8/10), navigation claire (7/10).
-Points faibles : HTML Flutter quasi vide (3/10), accessibilité (3/10), preuves commerciales insuffisantes (6/10).
-
-Détail : [`docs/05_Audit_2026-08-19.md`](docs/05_Audit_2026-08-19.md)
+Constats historiques sur la stack Flutter + `/seo`. Traitement révisé : migration Astro ([`Architecture_SEO.md`](brainstorming/sessions/Architecture_SEO.md)).
 
 ## Branche de travail
 
-`feature/prep-verif-prod` — phase 1 préparation MVP2.
+`feature/mvp2-decisions-astro` ou branches `feature/astro-*` depuis `main`.
 
 ## MVP2 — ordre immédiat
 
-1. **Préparation** — essentiellement faite (audit + tag `mvp1-final` + CI locale) ; optionnel : test mail contact
-2. **Séance en cours** — [Architecture & SEO](brainstorming/sessions/Architecture_SEO.md) (décisions, pas refaire l’audit visuel)
-3. **Revue préversion** puis publication (tag `V2.0.0`)
+1. **Jalon 1** — migration Astro (8 étapes, [`TODO.md`](TODO.md))
+2. **Séances** — parcours, visuel, messages, Élan, mesure
+3. **Revue préversion** puis tag **`V2.0.0`**
 
 ## Jalons produit
 
 | Jalon | Statut | Contenu livré / visé |
 |-------|--------|----------------------|
-| **MVP1** | ✅ Terminé | Site vitrine déployé (pages, contact, thème, CI/CD, couche `/seo`, Search Console branchée) |
-| **MVP2** | 🔵 En cours | Objectifs [`07_MVP2.md`](docs/07_MVP2.md) ; séances [`brainstorming/TODO.md`](brainstorming/TODO.md) |
-| **Après MVP2** | À définir | Blog, multiplateforme, backend dynamique, multilingue ([`docs/00_Vision.md`](docs/00_Vision.md)) |
+| **MVP1** | ✅ Terminé | Flutter + `/seo`, CI/CD, contact |
+| **MVP2** | 🔵 En cours | Astro, contenu, légal, mesure — [`07_MVP2.md`](docs/07_MVP2.md) |
+| **Bascule Astro** | 🔵 En cours | Tag type `V1.5.0`, 301, nouveau sitemap |
+| **Après MVP2** | À définir | Blog, multiplateforme, backend ([`docs/00_Vision.md`](docs/00_Vision.md)) |
 
-Backlog officiel : [`TODO.md`](TODO.md). Idées exploratoires : [`brainstorming/TODO.md`](brainstorming/TODO.md).
+Backlog officiel : [`TODO.md`](TODO.md).  
+**Tes actions (jalon 1)** : [`docs/CHECKLIST_TACHES_FABIEN.md`](docs/CHECKLIST_TACHES_FABIEN.md).

@@ -7,12 +7,12 @@
 | Séance | Fichier |
 |--------|---------|
 | Définition du MVP2 (cadrage) | [`sessions/Definition_MVP2.md`](sessions/Definition_MVP2.md) |
+| Architecture du site et SEO (28/09/2026) | [`sessions/Architecture_SEO.md`](sessions/Architecture_SEO.md) |
 
 ## Sessions à venir (ordre recommandé)
 
 | # | Séance | Fichier | Statut |
 |---|--------|---------|--------|
-| 1 | Architecture du site et SEO | [`sessions/Architecture_SEO.md`](sessions/Architecture_SEO.md) | À démarrer |
 | 2 | Parcours et structure | [`sessions/Parcours_et_structure.md`](sessions/Parcours_et_structure.md) | À démarrer |
 | 3 | Direction visuelle | [`sessions/Direction_visuelle.md`](sessions/Direction_visuelle.md) | À démarrer |
 | 4 | Messages et projets (hors Élan) | [`sessions/Messages_et_projets.md`](sessions/Messages_et_projets.md) | À démarrer |

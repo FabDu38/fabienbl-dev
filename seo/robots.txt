@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /seo/
-Allow: /
-
-Sitemap: https://fabien-blasquez.dev/seo/sitemap.xml
