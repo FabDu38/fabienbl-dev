@@ -11,6 +11,7 @@
 - [ ] Relire le diff (docs + dossier `site/` + suppression Flutter + `netlify.toml` + `astro-ci.yml`).
 - [ ] Vérifier que les changements sont sur une branche `feature/…` depuis `main` (convention MVP2).
 - [ ] Ouvrir une **PR** vers `main`, attendre que **Astro CI** soit verte.
+- [ ] Si la PR est bloquée sur **Flutter CI (Required, Expected)** : mettre à jour les checks requis sur `main` → **`Astro CI / Astro build`** uniquement ([`06_Infrastructure.md`](06_Infrastructure.md)).
 - [ ] **Merger** la PR (prod ne bouge pas tant qu’aucun tag `V*` n’est poussé).
 - [ ] *(Optionnel)* Supprimer le dépôt Git imbriqué `site/.git` s’il existe encore, pour éviter la confusion.
 

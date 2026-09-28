@@ -147,7 +147,7 @@ La branche `main` est protégée sur GitHub. Toute modification doit passer par 
    → Rédiger un résumé du changement
    → Relire le diff avant de valider
 
-5. Attendre la CI (Flutter CI doit passer)
+5. Attendre la CI (**Astro CI / Astro build** doit passer)
 
 6. Merger la PR sur GitHub
 
@@ -159,7 +159,18 @@ La branche `main` est protégée sur GitHub. Toute modification doit passer par 
 
 ### Règles
 
-- La CI (analyse + build) doit passer avant le merge
+- La CI (**Astro CI / Astro build**) doit passer avant le merge
+- Si une PR reste bloquée sur **Flutter CI — Expected** : l’ancien workflow a été retiré ; mettre à jour la protection de branche (voir ci-dessous)
+
+### Protection de branche `main` (après migration Astro)
+
+Sur GitHub : **Settings → Rules** (ruleset ou *Branch protection* sur `main`) → **Required status checks** :
+
+1. **Retirer** : `Flutter CI` / `Flutter CI` (ou tout check lié à l’ancien workflow supprimé).
+2. **Ajouter** : **`Astro CI / Astro build`** (nom affiché une fois le workflow exécuté sur une PR).
+3. Enregistrer, puis **Re-run** ou rouvrir la PR : seul Astro doit rester requis.
+
+Sans cette mise à jour, GitHub attend indéfiniment un check qui ne sera plus jamais rapporté.
 - Toujours relire le diff, même en solo
 - Supprimer les branches locales et distantes après merge
 
