@@ -36,7 +36,7 @@ Aucun serveur MCP **spécifique Astro** n’est requis pour compiler ou publier 
 
 - Configuration **par machine** (Cursor → MCP) : pas versionnée comme le code du site.
 - Courbe d’apprentissage et maintenance des serveurs (mises à jour, auth).
-- Les deploys **prod** restent sur **tag `V*`** + secrets GitHub ; MCP ne remplace pas cette procédure ([`BASCULE_ASTRO.md`](BASCULE_ASTRO.md)).
+- Les deploys **prod** restent sur **tag `V*`** + secrets GitHub ; MCP ne remplace pas cette procédure ([`06_Infrastructure.md`](06_Infrastructure.md)).
 - Risque de sur-confiance : un test navigateur MCP ne remplace pas Search Console ni la surveillance post-301.
 
 ## Installations — faut-il en faire pour le jalon 1 ?
