@@ -6,6 +6,7 @@ Site public `fabien-blasquez.dev` (MVP2).
 cd site
 npm ci
 npm run dev    # http://localhost:4321
+npm run check  # types / diagnostics Astro
 npm run build  # sortie dans dist/
 ```
 
