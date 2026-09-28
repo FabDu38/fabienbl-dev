@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
 ---
 
 <BaseLayout
@@ -7,9 +8,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   description="La page demandée n'existe pas."
   path="/404/"
 >
-  <div class="content-page" style="text-align:center;padding-top:80px">
-    <h1 class="page-title">404</h1>
-    <p style="color:var(--color-on-surface-variant)">Cette page n'existe pas ou a été déplacée.</p>
-    <p style="margin-top:24px"><a class="btn-primary" href="/">Retour à l'accueil</a></p>
-  </div>
+  <section class="error-page">
+    <p class="error-code text-gradient" aria-hidden="true">404</p>
+    <h1>Page introuvable</h1>
+    <p>Cette page n'existe pas ou a été déplacée.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="/">
+        <Icon name="home" size={18} />
+        Retour à l'accueil
+      </a>
+      <a class="btn-secondary" href="/contact/">Me contacter</a>
+    </div>
+  </section>
 </BaseLayout>

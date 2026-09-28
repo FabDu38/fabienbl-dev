@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import Icon from '../../components/Icon.astro';
 ---
 
 <BaseLayout
@@ -7,12 +9,28 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   description="Prestations de développement d'applications sur mesure — contenu à définir en séance parcours."
   path="/services/"
 >
-  <div class="content-page">
-    <h1 class="page-title">Services</h1>
-    <p style="color:var(--color-on-surface-variant);line-height:1.5">
-      Page réservée pour les futures offres détaillées (applis métier, Flutter, reprise d'existant,
-      automatisation). Contenu à valider en séance <em>Parcours et structure</em>.
-    </p>
-    <p><a href="/contact/">Me contacter →</a></p>
+  <PageHero
+    eyebrow="Services"
+    title="Services"
+    lead="Des prestations de développement d'applications sur mesure."
+  />
+  <div class="page-body">
+    <div class="card empty-state reveal">
+      <div class="card-icon"><Icon name="briefcase" size={24} /></div>
+      <div class="empty-state-body">
+        <h2>Offres détaillées bientôt disponibles</h2>
+        <p>Cette page présentera prochainement le détail de mes offres.</p>
+        <ul class="chips">
+          <li class="chip">Applications métier</li>
+          <li class="chip">Flutter</li>
+          <li class="chip">Reprise d'existant</li>
+          <li class="chip">Automatisation</li>
+        </ul>
+        <a class="btn-primary" href="/contact/">
+          Me contacter
+          <Icon name="arrow-right" size={18} />
+        </a>
+      </div>
+    </div>
   </div>
 </BaseLayout>

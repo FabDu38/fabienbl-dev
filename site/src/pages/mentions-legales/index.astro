@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import Icon from '../../components/Icon.astro';
 ---
 
 <BaseLayout
@@ -7,8 +9,14 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   description="Mentions légales du site fabien-blasquez.dev."
   path="/mentions-legales/"
 >
-  <div class="content-page">
-    <h1 class="page-title">Mentions légales</h1>
-    <p style="color:var(--color-on-surface-variant)">Mentions légales à venir.</p>
+  <PageHero eyebrow="Informations" title="Mentions légales" />
+  <div class="page-body">
+    <div class="card empty-state reveal">
+      <div class="card-icon"><Icon name="file" size={24} /></div>
+      <div class="empty-state-body">
+        <h2>En cours de rédaction</h2>
+        <p>Mentions légales à venir.</p>
+      </div>
+    </div>
   </div>
 </BaseLayout>

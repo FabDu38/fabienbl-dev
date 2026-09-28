@@ -1,5 +1,8 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import CtaPanel from '../../components/CtaPanel.astro';
+import Icon from '../../components/Icon.astro';
 ---
 
 <BaseLayout
@@ -7,51 +10,66 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   description="Projets professionnels et études de cas : applications métier, portfolio et démarche de conception."
   path="/projets/"
 >
-  <div class="content-page">
-    <h1 class="page-title">Projets</h1>
-    <p class="reveal" style="color:var(--color-on-surface-variant);line-height:1.5">
-      Les projets présentés ici illustrent ma démarche de conception et ma façon de structurer des
-      applications, plus qu'une vitrine exhaustive de réalisations.
-    </p>
+  <PageHero
+    eyebrow="Réalisations"
+    title="Projets"
+    lead="Les projets présentés ici illustrent ma démarche de conception et ma façon de structurer des applications, plus qu'une vitrine exhaustive de réalisations."
+  />
 
-    <article class="card project-card reveal">
-      <h2>Projets professionnels en entreprise</h2>
-      <p><strong>Applications et outils métier</strong></p>
-      <p style="color:var(--color-on-surface-variant)">
-        Projets réalisés en environnement entreprise, sur des applications et outils métier, du cadrage
-        à la mise en production.
-      </p>
-      <div class="tags">
-        <span class="tag">Applications métier</span>
-        <span class="tag">Contexte industriel</span>
-      </div>
-      <p style="margin-top:16px"><a href="/projets/professionnels/">Voir le détail →</a></p>
-    </article>
+  <div class="page-body">
+    <div class="project-grid">
+      <article class="card project-card project-card--featured reveal">
+        <p class="project-kicker">Applications et outils métier</p>
+        <h2>Projets professionnels en entreprise</h2>
+        <p>
+          Projets réalisés en environnement entreprise, sur des applications et outils métier, du
+          cadrage à la mise en production.
+        </p>
+        <div class="card-footer">
+          <ul class="tags">
+            <li class="tag">Applications métier</li>
+            <li class="tag">Contexte industriel</li>
+          </ul>
+          <a class="card-link" href="/projets/professionnels/">
+            Voir le détail <Icon name="arrow-right" size={18} />
+          </a>
+        </div>
+      </article>
 
-    <article class="card project-card reveal">
-      <h2>Portfolio professionnel</h2>
-      <p><strong>Application Flutter Web</strong></p>
-      <p style="color:var(--color-on-surface-variant)">
-        Application Flutter Web servant de vitrine professionnelle et de socle technique
-        multiplateforme (remplacée par ce site Astro).
-      </p>
-      <div class="tags">
-        <span class="tag">Flutter</span>
-        <span class="tag">Web</span>
-      </div>
-      <p style="margin-top:16px"><a href="/projets/portfolio/">Étude de cas →</a></p>
-    </article>
+      <article class="card project-card reveal">
+        <p class="project-kicker">Application Flutter Web</p>
+        <h2>Portfolio professionnel</h2>
+        <p>
+          Application Flutter Web servant de vitrine professionnelle et de socle technique
+          multiplateforme (remplacée par ce site Astro).
+        </p>
+        <div class="card-footer">
+          <ul class="tags">
+            <li class="tag">Flutter</li>
+            <li class="tag">Web</li>
+          </ul>
+          <a class="card-link" href="/projets/portfolio/">
+            Étude de cas <Icon name="arrow-right" size={18} />
+          </a>
+        </div>
+      </article>
 
-    <article class="card project-card reveal">
-      <h2>Outil de suivi d'activités et d'objectifs</h2>
-      <p><strong>Application Flutter — en cours</strong></p>
-      <p style="color:var(--color-on-surface-variant)">
-        Projet en cours autour de la structuration des données, de la navigation et de l'évolutivité.
-      </p>
-      <div class="tags">
-        <span class="tag">Flutter</span>
-        <span class="tag">En cours</span>
-      </div>
-    </article>
+      <article class="card project-card reveal">
+        <p class="project-kicker">Application Flutter — en cours</p>
+        <h2>Outil de suivi d'activités et d'objectifs</h2>
+        <p>
+          Projet en cours autour de la structuration des données, de la navigation et de
+          l'évolutivité.
+        </p>
+        <div class="card-footer">
+          <ul class="tags">
+            <li class="tag">Flutter</li>
+            <li class="tag tag--muted">En cours</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+
+    <CtaPanel compact />
   </div>
 </BaseLayout>
