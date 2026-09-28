@@ -50,22 +50,35 @@ Les idées encore exploratoires restent dans [`brainstorming/TODO.md`](brainstor
 
 ### Séances de brainstorming
 
-**Prochaine :** [Architecture du site et SEO](brainstorming/sessions/Architecture_SEO.md) — s’appuyer sur l’audit + le code, pas une nouvelle inspection visuelle.
+- [x] **Architecture du site et SEO** (28/09/2026 — [`Architecture_SEO`](brainstorming/sessions/Architecture_SEO.md))
+
+**Prochaine :** [Parcours et structure](brainstorming/sessions/Parcours_et_structure.md).
 
 Suivre et cocher dans [`brainstorming/TODO.md`](brainstorming/TODO.md).
 
-### Candidats — Audit P0 (critiques)
+### Jalon 1 — Migration complète vers Astro
 
-> Issues de l'[audit du 19/08/2026](docs/05_Audit_2026-08-19.md). Inclusion et ordre : à trancher en séances MVP2 (dès architecture / SEO).
+> Décisions : [`Architecture_SEO`](brainstorming/sessions/Architecture_SEO.md). Détail : [`docs/08_Migration_Astro.md`](docs/08_Migration_Astro.md). Prod Flutter inchangée jusqu’à la bascule (tag `V1.5.0` proposé).
 
-- [ ] Corriger `web/index.html` (description, `lang=fr`, canonical, Open Graph, Twitter Card, image sociale, titre statique)
-- [ ] Débloquer le zoom (retirer `maximum-scale=1.0` et `user-scalable=no` du viewport)
-- [ ] Uniformiser les URL SEO (même format navigation/sitemap/canonical, redirections 301)
-- [ ] Renforcer la sémantique Flutter (`Semantics`, navigation clavier, ordre de focus, noms accessibles)
+- [x] 1. Inventorier routes Flutter, `/seo`, contenus, médias, animations, formulaire ; correspondance URL
+- [x] 2. Initialiser Astro dans `site/` ; CI build ; préversion Netlify (noindex) ; note MCP → [`docs/09_MCP_et_outils_agent.md`](docs/09_MCP_et_outils_agent.md)
+- [x] 3. Prototype : layout, header, menu mobile, footer (sans lien SEO), accueil fidèle
+- [x] 4. Migrer toutes les pages et le formulaire EmailJS (JS client)
+- [x] 5. SEO : composant meta, JSON-LD, sitemap, robots, redirections 301 depuis `/seo/*.html`
+- [x] 6. Accessibilité : zoom, sémantique, clavier, focus, contrastes, footer dans le flux
+- [x] 7. Recette préversion (URL, 404, formulaire, sans JS, Lighthouse SEO ≥ 90) — build local OK ; Lighthouse à confirmer sur préversion
+- [x] 8. Bascule prod (tag), contrôle 301 + sitemap GSC ; PR suppression code Flutter — config prête ; tag `V1.5.0` + GSC manuels
+
+### Critères de recette Astro (ex-audit P0 — plus de tâches sur Flutter)
+
+- [ ] Métadonnées complètes par page (`lang=fr`, title, description, canonical, OG, Twitter)
+- [ ] Zoom non bloqué (pas de `user-scalable=no`)
+- [ ] URL uniformes (barre finale, une canonique, 301 depuis `/seo`)
+- [ ] HTML sémantique, navigation clavier, focus visible, noms accessibles
 
 ### Candidats — Audit P1 (importants)
 
-- [ ] Corriger le footer (le placer dans le flux naturel, ne plus masquer le contenu)
+- [ ] Footer dans le flux naturel (recette Astro)
 - [ ] Réparer les finitions (icône LinkedIn, copyright 2026, mentions légales, info données formulaire)
 - [ ] Préciser la promesse (nommer la cible, problèmes résolus, avantage expérience industrielle)
 - [ ] Créer de vrais cas clients (Supplyframe, Schneider, Alfa Laval, BF Web Création — même anonymisés)
@@ -89,11 +102,10 @@ Suivre et cocher dans [`brainstorming/TODO.md`](brainstorming/TODO.md).
 - [ ] Ajouter le bandeau de consentement cookies (message clair à l'ouverture)
 - [ ] Rédiger les CGU/CGV (règles d'utilisation, responsabilités, droits)
 
-### Backlog — Implémentation Flutter Web
+### Backlog — Site Astro (motion & perf)
 
-- [ ] Tester la réactivité des animations sur mobile (durées et comportements selon taille d'écran)
-- [ ] Intégrer les animations de texte et fond (effet fluide et moderne sans nuire à la perf)
-- [ ] Étudier code et mécanisme
+- [ ] Animations au scroll (CSS / IntersectionObserver), fidèles à l’esprit Flutter sans dégrader la perf
+- [ ] Lazy-loading images, build statique optimisé
 
 ### Backlog — Performance & accessibilité
 

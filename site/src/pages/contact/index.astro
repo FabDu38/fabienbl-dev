@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ContactForm from '../../components/ContactForm.astro';
+---
+
+<BaseLayout
+  title="Contact | Fabien Blasquez"
+  description="Contactez Fabien Blasquez : formulaire, email contact@fabien-blasquez.dev ou LinkedIn."
+  path="/contact/"
+>
+  <div class="content-page">
+    <h1 class="page-title">Contact</h1>
+    <p style="color:var(--color-on-surface-variant);line-height:1.5;margin-bottom:32px">
+      Vous pouvez me joindre via le formulaire ci-dessous, ou directement par email ou LinkedIn.
+    </p>
+    <div class="contact-grid">
+      <aside class="card reveal">
+        <h2 style="font-size:1.25rem;margin:0 0 24px">Me contacter directement</h2>
+        <p>
+          <a href="mailto:contact@fabien-blasquez.dev">contact@fabien-blasquez.dev</a>
+        </p>
+        <p style="margin-top:16px">
+          <a
+            href="https://www.linkedin.com/in/fabien-blasquez-4aa16636/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <img src="/icons/linkedin.png" alt="" width="20" height="20" style="vertical-align:middle;margin-right:8px" />
+            LinkedIn — fabien-blasquez
+          </a>
+        </p>
+      </aside>
+      <div class="reveal">
+        <ContactForm />
+      </div>
+    </div>
+  </div>
+</BaseLayout>

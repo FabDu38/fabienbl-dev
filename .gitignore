@@ -123,3 +123,12 @@ confidentiel/
 
 # Exports locaux (brainstorming, zip pour outils externes — non versionnés)
 exports/
+
+# Astro
+site/node_modules/
+site/dist/
+
+# Ancien projet Flutter (artefacts locaux)
+.metadata
+.flutter-plugins-dependencies
+fabien_site.iml

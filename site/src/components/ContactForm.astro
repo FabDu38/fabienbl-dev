@@ -1,0 +1,92 @@
+---
+---
+
+<form id="contact-form" class="card" novalidate>
+  <h2 class="page-title" style="font-size:1.25rem;margin-bottom:16px">Formulaire</h2>
+  <div class="form-field">
+    <label for="name">Nom</label>
+    <input id="name" name="name" type="text" required autocomplete="name" />
+  </div>
+  <div class="form-field">
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" required autocomplete="email" />
+  </div>
+  <div class="form-field">
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="6" required></textarea>
+  </div>
+  <button type="submit" class="btn-primary">Envoyer</button>
+  <p class="hint">
+    Les données saisies servent uniquement à répondre à votre demande. Elles ne sont pas conservées
+    au-delà de l’échange.
+  </p>
+  <div id="form-status" class="form-status" hidden role="status" aria-live="polite"></div>
+</form>
+
+<script>
+  const SERVICE_ID = 'service_3ehoqgp';
+  const TEMPLATE_ID = 'template_n0s20gd';
+  const PUBLIC_KEY = '9K8EyS_guLUXp0WnX';
+
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const statusEl = document.getElementById('form-status') as HTMLDivElement;
+
+  function showStatus(message: string, type: 'error' | 'success') {
+    statusEl.hidden = false;
+    statusEl.className = `form-status ${type}`;
+    statusEl.textContent = message;
+  }
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    statusEl.hidden = true;
+
+    const name = (form.elements.namedItem('name') as HTMLInputElement).value.trim();
+    const email = (form.elements.namedItem('email') as HTMLInputElement).value.trim();
+    const message = (form.elements.namedItem('message') as HTMLTextAreaElement).value.trim();
+
+    if (!name || !email || !message) {
+      showStatus('Veuillez remplir tous les champs.', 'error');
+      return;
+    }
+
+    const body = {
+      service_id: SERVICE_ID,
+      template_id: TEMPLATE_ID,
+      user_id: PUBLIC_KEY,
+      template_params: {
+        from_name: name,
+        from_email: email,
+        message,
+      },
+    };
+
+    try {
+      const res = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      });
+
+      if (res.ok) {
+        showStatus('Message envoyé. Je vous réponds rapidement.', 'success');
+        form.reset();
+        return;
+      }
+
+      const text = await res.text();
+      let msg = 'Une erreur est survenue. Réessayez ou contactez-moi par email.';
+      if (res.status === 412) {
+        msg =
+          'Erreur de configuration EmailJS (412). Essayez plus tard ou écrivez à contact@fabien-blasquez.dev.';
+      } else if (res.status === 403) {
+        msg = 'Accès refusé (domaine ou clé EmailJS). Utilisez contact@fabien-blasquez.dev.';
+      }
+      console.error('EmailJS', res.status, text);
+      showStatus(msg, 'error');
+    } catch (err) {
+      console.error(err);
+      showStatus('Erreur réseau. Réessayez ou contactez-moi par email.', 'error');
+    }
+  });
+</script>

@@ -1,56 +1,35 @@
 # fabienbl-dev
 
-Site vitrine professionnel [fabien-blasquez.dev](https://fabien-blasquez.dev), développé avec Flutter Web.
+Site vitrine professionnel [fabien-blasquez.dev](https://fabien-blasquez.dev), construit avec **Astro** (MVP2).
 
 ## Objectif
 
-Site personnel responsive servant de vitrine professionnelle et de socle technique multiplateforme (web, mobile, desktop).
+Site personnel responsive : vitrine freelance, pages indexables, formulaire de contact.
 
-**Phase actuelle :** MVP1 ✅ terminé — MVP2 🔵 en cours. Détail : [`PROJECT_STATUS.md`](PROJECT_STATUS.md) et backlog [`TODO.md`](TODO.md).
+**Phase actuelle :** MVP2 — migration Astro (jalon 1). Détail : [`PROJECT_STATUS.md`](PROJECT_STATUS.md), [`TODO.md`](TODO.md), [`docs/08_Migration_Astro.md`](docs/08_Migration_Astro.md).
 
 ## Premiers pas
 
 ```bash
-flutter run -d chrome
+cd site
+npm ci
+npm run dev
 ```
+
+Build production : `npm run build` (sortie `site/dist/`).
 
 ## Structure du dépôt
 
 ```
-├── README.md                  Présentation du projet
-├── PROJECT_STATUS.md          État instantané
-├── TODO.md                    Backlog officiel
-├── METHODE_DE_TRAVAIL.md      Méthode de travail
-├── docs/                      Connaissance consolidée
-│   ├── 00_Vision.md
-│   ├── 01_Principes.md
-│   ├── 02_Contenu.md
-│   ├── 03_Design.md
-│   ├── 04_SEO_Performance.md
-│   ├── 05_Audit_2026-08-19.md
-│   ├── 06_Infrastructure.md
-│   └── 07_MVP2.md
-├── brainstorming/             Explorations et idées
-│   ├── TODO.md
-│   └── sessions/             Sessions de brainstorming
-├── confidentiel/              Documents business (non versionnés)
-├── lib/                       Code Flutter
-├── assets/                    Ressources visuelles
-├── seo/                       Couche SEO statique HTML
-├── scripts/                   Scripts utilitaires
-└── web/                       Configuration web Flutter
+├── site/                 Application Astro (site public)
+├── docs/                 Documentation projet
+├── brainstorming/        Séances de décision MVP2
+├── TODO.md               Backlog officiel
+└── netlify.toml          Build Netlify → site/dist
 ```
 
-## Stack technique
+## Déploiement
 
-- **Framework** : Flutter Web (Dart)
-- **Thème** : Material 3, seed color #2BBBAD, police Inter
-- **Hébergement** : Netlify (CDN, HTTPS automatique)
-- **CI/CD** : GitHub Actions (analyse + build + déploiement)
-- **Animations** : flutter_animate
-- **Navigation** : go_router
-- **Email** : SimpleLogin + EmailJS
-
-## Versioning
-
-Semver `MAJEUR.MINEUR.PATCH`. Détails dans [`METHODE_DE_TRAVAIL.md`](METHODE_DE_TRAVAIL.md).
+- **CI :** [`.github/workflows/astro-ci.yml`](.github/workflows/astro-ci.yml)
+- **Production :** tag `V*` (ex. `V1.5.0` bascule Astro) — voir [`docs/BASCULE_ASTRO.md`](docs/BASCULE_ASTRO.md)
+- **Préversion :** deploy Netlify `astro-preview` (noindex) sur push `main`

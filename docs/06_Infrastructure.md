@@ -11,22 +11,28 @@
 
 ## Déploiement automatique (CI/CD)
 
-### GitHub Actions (`flutter-ci.yml`)
+### GitHub Actions (`astro-ci.yml`)
 
-Le workflow se déclenche sur **push** (toutes branches + tags `V*`) et sur **PR** vers `main` :
+Workflow sur **push** (branches + tags `V*`) et **PR** vers `main` :
 
-1. Démarre une machine Linux
-2. Récupère le code du dépôt
-3. Installe Flutter stable
-4. `flutter pub get`
-5. `flutter analyze`
-6. `flutter build web --release`
-7. **Uniquement sur tag `V*`** : `netlify deploy --prod` (dossier `build/web`)
+1. Checkout, Node 22, `npm ci` dans `site/`
+2. `npm run build` → `site/dist`
+3. **Push `main`** : deploy Netlify **preview** (`astro-preview`) avec `X-Robots-Tag: noindex`
+4. **Tag `V*`** : `netlify deploy --prod` depuis `site/dist`
+
+Voir [`BASCULE_ASTRO.md`](BASCULE_ASTRO.md) pour la procédure de bascule.
+
+### Projet Astro (`site/`)
+
+- Astro installé **localement** dans `site/package.json` (pas d’installation globale)
+- Node : vérifier la version minimale requise par Astro au moment du `npm install` (dev local : v22.x OK)
+- Config : `site: 'https://fabien-blasquez.dev'`, `trailingSlash: 'always'`
+- Publication cible : `site/dist` sur Netlify après bascule
 
 ### Configuration Netlify
 
-- **Build command** : `flutter build web --release` (dans `netlify.toml`, si build Netlify utilisé)
-- **Publish directory** : `build/web`
+- **Build command** : `npm ci && npm run build` (base `site/`, voir `netlify.toml`)
+- **Publish directory** : `site/dist`
 - **Builds Netlify** : peuvent être en pause (« Builds are stopped ») — **normal** si la prod passe par GitHub Actions + CLI ; ce bandeau ne remplace pas les secrets GitHub
 - **Déploiement prod** : via GitHub Actions (pas un auto-deploy Git → Netlify obligatoire)
 
@@ -52,24 +58,15 @@ Sans ces deux secrets, l’étape *Deploy to Netlify* échoue avec `Unauthorized
 ### Compilation locale
 
 ```bash
-flutter build web --release
+cd site && npm ci && npm run build
 ```
 
-Le build se trouve dans `build/web`.
+Le build se trouve dans `site/dist`.
 
 ### Test local
 
 ```bash
-flutter run -d chrome
-```
-
-### Maintenance Flutter
-
-```bash
-flutter upgrade
-flutter doctor
-flutter clean
-flutter pub get
+cd site && npm run dev
 ```
 
 ## Email

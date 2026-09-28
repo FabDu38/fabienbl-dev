@@ -2,117 +2,67 @@
 
 > **Objectif :** Documenter la stratégie SEO, les choix techniques d'indexation et les objectifs de performance.
 
-## Contexte
+## Contexte (depuis sept. 2026)
 
-Le site principal est une application Flutter Web (non SEO-friendly nativement). Une couche SEO statique en HTML existe dans `/seo` pour l'indexation.
+Le site vitrine public est en cours de **migration vers Astro** (`site/`). Une seule série de pages HTML indexables remplace l’architecture Flutter + miroir `/seo`. Décision : [`brainstorming/sessions/Architecture_SEO.md`](../brainstorming/sessions/Architecture_SEO.md).
 
-## Architecture SEO
+**Pendant la migration :** la production reste sur Flutter (`build/web`) jusqu’au tag de bascule (ex. `V1.5.0`). La préversion Astro est servie hors index.
+
+## Architecture SEO cible
 
 ```
-/seo
-├── developpeur-web-freelance.html  (landing principale)
-├── a-propos.html
-├── projets.html
-├── contact.html
-├── mentions-legales.html
-├── sitemap.xml
-└── robots.txt
+site/ (Astro → dist/)
+├── /                    (accueil)
+├── /projets/
+├── /projets/portfolio/
+├── /projets/professionnels/
+├── /a-propos/
+├── /contact/
+├── /mentions-legales/
+├── /cgu/
+└── /services/           (placeholder — contenu en séance parcours)
 ```
 
-Liaison bidirectionnelle : footer Flutter → pages SEO, pages SEO → app Flutter.
+- **URL canoniques :** sans `.html`, **barre finale** sur les pages internes (`/projets/`, etc.).
+- **Sitemap :** généré via `@astrojs/sitemap` à la racine du domaine.
+- **robots.txt :** `Allow: /`, référence au sitemap `https://fabien-blasquez.dev/sitemap-index.xml` (ou équivalent Astro).
+- **Redirections 301** depuis l’ancien `/seo/*.html` (voir [`08_Migration_Astro.md`](08_Migration_Astro.md)).
 
-## MVP1 — ✅ Livré (base SEO)
+## MVP1 — ✅ Livré (historique)
 
-- Couche `/seo` en HTML statique (pages, titres, métadescriptions, JSON-LD)
-- `sitemap.xml` et liaison avec l’app Flutter
-- Google Search Console configurée, demande d’indexation des URLs `/seo`
-- Stratégie de parité contenu Flutter ↔ SEO à renforcer (voir audit — **MVP2**)
+- Couche `/seo` en HTML statique, Search Console branchée sur `/seo/sitemap.xml`
+- Site Flutter en expérience principale (remplacé par Astro au jalon 1)
 
-## MVP2 — En cours (référencement public)
+## MVP2 — En cours
 
-- Corrections P0/P1 de l’audit (HTML Flutter, URL, accessibilité)
-- Retrait du `noindex` / politique d’indexation alignée sur la version publique
-- Analytics + Consent Mode
-- Bannière cookie fonctionnelle
-- Lighthouse ≥ 90, checklist SEO complétée
+- Site unique Astro : métadonnées, JSON-LD, Open Graph, Twitter Cards par page
+- Accessibilité : zoom autorisé, HTML sémantique, clavier (critères de recette)
+- Analytics + Consent Mode (séance mesure)
+- Lighthouse SEO ≥ 90 sur la préversion puis la prod
 
 ## SEO technique
 
-- Données structurées JSON-LD : Person, WebSite
-- OpenGraph + Twitter Cards
+- Données structurées JSON-LD : Person, WebSite (reprises de `/seo` puis enrichies)
+- OpenGraph + Twitter Cards + image sociale
 - 1 seul H1 par page, hiérarchie H1 → H2 → H3
 - Title unique par page (≈ 50–60 caractères)
 - Meta description unique (≈ 140–160 caractères)
-- URLs courtes et lisibles
 
 ## Checklist SEO
 
-### Structure & HTML
-
-- [ ] 1 seul H1 par page
-- [ ] Hiérarchie H1 → H2 → H3 logique
-- [ ] Title unique par page (≈ 50–60 caractères)
-- [ ] Meta description unique et lisible (≈ 140–160 caractères)
-
-### Contenu
-
-- [ ] 1 page = 1 intention claire
-- [ ] Contenu qui répond à une vraie question
-- [ ] Texte lisible (paragraphes courts, listes)
-- [ ] Champ sémantique cohérent (pas de répétitions)
-
-### Mots-clés
-
-- [ ] Mot-clé principal identifié par page
-- [ ] Mot-clé présent dans : Title / H1 / URL / intro
-- [ ] Pas de bourrage de mots-clés
-
-### URLs & navigation
-
-- [ ] URLs courtes et lisibles
-- [ ] Pas de paramètres inutiles
-- [ ] Navigation claire (menu compréhensible)
-
-### Maillage interne
-
-- [ ] Liens entre pages liées logiquement
-- [ ] Ancres de lien descriptives (pas "clique ici")
-- [ ] Aucune page importante orpheline
-
-### Technique
-
-- [ ] Site rapide (images optimisées)
-- [ ] Mobile OK (responsive réel)
-- [ ] HTTPS actif
-- [ ] Pas d'erreurs 404 visibles
-
-### Indexation
-
-- [ ] sitemap.xml présent
-- [ ] robots.txt propre
-- [ ] Pages inutiles non indexées
-
-### Confiance et crédibilité
-
-- [ ] Page À propos claire
-- [ ] Page Contact accessible
-- [ ] Mentions légales visibles
-- [ ] Identité claire
-
-### Objectif business
-
-- [ ] CTA clair par page
-- [ ] Objectif mesurable (contact, devis, etc.)
-- [ ] Pas de CTA concurrents multiples
+(Voir sections Structure, Contenu, URLs, Indexation dans ce document — à cocher dans [`08_Migration_Astro.md`](08_Migration_Astro.md) lors de la recette.)
 
 ## Performance
 
-- Cible : Lighthouse ≥ 90 mobile
-- Lazy-loading images
-- Minification
+- Cible : Lighthouse ≥ 90 mobile (site statique Astro)
+- Images optimisées, lazy-loading
 - HTTPS actif (Netlify)
 
 ## Outils
 
-- Google Search Console : configurée, sitemap soumis à `https://fabien-blasquez.dev/seo/sitemap.xml`
-- Indexation manuelle demandée pour chaque URL
+- Google Search Console : après bascule, soumettre le **nouveau** sitemap et surveiller couverture / 301
+- Indexation : migration d’URL selon [la doc Google](https://developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes)
+
+## Historique audit
+
+L’[audit du 19/08/2026](05_Audit_2026-08-19.md) reste le constat sur l’ancienne stack ; le plan d’action P0 Flutter/`/seo` est **remplacé** par la migration Astro (voir note en tête de l’audit).

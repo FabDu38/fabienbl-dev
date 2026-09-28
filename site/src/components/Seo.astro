@@ -1,0 +1,33 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  path: string;
+  ogType?: string;
+  noindex?: boolean;
+}
+
+const { title, description, path, ogType = 'website', noindex = false } = Astro.props;
+const canonical = new URL(path, Astro.site).href;
+const siteName = 'Fabien Blasquez — Développeur Web Freelance';
+---
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+{noindex && <meta name="robots" content="noindex, nofollow" />}
+
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:type" content={ogType} />
+<meta property="og:url" content={canonical} />
+<meta property="og:locale" content="fr_FR" />
+<meta property="og:site_name" content={siteName} />
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />

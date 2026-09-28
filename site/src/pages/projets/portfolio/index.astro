@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Étude de cas — Portfolio professionnel | Fabien Blasquez"
+  description="Étude de cas : conception d'une application Flutter Web comme vitrine professionnelle et socle multiplateforme."
+  path="/projets/portfolio/"
+>
+  <div class="content-page">
+    <a class="back-link" href="/projets/">← Retour aux projets</a>
+    <h1 class="page-title">Portfolio professionnel</h1>
+    <p style="color:var(--color-on-surface-variant);font-size:1.125rem;line-height:1.5">
+      Application Flutter Web conçue comme une vitrine professionnelle et un socle technique
+      multiplateforme.
+    </p>
+    <hr class="divider" />
+    <section class="reveal">
+      <h2>Contexte & intention</h2>
+      <p style="color:var(--color-on-surface-variant);line-height:1.5">
+        Ce projet correspondait à mon site professionnel : une application Flutter Web structurée,
+        vitrine et base technique pour des évolutions futures, avec des contraintes réelles de
+        lisibilité, maintenabilité et déploiement.
+      </p>
+    </section>
+    <hr class="divider" />
+    <section class="reveal">
+      <h2>Problématique</h2>
+      <ul class="bullet-list">
+        <li>lisible sur tous les formats (desktop, tablette, mobile),</li>
+        <li>simple à maintenir et à faire évoluer,</li>
+        <li>sans sur-ingénierie inutile,</li>
+        <li>tout en respectant une logique de produit claire.</li>
+      </ul>
+    </section>
+    <hr class="divider" />
+    <section class="reveal">
+      <h2>Approche & mise en œuvre</h2>
+      <ul class="bullet-list">
+        <li>organisation modulaire des écrans et des sections</li>
+        <li>composants réutilisables</li>
+        <li>navigation multi-pages</li>
+        <li>gestion du responsive</li>
+        <li>animations légères et maîtrisées</li>
+      </ul>
+    </section>
+    <hr class="divider" />
+    <section class="reveal">
+      <h2>Choix techniques</h2>
+      <ul class="bullet-list">
+        <li>Flutter Web comme socle principal</li>
+        <li>approche multiplateforme dès la conception</li>
+        <li>codebase unique, structuré pour évoluer</li>
+      </ul>
+      <p style="margin-top:16px;color:var(--color-on-surface-variant)">
+        Le site public a migré vers <strong>Astro</strong> (MVP2) pour un HTML indexable natif, tout en
+        conservant la même promesse et navigation.
+      </p>
+    </section>
+  </div>
+</BaseLayout>
