@@ -60,7 +60,7 @@
 ### URL et redirections
 
 - [x] Toutes les pages cibles générées en build (`npm run build` — 10 routes + 404)
-- [x] Règles 301 définies dans `site/public/_redirects`
+- [x] Règles 301 définies dans `site/public/_redirects` (sans `301!` sur les barres finales — évite les boucles Netlify)
 - [x] Liens internes sans `.html` ni `/seo/`
 - [x] Page 404 (`src/pages/404.astro`)
 

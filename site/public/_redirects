@@ -1,13 +1,18 @@
+# Anciennes URL /seo (migration)
 /seo/developpeur-web-freelance.html  /  301
 /seo/a-propos.html  /a-propos/  301
 /seo/projets.html  /projets/  301
 /seo/contact.html  /contact/  301
 /seo/mentions-legales.html  /mentions-legales/  301
 /seo/sitemap.xml  /sitemap-index.xml  301
-/projets  /projets/  301!
-/a-propos  /a-propos/  301!
-/contact  /contact/  301!
-/mentions-legales  /mentions-legales/  301!
-/cgu  /cgu/  301!
-/projets/portfolio  /projets/portfolio/  301!
-/projets/professionnels  /projets/professionnels/  301!
+
+# Sans barre finale → canonique Astro (trailingSlash: always).
+# Ne pas utiliser 301! ici : en prod Netlify, ça provoque ERR_TOO_MANY_REDIRECTS sur /projets/, etc.
+/projets  /projets/  301
+/a-propos  /a-propos/  301
+/contact  /contact/  301
+/mentions-legales  /mentions-legales/  301
+/cgu  /cgu/  301
+/projets/portfolio  /projets/portfolio/  301
+/projets/professionnels  /projets/professionnels/  301
+/services  /services/  301
