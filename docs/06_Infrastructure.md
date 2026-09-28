@@ -31,10 +31,16 @@ Voir [`BASCULE_ASTRO.md`](BASCULE_ASTRO.md) pour la procédure de bascule.
 
 ### Configuration Netlify
 
-- **Build command** : `npm ci && npm run build` (base `site/`, voir `netlify.toml`)
+- **Build command** (référence CLI / doc) : `npm ci && npm run build` (base `site/`, voir `netlify.toml`)
 - **Publish directory** : `site/dist`
-- **Builds Netlify** : peuvent être en pause (« Builds are stopped ») — **normal** si la prod passe par GitHub Actions + CLI ; ce bandeau ne remplace pas les secrets GitHub
-- **Déploiement prod** : via GitHub Actions (pas un auto-deploy Git → Netlify obligatoire)
+- **Builds Git Netlify** : **désactivés** dans le dépôt via `ignore = "exit 0"` dans [`netlify.toml`](../netlify.toml) — un merge sur `main` **ne doit plus** republier la prod toute seule.
+- **À vérifier dans l’UI Netlify** (une fois) : *Site configuration → Build & deploy → Continuous deployment* → **Stop builds** (ou équivalent), pour aligner avec la règle « prod au tag seulement ».
+- **Déploiement prod** : **uniquement** `netlify deploy --prod` depuis **GitHub Actions** au push d’un tag **`V*`**.
+- **Préversion** : push sur `main` → workflow Astro CI → `netlify deploy` **sans** `--prod` (alias `astro-preview`, noindex) — **ne remplace pas** fabien-blasquez.dev.
+
+#### Incident — merge `main` a publié Astro en prod sans tag (sept. 2026)
+
+Tant que Netlify buildait chaque push sur `main` avec le nouveau `netlify.toml`, la prod a été mise à jour **sans** tag `V*`. Correction : `ignore = "exit 0"` + stop builds côté Netlify. Les retouches se mergent sur `main` ; la prod ne bouge qu’au **prochain tag** voulu (ex. `V1.5.1` après recette).
 
 ### Secrets GitHub (obligatoires pour la prod)
 

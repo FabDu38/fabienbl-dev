@@ -1,7 +1,15 @@
 # Site vitrine Astro (MVP2)
+#
+# IMPORTANT — prod ne doit PAS suivre chaque merge sur main :
+# - Les builds déclenchés par l’intégration Git Netlify sont ignorés (ignore ci-dessous).
+# - Prod : GitHub Actions → tag V* → netlify deploy --prod (voir docs/06_Infrastructure.md).
+# - Préversion : GitHub Actions sur push main → netlify deploy (sans --prod, alias astro-preview).
+#
 [build]
   base = "site"
   publish = "dist"
   command = "npm ci && npm run build"
+  # Exit 0 = annuler le build Netlify côté Git (évite publish prod auto au merge main).
+  ignore = "exit 0"
 
 # Redirections legacy : voir site/public/_redirects
