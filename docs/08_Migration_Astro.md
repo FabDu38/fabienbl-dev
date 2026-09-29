@@ -1,52 +1,60 @@
 # Migration Astro — inventaire et recette
 
-> Jalon 1 MVP2. Décisions : [`brainstorming/sessions/Architecture_SEO.md`](../brainstorming/sessions/Architecture_SEO.md).
+> Jalon 1 MVP2. Décisions : `[brainstorming/sessions/Architecture_SEO.md](../brainstorming/sessions/Architecture_SEO.md)`.
 
 ## Correspondance des URL
 
-| Ancienne URL (prod) | Nouvelle URL canonique | Statut |
-|---------------------|------------------------|--------|
-| `/` (Flutter SPA) | `/` | Remplacée par Astro |
-| `/seo/developpeur-web-freelance.html` | `/` | **301** |
-| `/seo/a-propos.html` | `/a-propos/` | **301** |
-| `/seo/projets.html` | `/projets/` | **301** |
-| `/seo/contact.html` | `/contact/` | **301** |
-| `/seo/mentions-legales.html` | `/mentions-legales/` | **301** |
-| `/projets` (Flutter) | `/projets/` | **301** si sans slash |
-| `/projets/portfolio` | `/projets/portfolio/` | Conservée |
-| `/projets/professionnels` | `/projets/professionnels/` | Conservée |
-| `/a-propos`, `/contact`, `/mentions-legales`, `/cgu` | Même chemin + **barre finale** | **301** |
+
+| Ancienne URL (prod)                                  | Nouvelle URL canonique         | Statut                |
+| ---------------------------------------------------- | ------------------------------ | --------------------- |
+| `/` (Flutter SPA)                                    | `/`                            | Remplacée par Astro   |
+| `/seo/developpeur-web-freelance.html`                | `/`                            | **301**               |
+| `/seo/a-propos.html`                                 | `/a-propos/`                   | **301**               |
+| `/seo/projets.html`                                  | `/projets/`                    | **301**               |
+| `/seo/contact.html`                                  | `/contact/`                    | **301**               |
+| `/seo/mentions-legales.html`                         | `/mentions-legales/`           | **301**               |
+| `/projets` (Flutter)                                 | `/projets/`                    | **301** si sans slash |
+| `/projets/portfolio`                                 | `/projets/portfolio/`          | Conservée             |
+| `/projets/professionnels`                            | `/projets/professionnels/`     | Conservée             |
+| `/a-propos`, `/contact`, `/mentions-legales`, `/cgu` | Même chemin + **barre finale** | **301**               |
+
 
 **URL cibles validées (proposition séance 28/09)** : `/projets/portfolio/`, `/projets/professionnels/`, `/cgu/`, landing freelance → `/`.
 
 ## Inventaire routes Flutter (`lib/core/router.dart`)
 
-| Route | Page Dart | Contenu principal | Médias | Animations |
-|-------|-----------|-------------------|--------|------------|
-| `/` | `home_page.dart` + widgets hero, piliers, services, expérience, CTA | Promesse, 3 piliers, services, expérience, CTA contact | Placeholders images | `flutter_animate`, `visibility_detector` au scroll |
-| `/projets` | `projects_page.dart` | 3 cartes projets + liens | — | Fade/slide sur cartes |
-| `/projets/portfolio` | `portfolio_case_study_page.dart` | Étude de cas portfolio | — | Idem |
-| `/projets/professionnels` | `professional_projects_page.dart` | Contexte projets entreprise | — | Idem |
-| `/a-propos` | `about_page.dart` | Bio, vision, compétences | — | Sections animées |
-| `/contact` | `contact_page.dart` | Formulaire + email + LinkedIn | `assets/icons/linkedin_174857.png` | — |
-| `/mentions-legales` | `mentions_legales_page.dart` | Texte légal | — | — |
-| `/cgu` | `cgu_page.dart` | CGU | — | — |
+
+| Route                     | Page Dart                                                           | Contenu principal                                      | Médias                             | Animations                                         |
+| ------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------ | ---------------------------------- | -------------------------------------------------- |
+| `/`                       | `home_page.dart` + widgets hero, piliers, services, expérience, CTA | Promesse, 3 piliers, services, expérience, CTA contact | Placeholders images                | `flutter_animate`, `visibility_detector` au scroll |
+| `/projets`                | `projects_page.dart`                                                | 3 cartes projets + liens                               | —                                  | Fade/slide sur cartes                              |
+| `/projets/portfolio`      | `portfolio_case_study_page.dart`                                    | Étude de cas portfolio                                 | —                                  | Idem                                               |
+| `/projets/professionnels` | `professional_projects_page.dart`                                   | Contexte projets entreprise                            | —                                  | Idem                                               |
+| `/a-propos`               | `about_page.dart`                                                   | Bio, vision, compétences                               | —                                  | Sections animées                                   |
+| `/contact`                | `contact_page.dart`                                                 | Formulaire + email + LinkedIn                          | `assets/icons/linkedin_174857.png` | —                                                  |
+| `/mentions-legales`       | `mentions_legales_page.dart`                                        | Texte légal                                            | —                                  | —                                                  |
+| `/cgu`                    | `cgu_page.dart`                                                     | CGU                                                    | —                                  | —                                                  |
+
 
 **Shell global** : `app_shell.dart` — header 64px, nav desktop / drawer mobile, footer (copyright, lien SEO à **supprimer**), `contentMaxWidth` 840px.
 
-**Thème** : Material 3 (`theme.dart`) — clair + sombre via **`prefers-color-scheme`** (équivalent Flutter `ThemeMode.system`), police Inter.
+**Thème** : Material 3 (`theme.dart`) — clair + sombre via `prefers-color-scheme` (équivalent Flutter `ThemeMode.system`), police Inter.
 
 ## Inventaire `/seo` (source contenu + JSON-LD)
 
-| Fichier | Rôle | Migration |
-|---------|------|-----------|
+
+| Fichier                          | Rôle                                        | Migration                           |
+| -------------------------------- | ------------------------------------------- | ----------------------------------- |
 | `developpeur-web-freelance.html` | Landing SEO riche (sections services, FAQ…) | Fusion contenu utile dans `/` Astro |
-| `a-propos.html` | Bio indexable | `/a-propos/` |
-| `projets.html` | Liste projets | `/projets/` |
-| `contact.html` | Contact | `/contact/` |
-| `mentions-legales.html` | Légal | `/mentions-legales/` |
-| `sitemap.xml` | 5 URL `/seo/*.html` | Remplacé par sitemap Astro racine |
-| `robots.txt` | Allow `/seo` | `Allow: /` à la racine |
+| `a-propos.html`                  | Bio indexable                               | `/a-propos/`                        |
+| `projets.html`                   | Liste projets                               | `/projets/`                         |
+| `contact.html`                   | Contact                                     | `/contact/`                         |
+| `mentions-legales.html`          | Légal                                       | `/mentions-legales/`                |
+| `sitemap.xml`                    | 5 URL `/seo/*.html`                         | Remplacé par sitemap Astro racine   |
+| `robots.txt`                     | Allow `/seo`                                | `Allow: /` à la racine              |
+
+
+
 
 ## Formulaire contact
 
@@ -55,7 +63,11 @@
 - **Champs** : nom, email, message (+ validation côté client, messages d’erreur comme Flutter)
 - **Domaines EmailJS** : `fabien-blasquez.dev`, préversion Netlify, `localhost`
 
+
+
 ## Recette préversion (étape 7)
+
+
 
 ### URL et redirections
 
@@ -64,11 +76,15 @@
 - [x] Liens internes sans `.html` ni `/seo/`
 - [x] Page 404 (`src/pages/404.astro`)
 
+
+
 ### Fonctionnel
 
 - [x] Menu desktop + drawer mobile
 - [x] Formulaire contact EmailJS (client JS)
 - [x] Liens mailto et LinkedIn
+
+
 
 ### SEO / technique
 
@@ -78,6 +94,8 @@
 - [x] `robots.txt` + `@astrojs/sitemap`
 - [x] Préversion CI : `X-Robots-Tag: noindex` sur deploy preview
 
+
+
 ### Accessibilité (étape 6)
 
 - [x] Zoom autorisé (viewport standard)
@@ -85,16 +103,22 @@
 - [x] Skip link, `:focus-visible`, labels formulaire
 - [x] Footer dans le flux document
 
+
+
 ### Performance
 
 - [ ] Lighthouse SEO ≥ 90 (mobile) — à mesurer sur URL de préversion prod
 - [x] Contenu principal en HTML statique (formulaire seul nécessite JS)
 
+
+
 ### Bascule prod (étape 8)
 
 - [x] Tag release `V*` → deploy `site/dist` via Astro CI (`netlify deploy --prod`)
 - [x] Flutter retiré du dépôt (jalon 1)
-- [ ] Search Console : nouveau sitemap, surveillance couverture 2–4 semaines
+- [x] Search Console : nouveau sitemap, surveillance couverture 2–4 semaines
+
+
 
 ### Actions manuelles — prod ou préversion
 
@@ -116,22 +140,26 @@ curl.exe -sI "https://fabien-blasquez.dev/projets/"
 
 **Attendu (exemples)** :
 
-| URL testée | Code | `Location` (ou URL finale) |
-|------------|------|----------------------------|
-| `/seo/developpeur-web-freelance.html` | 301 | `https://fabien-blasquez.dev/` |
-| `/seo/a-propos.html` | 301 | `https://fabien-blasquez.dev/a-propos/` |
-| `/seo/projets.html` | 301 | `https://fabien-blasquez.dev/projets/` |
-| `/seo/contact.html` | 301 | `https://fabien-blasquez.dev/contact/` |
-| `/seo/mentions-legales.html` | 301 | `https://fabien-blasquez.dev/mentions-legales/` |
-| `/seo/sitemap.xml` | 301 | `https://fabien-blasquez.dev/sitemap-index.xml` |
-| `/projets` (sans slash) | 301 | `https://fabien-blasquez.dev/projets/` |
-| `/projets/` | **200** | (pas de 301 vers la même URL) |
 
-Liste complète : [`site/public/_redirects`](../site/public/_redirects).
+| URL testée                            | Code    | `Location` (ou URL finale)                      |
+| ------------------------------------- | ------- | ----------------------------------------------- |
+| `/seo/developpeur-web-freelance.html` | 301     | `https://fabien-blasquez.dev/`                  |
+| `/seo/a-propos.html`                  | 301     | `https://fabien-blasquez.dev/a-propos/`         |
+| `/seo/projets.html`                   | 301     | `https://fabien-blasquez.dev/projets/`          |
+| `/seo/contact.html`                   | 301     | `https://fabien-blasquez.dev/contact/`          |
+| `/seo/mentions-legales.html`          | 301     | `https://fabien-blasquez.dev/mentions-legales/` |
+| `/seo/sitemap.xml`                    | 301     | `https://fabien-blasquez.dev/sitemap-index.xml` |
+| `/projets` (sans slash)               | 301     | `https://fabien-blasquez.dev/projets/`          |
+| `/projets/`                           | **200** | (pas de 301 vers la même URL)                   |
 
-- [ ] Legacy `/seo/*.html` → bonnes destinations
-- [ ] Chemins sans barre finale → version avec `/`
-- [ ] Pages canoniques (`/projets/`, `/contact/`, …) en **200**
+
+Liste complète : `[site/public/_redirects](../site/public/_redirects)`.
+
+- [x] Legacy `/seo/*.html` → bonnes destinations
+- [x] Chemins sans barre finale → version avec `/`
+- [x] Pages canoniques (`/projets/`, `/contact/`, …) en **200**
+
+
 
 #### Lighthouse
 
@@ -141,8 +169,10 @@ Liste complète : [`site/public/_redirects`](../site/public/_redirects).
 4. Cocher au minimum **Performance** et **SEO** (Accessibilité optionnel).
 5. **Analyser** (page chargée, pas d’onglet en arrière-plan).
 
-- [ ] **SEO** ≥ **90** (mobile) — noter le score et la page si &lt; 90
+- [ ] **SEO** ≥ **90** (mobile) — noter le score et la page si < 90
 - [ ] (Optionnel) noter Performance / Accessibilité pour suivi MVP2
+
+
 
 #### Thème clair / sombre (`prefers-color-scheme`)
 
@@ -157,14 +187,14 @@ Le site suit le **thème système** (pas de bouton dans l’UI). Équivalent Flu
 Pages à parcourir rapidement :
 
 - [ ] **Accueil** — hero, cartes, CTA
-- [ ] **`/projets/`** et une sous-page (ex. `/projets/professionnels/`)
-- [ ] **`/contact/`** — formulaire, champs, bouton envoyer
+- [ ] `/projets/` et une sous-page (ex. `/projets/professionnels/`)
+- [ ] `/contact/` — formulaire, champs, bouton envoyer
 - [ ] **Header / menu mobile** — lisible, lien actif visible
 
 Critères : texte lisible, bordures visibles, pas de fond « cassé » ; accents ~`#006a62` (clair) / `#82d5ca` (sombre).
 
 ## Note MCP (étape 2)
 
-Étude détaillée (intérêt, limites, serveurs pertinents, décision d’installation) : **[`09_MCP_et_outils_agent.md`](09_MCP_et_outils_agent.md)**.
+Étude détaillée (intérêt, limites, serveurs pertinents, décision d’installation) : `[09_MCP_et_outils_agent.md](09_MCP_et_outils_agent.md)`.
 
 **Synthèse :** MCP = outils optionnels côté Cursor (ex. navigateur pour la recette préversion). **Pas d’installation requise** pour livrer le jalon 1 ; build et deploy restent Node + GitHub Actions + Netlify.
