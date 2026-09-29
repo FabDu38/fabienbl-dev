@@ -934,6 +934,12 @@ ul.bullet-list li::marker {
   background: linear-gradient(180deg, var(--color-surface-low), var(--color-surface));
 }
 
+@media (max-width: 839px) {
+  .page-hero--sub {
+    padding-top: 24px;
+  }
+}
+
 .page-hero::before {
   content: '';
   position: absolute;
@@ -950,19 +956,41 @@ ul.bullet-list li::marker {
   margin: 0 auto;
 }
 
-/* Retour + eyebrow : empiler (évite « Retour aux projetsEXPÉRIENCE ») */
-.page-hero-inner > .back-link,
-.page-hero-inner > .eyebrow {
-  display: flex;
-  width: fit-content;
+.page-hero-nav {
+  display: block;
+  width: 100%;
+  margin-bottom: 24px;
 }
 
-.page-hero-inner > .back-link {
-  margin-bottom: 20px;
-}
-
-.page-hero-inner > .eyebrow {
+.page-hero-content > .eyebrow {
   margin-bottom: 12px;
+}
+
+.back-link--hero {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  max-width: 100%;
+  min-height: 44px;
+  margin: 0;
+  padding: 10px 16px 10px 12px;
+  border: 1px solid var(--color-outline-variant);
+  border-radius: 999px;
+  background: var(--color-surface-card);
+  box-shadow: var(--shadow-sm);
+  line-height: 1.3;
+}
+
+.back-link--hero .back-link-text {
+  min-width: 0;
+}
+
+@media (max-width: 839px) {
+  .back-link--hero {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 .page-hero h1 {
@@ -998,11 +1026,17 @@ ul.bullet-list li::marker {
 .back-link {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   margin-bottom: 24px;
   font-size: 0.9375rem;
   font-weight: 600;
+  color: var(--color-on-surface-variant);
   text-decoration: none;
+  transition: color 0.2s;
+}
+
+.back-link:hover {
+  color: var(--color-primary);
 }
 
 .back-link svg {

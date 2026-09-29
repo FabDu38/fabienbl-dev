@@ -9,21 +9,26 @@ export interface Props {
 }
 
 const { title, eyebrow, lead, back } = Astro.props;
+const showEyebrow = eyebrow && !back;
 ---
 
-<header class="page-hero">
-  <div class="page-hero-inner reveal">
+<header class="page-hero" class:list={{ 'page-hero--sub': Boolean(back) }}>
+  <div class="page-hero-inner">
     {
       back && (
-        <a class="back-link" href={back.href}>
-          <Icon name="arrow-left" size={18} />
-          {back.label}
-        </a>
+        <nav class="page-hero-nav" aria-label="Navigation secondaire">
+          <a class="back-link back-link--hero" href={back.href}>
+            <Icon name="arrow-left" size={18} />
+            <span class="back-link-text">{back.label}</span>
+          </a>
+        </nav>
       )
     }
-    {eyebrow && <p class="eyebrow">{eyebrow}</p>}
-    <h1>{title}</h1>
-    {lead && <p class="page-lead">{lead}</p>}
-    <slot />
+    <div class="page-hero-content reveal">
+      {showEyebrow && <p class="eyebrow">{eyebrow}</p>}
+      <h1>{title}</h1>
+      {lead && <p class="page-lead">{lead}</p>}
+      <slot />
+    </div>
   </div>
 </header>
