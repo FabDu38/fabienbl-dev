@@ -4,12 +4,11 @@ export const personLd = {
   name: 'Fabien Blasquez',
   jobTitle: 'Développeur Web Freelance',
   description:
-    'Développeur freelance spécialisé en applications sur mesure pour PME et équipes opérationnelles',
+    'Développeur freelance spécialisé en applications sur mesure pour des équipes métier',
   url: 'https://fabien-blasquez.dev',
   email: 'contact@fabien-blasquez.dev',
   sameAs: ['https://www.linkedin.com/in/fabien-blasquez-4aa16636/'],
   knowsAbout: [
-    'Flutter',
     'Développement Web',
     'Applications Multiplateformes',
     'Applications Métier',

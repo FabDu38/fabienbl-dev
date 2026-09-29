@@ -1,6 +1,8 @@
 # Migration Astro — inventaire et recette
 
-> Jalon 1 MVP2. Décisions : `[brainstorming/sessions/Architecture_SEO.md](../brainstorming/sessions/Architecture_SEO.md)`.
+> **Jalon 1 MVP2 — ✅ terminé** (recette prod validée, tag **`V1.5.2`**, sept. 2026).  
+> Décisions : [`brainstorming/sessions/Architecture_SEO.md`](../brainstorming/sessions/Architecture_SEO.md).  
+> Suite MVP2 : séance [**Parcours et structure**](../brainstorming/sessions/Parcours_et_structure.md) ✅ (29/09/2026). Prochaine séance : direction visuelle.
 
 ## Correspondance des URL
 
@@ -14,12 +16,12 @@
 | `/seo/contact.html`                                  | `/contact/`                    | **301**               |
 | `/seo/mentions-legales.html`                         | `/mentions-legales/`           | **301**               |
 | `/projets` (Flutter)                                 | `/projets/`                    | **301** si sans slash |
-| `/projets/portfolio`                                 | `/projets/portfolio/`          | Conservée             |
+| `/projets/portfolio` et `/projets/portfolio/`        | `/projets/`                    | **301** (parcours 29/09) |
 | `/projets/professionnels`                            | `/projets/professionnels/`     | Conservée             |
 | `/a-propos`, `/contact`, `/mentions-legales`, `/cgu` | Même chemin + **barre finale** | **301**               |
 
 
-**URL cibles validées (proposition séance 28/09)** : `/projets/portfolio/`, `/projets/professionnels/`, `/cgu/`, landing freelance → `/`.
+**URL cibles (séance 28/09, ajustées le 29/09)** : `/services/`, `/projets/`, `/projets/professionnels/`, `/cgu/`, landing freelance → `/`. `/projets/portfolio/` n'est plus canonique (**301** vers `/projets/`).
 
 ## Inventaire routes Flutter (`lib/core/router.dart`)
 
@@ -107,7 +109,7 @@
 
 ### Performance
 
-- [ ] Lighthouse SEO ≥ 90 (mobile) — à mesurer sur URL de préversion prod
+- [x] Lighthouse SEO ≥ 90 (mobile) — à mesurer sur URL de préversion prod
 - [x] Contenu principal en HTML statique (formulaire seul nécessite JS)
 
 
@@ -169,8 +171,8 @@ Liste complète : `[site/public/_redirects](../site/public/_redirects)`.
 4. Cocher au minimum **Performance** et **SEO** (Accessibilité optionnel).
 5. **Analyser** (page chargée, pas d’onglet en arrière-plan).
 
-- [ ] **SEO** ≥ **90** (mobile) — noter le score et la page si < 90
-- [ ] (Optionnel) noter Performance / Accessibilité pour suivi MVP2
+- [x] **SEO** ≥ **90** (mobile) — noter le score et la page si < 90
+- [x] (Optionnel) noter Performance / Accessibilité pour suivi MVP2
 
 
 
@@ -186,10 +188,10 @@ Le site suit le **thème système** (pas de bouton dans l’UI). Équivalent Flu
 
 Pages à parcourir rapidement :
 
-- [ ] **Accueil** — hero, cartes, CTA
-- [ ] `/projets/` et une sous-page (ex. `/projets/professionnels/`)
-- [ ] `/contact/` — formulaire, champs, bouton envoyer
-- [ ] **Header / menu mobile** — lisible, lien actif visible
+- [x] **Accueil** — hero, cartes, CTA
+- [x] `/projets/` et une sous-page (ex. `/projets/professionnels/`)
+- [x] `/contact/` — formulaire, champs, bouton envoyer
+- [x] **Header / menu mobile** — lisible, lien actif visible
 
 Critères : texte lisible, bordures visibles, pas de fond « cassé » ; accents ~`#006a62` (clair) / `#82d5ca` (sombre).
 

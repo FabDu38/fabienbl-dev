@@ -4,24 +4,25 @@
 
 ## Contexte (depuis sept. 2026)
 
-Le site vitrine public est en cours de **migration vers Astro** (`site/`). Une seule série de pages HTML indexables remplace l’architecture Flutter + miroir `/seo`. Décision : [`brainstorming/sessions/Architecture_SEO.md`](../brainstorming/sessions/Architecture_SEO.md).
+Le site vitrine public est en **Astro** (`site/`), une seule série de pages HTML indexables (remplace Flutter + miroir `/seo`). Décision : [`brainstorming/sessions/Architecture_SEO.md`](../brainstorming/sessions/Architecture_SEO.md). **Bascule prod validée** (tag **`V1.5.2`**, recette [`08_Migration_Astro.md`](08_Migration_Astro.md)).
 
-**Pendant la migration :** la production reste sur Flutter (`build/web`) jusqu’au tag de bascule (ex. `V1.5.0`). La préversion Astro est servie hors index.
+La préversion Netlify (`astro-preview`) reste hors index (`X-Robots-Tag: noindex`).
 
 ## Architecture SEO cible
 
 ```
 site/ (Astro → dist/)
 ├── /                    (accueil)
+├── /services/
 ├── /projets/
-├── /projets/portfolio/
 ├── /projets/professionnels/
 ├── /a-propos/
 ├── /contact/
 ├── /mentions-legales/
-├── /cgu/
-└── /services/           (placeholder — contenu en séance parcours)
+└── /cgu/
 ```
+
+`/projets/portfolio/` n'est plus une URL canonique : **301 vers `/projets/`** (séance Parcours, 29/09/2026). L'URL de la page Élan n'est pas encore choisie.
 
 - **URL canoniques :** sans `.html`, **barre finale** sur les pages internes (`/projets/`, etc.).
 - **Sitemap :** généré via `@astrojs/sitemap` à la racine du domaine.

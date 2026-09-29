@@ -6,7 +6,14 @@ import { personLd, websiteLd } from '../data/jsonLd';
 
 const title = 'Développeur Web Freelance | Applications sur mesure';
 const description =
-  "Développeur freelance avec 20 ans d'expérience. Applications web et métier sur mesure pour PME — solutions claires et durables.";
+  "Développeur freelance avec 20 ans d'expérience. Applications web et métier sur mesure — solutions claires et durables.";
+
+const services = [
+  { href: '/services/#creer', title: 'Créer une application métier' },
+  { href: '/services/#evoluer', title: 'Faire évoluer un outil existant' },
+  { href: '/services/#automatiser', title: 'Automatiser des tâches et des échanges de données' },
+  { href: '/services/#cadrer', title: 'Cadrer et piloter un projet numérique' },
+];
 ---
 
 <BaseLayout
@@ -35,10 +42,10 @@ const description =
       </p>
       <div class="hero-actions">
         <a class="btn-primary" href="/contact/">
-          Discuter de mon besoin
+          Parlons de votre projet
           <Icon name="arrow-right" size={18} />
         </a>
-        <a class="btn-secondary" href="/projets/">Voir les projets</a>
+        <a class="btn-secondary" href="/services/">Voir les services</a>
       </div>
       <p class="hint">Un premier échange pour clarifier votre besoin et définir la suite.</p>
     </div>
@@ -47,64 +54,26 @@ const description =
   <section class="section section--alt">
     <div class="section-inner">
       <div class="section-header reveal">
-        <p class="eyebrow">Approche</p>
-        <h2>Une approche simple, orientée résultat</h2>
-        <p>Du sur-mesure, de la clarté, et des outils qui restent utiles dans le temps.</p>
+        <p class="eyebrow">Services</p>
+        <h2>Ce que je peux prendre en charge</h2>
+        <p>D’abord les applications métier, et aussi le cadrage et le pilotage d’un projet.</p>
       </div>
-      <div class="pillars reveal">
-        <article class="card card--hover">
-          <div class="card-icon"><Icon name="target" size={24} /></div>
-          <h3>Sur-mesure utile</h3>
-          <p>
-            Chaque solution est pensée pour répondre à un besoin précis. Pas de superflu, pas de
-            complexité inutile : juste ce qui sert vraiment.
-          </p>
-        </article>
-        <article class="card card--hover">
-          <div class="card-icon"><Icon name="eye" size={24} /></div>
-          <h3>Clarté et simplicité</h3>
-          <p>
-            Un cadre clair, des échanges directs, des décisions compréhensibles. Vous savez à tout
-            moment où en est le projet.
-          </p>
-        </article>
-        <article class="card card--hover">
-          <div class="card-icon"><Icon name="layers" size={24} /></div>
-          <h3>Pensé pour durer</h3>
-          <p>
-            Des bases solides, une maintenance raisonnable et des évolutions possibles sans tout
-            reconstruire.
-          </p>
-        </article>
-      </div>
+      <ul class="service-links reveal">
+        {
+          services.map((service) => (
+            <li>
+              <a href={service.href}>{service.title}</a>
+            </li>
+          ))
+        }
+      </ul>
+      <p class="reveal">
+        <a class="btn-secondary" href="/services/">Voir le détail des services</a>
+      </p>
     </div>
   </section>
 
   <section class="section">
-    <div class="section-inner">
-      <div class="section-header reveal">
-        <p class="eyebrow">Prestations</p>
-        <h2>Ce que je fais concrètement</h2>
-        <p>Une prestation simple à comprendre : on clarifie, on construit, puis on améliore.</p>
-      </div>
-      <ol class="steps reveal">
-        <li>
-          <strong>Concevoir et développer</strong>
-          Conception et développement d'applications sur mesure, adaptées à vos usages réels.
-        </li>
-        <li>
-          <strong>Accompagner</strong>
-          Accompagnement de projets numériques, de l'idée jusqu'à une solution utilisable.
-        </li>
-        <li>
-          <strong>Faire évoluer</strong>
-          Suivi, évolutions et amélioration continue des outils mis en place.
-        </li>
-      </ol>
-    </div>
-  </section>
-
-  <section class="section section--alt">
     <div class="section-inner">
       <div class="section-header reveal">
         <p class="eyebrow">Expérience</p>
@@ -129,6 +98,47 @@ const description =
           </ul>
         </article>
       </div>
+      <div class="project-grid reveal">
+        <article class="card project-card">
+          <p class="project-kicker">Applications et outils métier</p>
+          <h3>Projets professionnels</h3>
+          <p>Contextes menés en entreprise, du cadrage à la mise en production.</p>
+          <div class="card-footer">
+            <a class="card-link" href="/projets/professionnels/">
+              Voir les projets professionnels <Icon name="arrow-right" size={18} />
+            </a>
+          </div>
+        </article>
+        <article class="card project-card">
+          <p class="project-kicker">Cas de projet</p>
+          <h3>Élan</h3>
+          <p>Présentation à venir. Pas de démo publique.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <p class="eyebrow">Collaboration</p>
+        <h2>Façon de travailler</h2>
+        <p>Du sur-mesure, de la clarté, et des outils qui restent utiles dans le temps.</p>
+      </div>
+      <ul class="check-list reveal">
+        <li>
+          <strong>Sur-mesure utile.</strong> Chaque solution est pensée pour répondre à un besoin précis.
+          Juste ce qui sert vraiment.
+        </li>
+        <li>
+          <strong>Clarté et simplicité.</strong> Un cadre clair, des échanges directs, des décisions
+          compréhensibles. Vous savez à tout moment où en est le projet.
+        </li>
+        <li>
+          <strong>Pensé pour durer.</strong> Des bases solides, une maintenance raisonnable et des
+          évolutions possibles.
+        </li>
+      </ul>
     </div>
   </section>
 

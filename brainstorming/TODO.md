@@ -8,13 +8,13 @@
 |--------|---------|
 | Définition du MVP2 (cadrage) | [`sessions/Definition_MVP2.md`](sessions/Definition_MVP2.md) |
 | Architecture du site et SEO (28/09/2026) | [`sessions/Architecture_SEO.md`](sessions/Architecture_SEO.md) |
+| Parcours et structure (29/09/2026) | [`sessions/Parcours_et_structure.md`](sessions/Parcours_et_structure.md) |
 
 ## Sessions à venir (ordre recommandé)
 
 | # | Séance | Fichier | Statut |
 |---|--------|---------|--------|
-| 2 | Parcours et structure | [`sessions/Parcours_et_structure.md`](sessions/Parcours_et_structure.md) | À démarrer |
-| 3 | Direction visuelle | [`sessions/Direction_visuelle.md`](sessions/Direction_visuelle.md) | À démarrer |
+| 3 | Direction visuelle | [`sessions/Direction_visuelle.md`](sessions/Direction_visuelle.md) | **Prochaine** |
 | 4 | Messages et projets (hors Élan) | [`sessions/Messages_et_projets.md`](sessions/Messages_et_projets.md) | À démarrer |
 | 5 | Cas Projet Élan | [`sessions/Cas_Projet_Elan.md`](sessions/Cas_Projet_Elan.md) | À démarrer |
 | 6 | Mesure, surveillance et données | [`sessions/Mesure_surveillance_donnees.md`](sessions/Mesure_surveillance_donnees.md) | À démarrer |
@@ -34,4 +34,4 @@ Les séances 4 et 5 peuvent se chevaucher dans le temps mais restent **deux fich
 - Portfolio détaillé avec captures
 - Micro-animations avancées
 - Intégration CMS headless
-- Pages de services dédiées (applis métier, Flutter, reprise d'existant, automatisation)
+- Pages de services dédiées (une seule page `/services/` pour le MVP2 ; sous-pages plus tard)
