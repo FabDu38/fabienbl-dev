@@ -5,15 +5,15 @@
 ## Phase
 
 - **MVP1** — ✅ terminé
-- **MVP2** — 🔵 en cours — séance Architecture/SEO ✅ ; **jalon 1 : migration Astro** en cours ([`docs/08_Migration_Astro.md`](docs/08_Migration_Astro.md))
+- **MVP2** — 🔵 en cours — **jalon 1 migration Astro ✅** (recette prod validée, tag **`V1.5.2`**) ; **parcours et structure ✅** (29/09/2026) ; **prochaine séance : Direction visuelle** ([`brainstorming/sessions/Direction_visuelle.md`](brainstorming/sessions/Direction_visuelle.md))
 
 ## État actuel
 
-- **Code source** : site Astro dans `site/` (jalon 1 implémenté)
-- **Production live** : site Astro ; mises à jour volontaires au tag **`V*`** ([`docs/06_Infrastructure.md`](docs/06_Infrastructure.md))
+- **Code source** : site Astro dans `site/` (seul site vitrine du dépôt)
+- **Production live** : Astro sur fabien-blasquez.dev ; déploiement prod au tag **`V*`** ([`docs/06_Infrastructure.md`](docs/06_Infrastructure.md)) — dernier tag prod **`V1.5.2`**
 - **Préversion** : deploy Netlify `astro-preview` (noindex) sur push `main`
 - Domaine fabien-blasquez.dev, HTTPS, EmailJS + SimpleLogin opérationnels
-- Google Search Console : sitemap historique `/seo/sitemap.xml` (à migrer après bascule Astro)
+- **Google Search Console** : sitemap `https://fabien-blasquez.dev/sitemap-index.xml` ; surveillance couverture 2–4 semaines
 
 ## Audit du 19/08/2026 — Note : 6,5/10
 
@@ -21,12 +21,12 @@ Constats historiques sur la stack Flutter + `/seo`. Traitement révisé : migrat
 
 ## Branche de travail
 
-`feature/mvp2-decisions-astro` ou branches `feature/astro-*` depuis `main`.
+`main` ; branches `feature/` ou `fix/` + PR (nettoyage des anciennes branches mergées recommandé).
 
 ## MVP2 — ordre immédiat
 
-1. **Jalon 1** — migration Astro (8 étapes, [`TODO.md`](TODO.md))
-2. **Séances** — parcours, visuel, messages, Élan, mesure
+1. **Séance Direction visuelle** — charte, motion ([`brainstorming/TODO.md`](brainstorming/TODO.md))
+2. **Séances suivantes** — messages et projets, cas Élan, mesure
 3. **Revue préversion** puis tag **`V2.0.0`**
 
 ## Jalons produit
@@ -35,7 +35,7 @@ Constats historiques sur la stack Flutter + `/seo`. Traitement révisé : migrat
 |-------|--------|----------------------|
 | **MVP1** | ✅ Terminé | Flutter + `/seo`, CI/CD, contact |
 | **MVP2** | 🔵 En cours | Astro, contenu, légal, mesure — [`07_MVP2.md`](docs/07_MVP2.md) |
-| **Bascule Astro** | 🔵 En cours | Tag type `V1.5.0`, 301, nouveau sitemap |
+| **Bascule Astro** | ✅ Terminé | Tags `V1.5.x`, 301, sitemap GSC — [`08_Migration_Astro.md`](docs/08_Migration_Astro.md) |
 | **Après MVP2** | À définir | Blog, multiplateforme, backend ([`docs/00_Vision.md`](docs/00_Vision.md)) |
 
 Backlog officiel : [`TODO.md`](TODO.md).

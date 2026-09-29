@@ -39,7 +39,7 @@ import Icon from './Icon.astro';
       placeholder="Décrivez votre besoin, votre contexte, vos délais…"></textarea>
   </div>
   <button type="submit" class="btn-primary btn-block" data-submit>
-    <span data-submit-label>Envoyer le message</span>
+    <span data-submit-label>Envoyer mon message</span>
     <Icon name="arrow-right" size={18} />
   </button>
   <p class="form-privacy">
@@ -65,7 +65,7 @@ import Icon from './Icon.astro';
   function setSending(sending: boolean) {
     if (!submitBtn || !submitLabel) return;
     submitBtn.disabled = sending;
-    submitLabel.textContent = sending ? 'Envoi en cours…' : 'Envoyer le message';
+    submitLabel.textContent = sending ? 'Envoi en cours…' : 'Envoyer mon message';
   }
 
   function showStatus(message: string, type: 'error' | 'success') {

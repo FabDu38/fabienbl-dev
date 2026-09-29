@@ -17,7 +17,7 @@
 
 ## Technique
 
-- Flutter Web comme socle — codebase unique, évolutif vers mobile/desktop
+- Site vitrine en **Astro** (HTML statique) ; stack projet au cas par cas (ex. Flutter pour apps métier)
 - Pas de sur-ingénierie : juste ce qui sert le besoin actuel
 - CI/CD systématique (build + déploiement automatique)
 - Lighthouse ≥ 90 mobile comme baseline

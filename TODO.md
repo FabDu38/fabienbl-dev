@@ -45,20 +45,19 @@ Les idées encore exploratoires restent dans [`brainstorming/TODO.md`](brainstor
 - [x] Build local : `flutter analyze` + `flutter build web --release` OK (24/09/2026)
 - [x] **Deploy prod `V1.2.1`** — secrets Netlify recréés, pipeline Actions + Netlify validés (24/09/2026, voir [`06_Infrastructure.md`](docs/06_Infrastructure.md))
 - [x] **Contact prod** — EmailJS Gmail reconnecté ; messages d’erreur UI (`contact_page.dart`) déployés en `V1.2.1`
-- [ ] **Optionnel** — GSC ; PR/preview (reportés)
-- [x] Rappel : **prod** uniquement au tag `V2.0.0` ; travail et tests en **local** pour l’instant
+- [x] **GSC** — sitemap `sitemap-index.xml` soumis après bascule Astro
+- [x] Rappel : **prod** au tag `V*` ; objectif publication MVP2 au tag **`V2.0.0`**
 
 ### Séances de brainstorming
 
 - [x] **Architecture du site et SEO** (28/09/2026 — [`Architecture_SEO`](brainstorming/sessions/Architecture_SEO.md))
-
-**Prochaine :** [Parcours et structure](brainstorming/sessions/Parcours_et_structure.md).
+- [x] **Parcours et structure** (29/09/2026 — [`Parcours_et_structure`](brainstorming/sessions/Parcours_et_structure.md)) — menu, une page Services, CTA, 301 portfolio ; textes et Élan aux séances suivantes
 
 Suivre et cocher dans [`brainstorming/TODO.md`](brainstorming/TODO.md).
 
 ### Jalon 1 — Migration complète vers Astro
 
-> Décisions : [`Architecture_SEO`](brainstorming/sessions/Architecture_SEO.md). Détail : [`docs/08_Migration_Astro.md`](docs/08_Migration_Astro.md). Prod Flutter inchangée jusqu’à la bascule (tag `V1.5.0` proposé).
+> Décisions : [`Architecture_SEO`](brainstorming/sessions/Architecture_SEO.md). Détail : [`docs/08_Migration_Astro.md`](docs/08_Migration_Astro.md). **✅ Validé en prod** (recette manuelle, tag **`V1.5.2`**, sept. 2026).
 
 - [x] 1. Inventorier routes Flutter, `/seo`, contenus, médias, animations, formulaire ; correspondance URL
 - [x] 2. Initialiser Astro dans `site/` ; CI build ; préversion Netlify (noindex) ; note MCP → [`docs/09_MCP_et_outils_agent.md`](docs/09_MCP_et_outils_agent.md)
@@ -66,32 +65,32 @@ Suivre et cocher dans [`brainstorming/TODO.md`](brainstorming/TODO.md).
 - [x] 4. Migrer toutes les pages et le formulaire EmailJS (JS client)
 - [x] 5. SEO : composant meta, JSON-LD, sitemap, robots, redirections 301 depuis `/seo/*.html`
 - [x] 6. Accessibilité : zoom, sémantique, clavier, focus, contrastes, footer dans le flux
-- [x] 7. Recette préversion (URL, 404, formulaire, sans JS, Lighthouse SEO ≥ 90) — build local OK ; Lighthouse à confirmer sur préversion
-- [x] 8. Bascule prod (tag), contrôle 301 + sitemap GSC ; PR suppression code Flutter — config prête ; tag `V1.5.0` + GSC manuels
+- [x] 7. Recette préversion (URL, 404, formulaire, sans JS, Lighthouse SEO ≥ 90)
+- [x] 8. Bascule prod (tag), contrôle 301 + sitemap GSC ; code Flutter retiré — prod **`V1.5.2`**
 
-### Critères de recette Astro (ex-audit P0 — plus de tâches sur Flutter)
+### Critères de recette Astro (ex-audit P0 — validés en prod, sept. 2026)
 
-- [ ] Métadonnées complètes par page (`lang=fr`, title, description, canonical, OG, Twitter)
-- [ ] Zoom non bloqué (pas de `user-scalable=no`)
-- [ ] URL uniformes (barre finale, une canonique, 301 depuis `/seo`)
-- [ ] HTML sémantique, navigation clavier, focus visible, noms accessibles
+- [x] Métadonnées complètes par page (`lang=fr`, title, description, canonical, OG, Twitter)
+- [x] Zoom non bloqué (pas de `user-scalable=no`)
+- [x] URL uniformes (barre finale, une canonique, 301 depuis `/seo`)
+- [x] HTML sémantique, navigation clavier, focus visible, noms accessibles
 
 ### Candidats — Audit P1 (importants)
 
-- [ ] Footer dans le flux naturel (recette Astro)
+- [x] Footer dans le flux naturel (recette Astro)
 - [ ] Réparer les finitions (icône LinkedIn, copyright 2026, mentions légales, info données formulaire)
 - [ ] Préciser la promesse (nommer la cible, problèmes résolus, avantage expérience industrielle)
 - [ ] Créer de vrais cas clients (Supplyframe, Schneider, Alfa Laval, BF Web Création — même anonymisés)
 
 ### Candidats — Audit P2 (finitions)
 
-- [ ] Déployer les pages de services (applis métier, Flutter, reprise d'existant, automatisation, Grenoble/remote)
+- [x] Une page Services (quatre missions, pas de sous-pages) — structure posée le 29/09/2026 ; textes finaux en séance Messages
 - [ ] Mesurer après corrections (Lighthouse mobile/desktop, test clavier, Search Console, données structurées)
 
 ### Candidats — SEO & Analytics
 
-- [ ] Suivre Google Search Console
-- [ ] Tester l'audit Lighthouse → score SEO ≥ 90
+- [x] Suivre Google Search Console (sitemap post-migration soumis)
+- [x] Tester l'audit Lighthouse → score SEO ≥ 90 (prod, mobile)
 - [ ] Configurer le tag d'analyse (script via balise ou module Flutter)
 - [ ] Analyser les premières données (tendances, adapter le contenu)
 
