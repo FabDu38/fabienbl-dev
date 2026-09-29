@@ -52,8 +52,19 @@ Les idées encore exploratoires restent dans [`brainstorming/TODO.md`](brainstor
 
 - [x] **Architecture du site et SEO** (28/09/2026 — [`Architecture_SEO`](brainstorming/sessions/Architecture_SEO.md))
 - [x] **Parcours et structure** (29/09/2026 — [`Parcours_et_structure`](brainstorming/sessions/Parcours_et_structure.md)) — menu, une page Services, CTA, 301 portfolio ; textes et Élan aux séances suivantes
+- [x] **Direction visuelle** (29/09/2026 — [`Direction_visuelle`](brainstorming/sessions/Direction_visuelle.md)) — piste équilibrée, mouvement, visuels ; maquettes et assets encore à produire
 
 Suivre et cocher dans [`brainstorming/TODO.md`](brainstorming/TODO.md).
+
+### Direction visuelle — exécution
+
+Créneau : en parallèle des séances Messages et Élan, terminé avant la revue de préversion. Décisions : [`Direction_visuelle`](brainstorming/sessions/Direction_visuelle.md), charte [`docs/03_Design.md`](docs/03_Design.md).
+
+- [ ] Visuel graphique original du premier écran (SVG ou HTML/CSS léger ; sur mobile, titre, présentation et CTA avant le visuel)
+- [ ] Photo de Fabien pour À propos (reprise éventuelle près d’un appel à contact)
+- [ ] Captures réelles autorisées, ou schémas légendés, pour les projets professionnels
+- [ ] Image Open Graph (palette, motif graphique, nom ; lisible au petit format)
+- [ ] Recette mouvement et performance sur la préversion (`prefers-reduced-motion`, sans JavaScript, clair/sombre, mobile, Lighthouse ≥ 90)
 
 ### Jalon 1 — Migration complète vers Astro
 
@@ -103,7 +114,7 @@ Suivre et cocher dans [`brainstorming/TODO.md`](brainstorming/TODO.md).
 
 ### Backlog — Site Astro (motion & perf)
 
-- [ ] Animations au scroll (CSS / IntersectionObserver), fidèles à l’esprit Flutter sans dégrader la perf
+- [ ] Apparitions à l’entrée des sections et micro-interactions courtes (CSS, observation légère) ; respecter `prefers-reduced-motion` et la cible Lighthouse ≥ 90 mobile — voir la section Direction visuelle
 - [ ] Lazy-loading images, build statique optimisé
 
 ### Backlog — Performance & accessibilité

@@ -9,9 +9,7 @@ Définir ce que voit le visiteur, dans quel ordre, et le contenu macro de chaque
 
 ## Entrées de la séance
 
-- Brief export Chatou : [`exports/Parcours_et_structure_brief_Chatou.md`](../../exports/Parcours_et_structure_brief_Chatou.md) + annexe code/docs [`exports/Parcours_et_structure_annexe_Chatou.md`](../../exports/Parcours_et_structure_annexe_Chatou.md)
-- Synthèse de transmission : `exports/Synthese_Parcours_et_structure_MVP2_2026-09-29.md` (non versionné)
-- Contenu actuel documenté : [`docs/02_Contenu.md`](../../docs/02_Contenu.md)
+- Contenu cristallisé : [`docs/02_Contenu.md`](../../docs/02_Contenu.md)
 - Principes éditoriaux : [`docs/01_Principes.md`](../../docs/01_Principes.md)
 - Plan d’URL déjà tranché : [`Architecture_SEO.md`](Architecture_SEO.md) (table « Plan d’URL indicatif »)
 - Site live : https://fabien-blasquez.dev
