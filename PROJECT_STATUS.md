@@ -5,7 +5,7 @@
 ## Phase
 
 - **MVP1** — ✅ terminé
-- **MVP2** — 🔵 en cours — **jalon 1 migration Astro ✅** (recette prod validée, tag **`V1.5.2`**) ; **parcours et structure ✅** (29/09/2026) ; **direction visuelle ✅** (29/09/2026) ; **prochaine séance : Messages et projets** ([`brainstorming/sessions/Messages_et_projets.md`](brainstorming/sessions/Messages_et_projets.md))
+- **MVP2** — 🔵 en cours — **jalon 1 migration Astro ✅** (recette prod validée, tag **`V1.5.2`**) ; **parcours et structure ✅** (29/09/2026) ; **direction visuelle ✅** (29/09/2026) ; **messages et projets ✅** (01/10/2026) ; **prochaine séance : Cas Projet Élan** ([`brainstorming/sessions/Cas_Projet_Elan.md`](brainstorming/sessions/Cas_Projet_Elan.md))
 
 ## État actuel
 
@@ -25,11 +25,11 @@ Constats historiques sur la stack Flutter + `/seo`. Traitement révisé : migrat
 
 ## MVP2 — ordre jusqu’à la publication
 
-1. **Séance Messages et projets** — formulations, cas hors Élan ([`brainstorming/TODO.md`](brainstorming/TODO.md))
-2. **Séance Cas Projet Élan** — peut chevaucher l’étape 1 ; fichier distinct
-3. **Chantier direction visuelle** — maquettes puis implémentation ([`TODO.md`](TODO.md), [`docs/03_Design.md`](docs/03_Design.md)). Accueil et mouvement en parallèle des étapes 1 et 2. Photo, captures autorisées et visuel Élan dès que ces éléments sont là. Terminé avant la revue.
+1. **Séance Cas Projet Élan** — URL, contenu, visuel ([`brainstorming/TODO.md`](brainstorming/TODO.md))
+2. **Intégration des textes** Messages et projets — accueil, services, À propos, projets ([`TODO.md`](TODO.md))
+3. **Chantier direction visuelle** — maquettes puis implémentation ([`TODO.md`](TODO.md), [`docs/03_Design.md`](docs/03_Design.md)), en parallèle des étapes 1 et 2. Photo, captures autorisées et visuel Élan dès que ces éléments sont là. Terminé avant la revue.
 4. **Séance Mesure, surveillance et données**, puis mise en place
-5. **Revue de la préversion** — une fois les décisions des séances et le chantier visuel implémentés
+5. **Revue de la préversion** — une fois les décisions des séances, les textes et le chantier visuel implémentés
 6. **Publication** — tag **`V2.0.0`**
 
 ## Jalons produit

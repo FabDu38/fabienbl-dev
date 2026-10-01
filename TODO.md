@@ -53,12 +53,24 @@ Les idées encore exploratoires restent dans [`brainstorming/TODO.md`](brainstor
 - [x] **Architecture du site et SEO** (28/09/2026 — [`Architecture_SEO`](brainstorming/sessions/Architecture_SEO.md))
 - [x] **Parcours et structure** (29/09/2026 — [`Parcours_et_structure`](brainstorming/sessions/Parcours_et_structure.md)) — menu, une page Services, CTA, 301 portfolio ; textes et Élan aux séances suivantes
 - [x] **Direction visuelle** (29/09/2026 — [`Direction_visuelle`](brainstorming/sessions/Direction_visuelle.md)) — piste équilibrée, mouvement, visuels ; maquettes et assets encore à produire
+- [x] **Messages et projets** (01/10/2026 — [`Messages_et_projets`](brainstorming/sessions/Messages_et_projets.md)) — promesse, IA, services, cas hors Élan ; intégration des pages encore à faire
 
 Suivre et cocher dans [`brainstorming/TODO.md`](brainstorming/TODO.md).
 
+### Messages et projets — intégration
+
+Créneau : en parallèle du cas Élan et du chantier visuel, terminé avant la revue de préversion. Textes : [`Messages_et_projets`](brainstorming/sessions/Messages_et_projets.md), [`docs/02_Contenu.md`](docs/02_Contenu.md).
+
+- [ ] Accueil : premier écran, aperçu des services, façon de travailler, title et description validés
+- [ ] Services : quatre textes et libellé « Automatiser vos tâches et intégrer l’IA »
+- [ ] À propos : parcours et double usage de l’IA, sans répéter les cas
+- [ ] Projets : introduction ; page professionnelle dans l’ordre Supplyframe, Schneider Montbonnot, Schneider Fontanil, Alfa Laval, BF Web Création
+- [ ] Ne pas afficher les dates Schneider ni Alfa Laval tant qu’elles ne sont pas vérifiées
+- [ ] Métadonnées des autres pages : propositions à identifier, non validées dans la séance
+
 ### Direction visuelle — exécution
 
-Créneau : en parallèle des séances Messages et Élan, terminé avant la revue de préversion. Décisions : [`Direction_visuelle`](brainstorming/sessions/Direction_visuelle.md), charte [`docs/03_Design.md`](docs/03_Design.md).
+Créneau : en parallèle du cas Élan et de l’intégration des textes, terminé avant la revue de préversion. Décisions : [`Direction_visuelle`](brainstorming/sessions/Direction_visuelle.md), charte [`docs/03_Design.md`](docs/03_Design.md).
 
 - [ ] Visuel graphique original du premier écran (SVG ou HTML/CSS léger ; sur mobile, titre, présentation et CTA avant le visuel)
 - [ ] Photo de Fabien pour À propos (reprise éventuelle près d’un appel à contact)
@@ -90,8 +102,8 @@ Créneau : en parallèle des séances Messages et Élan, terminé avant la revue
 
 - [x] Footer dans le flux naturel (recette Astro)
 - [ ] Réparer les finitions (icône LinkedIn, copyright 2026, mentions légales, info données formulaire)
-- [ ] Préciser la promesse (nommer la cible, problèmes résolus, avantage expérience industrielle)
-- [ ] Créer de vrais cas clients (Supplyframe, Schneider, Alfa Laval, BF Web Création — même anonymisés)
+- [x] Préciser la promesse — textes validés le 01/10/2026 ; intégration dans la section Messages et projets
+- [x] Cas professionnels rédigés (Supplyframe, Schneider, Alfa Laval, BF Web Création, entreprises nommées) — intégration dans la section Messages et projets
 
 ### Candidats — Audit P2 (finitions)
 

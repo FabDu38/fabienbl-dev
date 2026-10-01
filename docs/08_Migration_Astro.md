@@ -2,7 +2,7 @@
 
 > **Jalon 1 MVP2 — ✅ terminé** (recette prod validée, tag **`V1.5.2`**, sept. 2026).  
 > Décisions : [`brainstorming/sessions/Architecture_SEO.md`](../brainstorming/sessions/Architecture_SEO.md).  
-> Suite MVP2 : séances [**Parcours et structure**](../brainstorming/sessions/Parcours_et_structure.md) ✅ et [**Direction visuelle**](../brainstorming/sessions/Direction_visuelle.md) ✅ (29/09/2026). Prochaine séance : messages et projets. Chantier visuel en parallèle, avant la revue — ordre dans [`PROJECT_STATUS.md`](../PROJECT_STATUS.md).
+> Suite MVP2 : séances [**Parcours et structure**](../brainstorming/sessions/Parcours_et_structure.md) ✅, [**Direction visuelle**](../brainstorming/sessions/Direction_visuelle.md) ✅ (29/09/2026) et [**Messages et projets**](../brainstorming/sessions/Messages_et_projets.md) ✅ (01/10/2026). Prochaine séance : cas Élan. Intégration des textes et chantier visuel en parallèle, avant la revue — ordre dans [`PROJECT_STATUS.md`](../PROJECT_STATUS.md).
 
 ## Correspondance des URL
 
