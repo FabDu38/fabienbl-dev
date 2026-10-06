@@ -13,12 +13,12 @@ import Icon from '../../components/Icon.astro';
   <PageHero
     eyebrow="Réalisations"
     title="Projets"
-    lead="Les projets présentés ici illustrent ma démarche de conception et ma façon de structurer des applications, plus qu'une vitrine exhaustive de réalisations."
+    lead="Les projets présentés ici illustrent mon expérience et ma façon de concevoir des outils numériques : des réalisations professionnelles et un projet personnel."
   />
 
   <div class="page-body">
     <div class="project-grid">
-      <article class="card project-card project-card--featured reveal">
+      <article class="card project-card reveal">
         <p class="project-kicker">Applications et outils métier</p>
         <h2>Projets professionnels</h2>
         <p>
@@ -37,13 +37,16 @@ import Icon from '../../components/Icon.astro';
       </article>
 
       <article class="card project-card reveal">
-        <p class="project-kicker">Cas de projet</p>
-        <h2>Élan</h2>
-        <p>Présentation du produit et de la démarche à venir. Pas de démo publique.</p>
+        <p class="project-kicker">Projet personnel</p>
+        <h2>Élan — L’IA au service du projet professionnel</h2>
+        <p>
+          Une application qui associe IA et données métiers pour comprendre sa situation, explorer des
+          pistes et être accompagné dans son projet professionnel.
+        </p>
         <div class="card-footer">
-          <ul class="tags">
-            <li class="tag tag--muted">Bientôt</li>
-          </ul>
+          <a class="card-link" href="/projets/elan/">
+            Découvrir le projet <Icon name="arrow-right" size={18} />
+          </a>
         </div>
       </article>
     </div>

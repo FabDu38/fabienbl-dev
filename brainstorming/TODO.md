@@ -11,20 +11,20 @@
 | Parcours et structure (29/09/2026) | [`sessions/Parcours_et_structure.md`](sessions/Parcours_et_structure.md) |
 | Direction visuelle (29/09/2026) | [`sessions/Direction_visuelle.md`](sessions/Direction_visuelle.md) |
 | Messages et projets (01/10/2026) | [`sessions/Messages_et_projets.md`](sessions/Messages_et_projets.md) |
+| Cas Projet Élan (01/10/2026) | [`sessions/Cas_Projet_Elan.md`](sessions/Cas_Projet_Elan.md) |
 
 ## Sessions à venir (ordre recommandé)
 
 | # | Séance | Fichier | Statut |
 |---|--------|---------|--------|
-| 5 | Cas Projet Élan | [`sessions/Cas_Projet_Elan.md`](sessions/Cas_Projet_Elan.md) | **Prochaine** |
-| 6 | Mesure, surveillance et données | [`sessions/Mesure_surveillance_donnees.md`](sessions/Mesure_surveillance_donnees.md) | À démarrer |
+| 6 | Mesure, surveillance et données | [`sessions/Mesure_surveillance_donnees.md`](sessions/Mesure_surveillance_donnees.md) | **Prochaine** |
 | 7 | Revue de la préversion | [`sessions/Revue_preversion.md`](sessions/Revue_preversion.md) | À démarrer |
 
-Les séances Élan et Mesure restent deux fichiers distincts. Le chantier visuel et l’intégration des textes validés avancent en parallèle, et se terminent avant la revue.
+Les séances restantes et la revue sont distinctes. Photo, captures et image Open Graph restent à collecter avant la revue.
 
-**Chantier direction visuelle** (exécution, pas une séance) : en parallèle du cas Élan, terminé avant la revue. Accueil et mouvement dès maintenant ; photo, captures autorisées et visuel Élan dès que ces éléments sont là. Tâches : [`../TODO.md`](../TODO.md).
+**Chantier direction visuelle** : visuel d’accueil et mouvement posés sans photo ni captures. Assets restants : [`../TODO.md`](../TODO.md).
 
-**Intégration des textes** (exécution, pas une séance) : poser sur les pages les textes de la séance Messages. Tâches : [`../TODO.md`](../TODO.md).
+**Intégration des textes** : textes Messages et page Élan condensée posés sur le site (captures Élan le 06/10/2026). Reste : [`../TODO.md`](../TODO.md).
 
 **Hors brainstorming obligatoire :** publication ; retours externes seulement si changements voulus.
 

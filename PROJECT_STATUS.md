@@ -5,12 +5,12 @@
 ## Phase
 
 - **MVP1** — ✅ terminé
-- **MVP2** — 🔵 en cours — **jalon 1 migration Astro ✅** (recette prod validée, tag **`V1.5.2`**) ; **parcours et structure ✅** (29/09/2026) ; **direction visuelle ✅** (29/09/2026) ; **messages et projets ✅** (01/10/2026) ; **prochaine séance : Cas Projet Élan** ([`brainstorming/sessions/Cas_Projet_Elan.md`](brainstorming/sessions/Cas_Projet_Elan.md))
+- **MVP2** — 🔵 en cours — **jalon 1 migration Astro ✅** (recette prod validée, tag **`V1.5.2`**) ; **parcours, direction visuelle, messages et Élan ✅** (29/09 et 01/10/2026) ; textes et visuel d’accueil intégrés sans captures ; **prochaine séance : Mesure** ([`brainstorming/sessions/Mesure_surveillance_donnees.md`](brainstorming/sessions/Mesure_surveillance_donnees.md))
 
 ## État actuel
 
 - **Code source** : site Astro dans `site/` (seul site vitrine du dépôt)
-- **Production live** : Astro sur fabien-blasquez.dev ; déploiement prod au tag **`V*`** ([`docs/06_Infrastructure.md`](docs/06_Infrastructure.md)) — dernier tag prod **`V1.5.2`**
+- **Production live** : Astro sur fabien-blasquez.dev ; déploiement prod au tag **`V*`** ([`docs/06_Infrastructure.md`](docs/06_Infrastructure.md)) — release **`V1.6.0`** (parcours validé, visuel d’accueil, cas Élan)
 - **Préversion** : deploy Netlify `astro-preview` (noindex) sur push `main`
 - Domaine fabien-blasquez.dev, HTTPS, EmailJS + SimpleLogin opérationnels
 - **Google Search Console** : sitemap `https://fabien-blasquez.dev/sitemap-index.xml` ; surveillance couverture 2–4 semaines
@@ -25,12 +25,10 @@ Constats historiques sur la stack Flutter + `/seo`. Traitement révisé : migrat
 
 ## MVP2 — ordre jusqu’à la publication
 
-1. **Séance Cas Projet Élan** — URL, contenu, visuel ([`brainstorming/TODO.md`](brainstorming/TODO.md))
-2. **Intégration des textes** Messages et projets — accueil, services, À propos, projets ([`TODO.md`](TODO.md))
-3. **Chantier direction visuelle** — maquettes puis implémentation ([`TODO.md`](TODO.md), [`docs/03_Design.md`](docs/03_Design.md)), en parallèle des étapes 1 et 2. Photo, captures autorisées et visuel Élan dès que ces éléments sont là. Terminé avant la revue.
-4. **Séance Mesure, surveillance et données**, puis mise en place
-5. **Revue de la préversion** — une fois les décisions des séances, les textes et le chantier visuel implémentés
-6. **Publication** — tag **`V2.0.0`**
+1. **Séance Mesure, surveillance et données**, puis mise en place ([`brainstorming/TODO.md`](brainstorming/TODO.md))
+2. **Assets encore ouverts** — captures des projets professionnels ([`TODO.md`](TODO.md)). Page Élan condensée intégrée le 06/10/2026 (captures et agrandissement). Image de partage reportée.
+3. **Revue de la préversion**
+4. **Publication** — tag **`V2.0.0`**
 
 ## Jalons produit
 

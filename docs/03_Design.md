@@ -47,7 +47,7 @@ Le mouvement se perçoit surtout quand une section entre dans le champ, puis pen
 - **Mobile (premier écran).** Titre, présentation et appel à l’action avant le visuel. Visuel simplifié ensuite. Cartes sur une colonne, textes faciles à parcourir, animations plus discrètes. Ne pas supposer une hauteur d’écran unique pour placer l’appel à l’action.
 - **Projets professionnels.** Captures réelles quand elles peuvent être montrées, sinon schémas légendés. Ne pas inventer de résultats ou d’interface client. La mise en page reste valable sans capture.
 - **Élan.** Visuel propre au projet, défini avec son cas. Pas de démo publique.
-- **À propos.** Portrait naturel et professionnel de Fabien. Reprise éventuelle près d’un appel à contact si la maquette le justifie. L’accueil garde son visuel graphique.
+- **À propos.** Portrait de Fabien sur la page (`site/public/images/fabien-blasquez.png`). L’accueil garde son visuel graphique.
 - **Open Graph.** Image de partage créée avec les maquettes : palette, motif graphique et nom de Fabien, lisible au petit format.
 
 Photos et captures réellement utilisées : les optimiser. La photo retenue, les captures autorisées et les références visuelles précises se collectent avant la maquette finale.

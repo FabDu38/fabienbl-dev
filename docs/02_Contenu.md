@@ -2,7 +2,7 @@
 
 > **Objectif :** Documenter la structure des pages, les contenus validés et les messages clés du site.
 
-Décisions de structure : séance [Parcours et structure](../brainstorming/sessions/Parcours_et_structure.md) (29/09/2026). Textes : séance [Messages et projets](../brainstorming/sessions/Messages_et_projets.md) (01/10/2026). L’intégration dans les pages Astro reste à faire.
+Décisions de structure : séance [Parcours et structure](../brainstorming/sessions/Parcours_et_structure.md) (29/09/2026). Textes : séance [Messages et projets](../brainstorming/sessions/Messages_et_projets.md) (01/10/2026). Cas Élan : séance [Cas Projet Élan](../brainstorming/sessions/Cas_Projet_Elan.md) (01/10/2026).
 
 ## Plan des pages
 
@@ -12,7 +12,7 @@ Décisions de structure : séance [Parcours et structure](../brainstorming/sessi
 | Services `/services/` | Montrer les missions possibles | Créer une application métier ; faire évoluer un outil existant ; automatiser et intégrer l’IA ; cadrage et pilotage ; méthode et preuves | Parlons de votre projet | Oui |
 | Projets `/projets/` | Montrer l'expérience et la démarche | Projets professionnels ; Élan | Parlons de votre projet | Oui |
 | Projets professionnels `/projets/professionnels/` | Montrer des cas concrets et le rôle tenu | Contextes, responsabilités, réalisations vérifiables | Parlons de votre projet | Non |
-| Élan (URL à choisir) | Présenter le produit et la démarche comme cas de projet | Contenu en séance Élan ; aucun accès démo | Parlons de votre projet | Non |
+| Élan `/projets/elan/` | Présenter le produit et la démarche comme cas de projet | Produit, parcours, méthode ; pas de démo | Parlons de votre projet | Non |
 | À propos `/a-propos/` | Présenter le parcours et la collaboration | Parcours, expérience, IA et méthode | Parlons de votre projet | Oui |
 | Contact `/contact/` | Permettre un premier échange | Formulaire, email, LinkedIn | Envoyer mon message | Oui |
 | Mentions légales `/mentions-legales/`, CGU `/cgu/` | Informations propres à ces pages | Contenu légal | — | Footer |
@@ -82,10 +82,29 @@ Introduction de la page : du développement au pilotage technique, ces réalisat
 4. **Alfa Laval** (complément court) — Visualisation de modèles 3D pour le bureau d’études ; mise à jour des outils commerciaux (devis, suivi des commandes). **Dates à vérifier avant affichage.**
 5. **BF Web Création** (complément court) — Sites web en indépendant : échanges avec le client, création, mise en ligne, maintenance.
 
-**Carte 2 — Élan**
+**Carte 2 — Élan** (lien `/projets/elan/`, même carte sur l’accueil)
 
-- Cas de projet, sans démo publique et sans URL tant que la séance Élan ne l'a pas choisie
-- Pas de lien cliquable sur la carte en attendant
+- Kicker : Projet personnel
+- Titre : Élan — L’IA au service du projet professionnel
+- Texte : Une application qui associe IA et données métiers pour comprendre sa situation, explorer des pistes et être accompagné dans son projet professionnel.
+- Lien : Découvrir le projet
+- Pas de démo publique. Pas de pastille « Bientôt ».
+
+**Page `/projets/elan/`**
+
+Version condensée du 6 octobre 2026 (dossier Bernard). Les décisions du 1er octobre restent valables : angle, publics, pas de démo, modèle économique hors texte public.
+
+Kicker : Projet personnel · Conception & IA. Titre : Élan — L’IA au service du projet professionnel. Accroche : comprendre sa situation, explorer des métiers et des formations, puis avancer avec un plan d’action. L’origine personnelle tient dans l’introduction. Statut affiché : Premier MVP achevé.
+
+1. Partir de la personne — grande capture sous le texte. Légende : Profil, échange et pistes réunis dans un même espace.
+2. Passer aux possibilités concrètes — paire métier (gauche) et formations (droite) sur desktop, une colonne sur mobile. Légendes : Approfondir une piste métier. Rechercher et comparer des formations.
+3. Organiser le passage à l’action — grande capture sous le texte. Légende : Un objectif choisi et un plan d’action modifiable.
+4. Mon savoir-faire en IA, appliqué à un produit — deux colonnes : l’IA dans l’application, l’IA dans la méthode.
+5. Une première version, une base pour la suite — un paragraphe (fiabiliser, enrichir la recherche de formations, fluidifier l’IA).
+
+La capture de profil est une retouche (Vue dév, API OK et la bulle d’échec de recherche retirés, aucun dialogue ajouté). Ce n’est pas une capture brute. Les trois autres captures sont celles fournies, sans modification. Chaque capture s’agrandit au clic et au clavier. La page reste lisible sans image.
+
+Title et description : proposition non validée, posée sur la page.
 
 Hors affichage : étude portfolio (301) ; outil de suivi d'activités et d'objectifs tant qu'il n'a pas de contenu consultable.
 

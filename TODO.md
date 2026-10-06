@@ -53,29 +53,31 @@ Les idées encore exploratoires restent dans [`brainstorming/TODO.md`](brainstor
 - [x] **Architecture du site et SEO** (28/09/2026 — [`Architecture_SEO`](brainstorming/sessions/Architecture_SEO.md))
 - [x] **Parcours et structure** (29/09/2026 — [`Parcours_et_structure`](brainstorming/sessions/Parcours_et_structure.md)) — menu, une page Services, CTA, 301 portfolio ; textes et Élan aux séances suivantes
 - [x] **Direction visuelle** (29/09/2026 — [`Direction_visuelle`](brainstorming/sessions/Direction_visuelle.md)) — piste équilibrée, mouvement, visuels ; maquettes et assets encore à produire
-- [x] **Messages et projets** (01/10/2026 — [`Messages_et_projets`](brainstorming/sessions/Messages_et_projets.md)) — promesse, IA, services, cas hors Élan ; intégration des pages encore à faire
+- [x] **Messages et projets** (01/10/2026 — [`Messages_et_projets`](brainstorming/sessions/Messages_et_projets.md)) — textes intégrés ; dates Schneider et Alfa Laval encore à vérifier avant affichage
+- [x] **Cas Projet Élan** (01/10/2026 — [`Cas_Projet_Elan`](brainstorming/sessions/Cas_Projet_Elan.md)) — page `/projets/elan/` ; version condensée du 06/10/2026 intégrée, captures et agrandissement vérifiés
 
 Suivre et cocher dans [`brainstorming/TODO.md`](brainstorming/TODO.md).
 
 ### Messages et projets — intégration
 
-Créneau : en parallèle du cas Élan et du chantier visuel, terminé avant la revue de préversion. Textes : [`Messages_et_projets`](brainstorming/sessions/Messages_et_projets.md), [`docs/02_Contenu.md`](docs/02_Contenu.md).
+Textes posés le 01/10/2026. Source : [`Messages_et_projets`](brainstorming/sessions/Messages_et_projets.md), [`docs/02_Contenu.md`](docs/02_Contenu.md).
 
-- [ ] Accueil : premier écran, aperçu des services, façon de travailler, title et description validés
-- [ ] Services : quatre textes et libellé « Automatiser vos tâches et intégrer l’IA »
-- [ ] À propos : parcours et double usage de l’IA, sans répéter les cas
-- [ ] Projets : introduction ; page professionnelle dans l’ordre Supplyframe, Schneider Montbonnot, Schneider Fontanil, Alfa Laval, BF Web Création
-- [ ] Ne pas afficher les dates Schneider ni Alfa Laval tant qu’elles ne sont pas vérifiées
-- [ ] Métadonnées des autres pages : propositions à identifier, non validées dans la séance
+- [x] Accueil : premier écran, aperçu des services, façon de travailler, title et description validés
+- [x] Services : quatre textes et libellé « Automatiser vos tâches et intégrer l’IA »
+- [x] À propos : parcours et double usage de l’IA, sans répéter les cas
+- [x] Projets : introduction ; page professionnelle dans l’ordre Supplyframe, Schneider Montbonnot, Schneider Fontanil, Alfa Laval, BF Web Création
+- [x] Dates Schneider et Alfa Laval non affichées
+- [ ] Métadonnées des autres pages : propositions posées au fil de l’intégration, non validées en séance (Élan compris)
 
 ### Direction visuelle — exécution
 
-Créneau : en parallèle du cas Élan et de l’intégration des textes, terminé avant la revue de préversion. Décisions : [`Direction_visuelle`](brainstorming/sessions/Direction_visuelle.md), charte [`docs/03_Design.md`](docs/03_Design.md).
+Visuel d’accueil et mouvement posés sans assets photo. Décisions : [`Direction_visuelle`](brainstorming/sessions/Direction_visuelle.md), charte [`docs/03_Design.md`](docs/03_Design.md).
 
-- [ ] Visuel graphique original du premier écran (SVG ou HTML/CSS léger ; sur mobile, titre, présentation et CTA avant le visuel)
-- [ ] Photo de Fabien pour À propos (reprise éventuelle près d’un appel à contact)
+- [x] Visuel graphique original du premier écran (SVG ; sur mobile, titre, présentation et CTA avant le visuel)
+- [x] Photo de Fabien sur À propos
 - [ ] Captures réelles autorisées, ou schémas légendés, pour les projets professionnels
-- [ ] Image Open Graph (palette, motif graphique, nom ; lisible au petit format)
+- [x] Captures Élan : profil (retouché), fiche métier, formations, accompagnement, avec légende et agrandissement
+- [ ] Image Open Graph — reportée pour le moment
 - [ ] Recette mouvement et performance sur la préversion (`prefers-reduced-motion`, sans JavaScript, clair/sombre, mobile, Lighthouse ≥ 90)
 
 ### Jalon 1 — Migration complète vers Astro
