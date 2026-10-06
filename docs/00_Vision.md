@@ -1,6 +1,8 @@
 # Vision
 
 > **Objectif :** Définir la raison d'être du site, le public visé et la promesse.
+>
+> Publics, promesse et IA : séance [Messages et projets](../brainstorming/sessions/Messages_et_projets.md) (01/10/2026).
 
 ## Raison d'être
 
@@ -8,22 +10,22 @@ Un site vitrine professionnel pour présenter l'activité de développeur freela
 
 ## Public cible
 
-PME, indépendants et startups ayant besoin d'applications sur mesure (web, mobile, desktop).
+PME et grandes organisations qui ont besoin d’applications métier sur mesure. L’expérience chez Schneider Electric et Supplyframe (groupe Siemens) s’adresse aussi à leurs équipes métier.
 
 ## Promesse
 
-> Des applications sur mesure, utiles aujourd'hui et durables dans le temps.
+> Des applications métier sur mesure, avec l’IA au service de vos projets.
 
-Accompagnement de projets de l'idée à une solution concrète et durable, adaptée aux enjeux réels de l'activité du client.
+Conception et évolution des outils, automatisation des tâches, et intégration de l’IA là où elle apporte une réponse concrète. Accompagnement du cadrage à la mise en œuvre, avec 20 ans d’expérience.
 
 ## Positionnement
 
-- Freelance développeur multiplateforme, 20 ans d'expérience
-- Travail à distance (nomade digital)
-- Flutter comme socle technique principal
-- Approche pragmatique, centrée sur l'usage et la réalité du terrain
-- Interlocuteur unique : de l'analyse des besoins à la mise en production
-- Tarification compétitive sans les coûts de structure d'une ESN
+- Développeur freelance, 20 ans d’expérience, applications métier
+- IA intégrée aux solutions clients, et IA utilisée comme outil de travail (exploration, développement, documentation), avec vérification et responsabilité de ce qui est livré
+- Pas de positionnement public centré sur Flutter
+- Approche pragmatique, centrée sur l’usage et la réalité du terrain
+- Interlocuteur unique : de l’analyse des besoins à la mise en production
+- Tarification compétitive sans les coûts de structure d’une ESN
 
 ## Offre
 

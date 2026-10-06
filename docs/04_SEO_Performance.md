@@ -16,13 +16,14 @@ site/ (Astro → dist/)
 ├── /services/
 ├── /projets/
 ├── /projets/professionnels/
+├── /projets/elan/
 ├── /a-propos/
 ├── /contact/
 ├── /mentions-legales/
 └── /cgu/
 ```
 
-`/projets/portfolio/` n'est plus une URL canonique : **301 vers `/projets/`** (séance Parcours, 29/09/2026). L'URL de la page Élan n'est pas encore choisie.
+`/projets/portfolio/` n'est plus une URL canonique : **301 vers `/projets/`** (séance Parcours, 29/09/2026). Page Élan : **`/projets/elan/`** (séance Élan, 01/10/2026), hors menu, incluse dans le sitemap au build. Title et description de cette page : proposition, non validés en séance.
 
 - **URL canoniques :** sans `.html`, **barre finale** sur les pages internes (`/projets/`, etc.).
 - **Sitemap :** généré via `@astrojs/sitemap` à la racine du domaine.

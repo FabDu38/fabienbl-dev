@@ -9,7 +9,6 @@ Fixer le niveau d’ambition visuelle : références, animations, images, rendu 
 
 ## Entrées de la séance
 
-- Résumé validé : [`exports/Direction_visuelle_MVP2_2026-09-29.md`](../../exports/Direction_visuelle_MVP2_2026-09-29.md)
 - État visuel de départ : [`site/src/styles/global.css`](../../site/src/styles/global.css) (le CSS Astro, pas l’ancienne charte Flutter)
 - Principes : [`docs/01_Principes.md`](../../docs/01_Principes.md)
 - Structure déjà tranchée : [`Parcours_et_structure.md`](Parcours_et_structure.md)
