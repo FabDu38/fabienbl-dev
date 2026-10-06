@@ -4,14 +4,14 @@ import Icon from '../components/Icon.astro';
 import CtaPanel from '../components/CtaPanel.astro';
 import { personLd, websiteLd } from '../data/jsonLd';
 
-const title = 'Développeur Web Freelance | Applications sur mesure';
+const title = 'Fabien Blasquez — Développeur freelance & solutions IA';
 const description =
-  "Développeur freelance avec 20 ans d'expérience. Applications web et métier sur mesure — solutions claires et durables.";
+  'Applications métier sur mesure, automatisation et intégration d’IA. Développeur freelance avec 20 ans d’expérience, du cadrage à la mise en œuvre.';
 
 const services = [
   { href: '/services/#creer', title: 'Créer une application métier' },
   { href: '/services/#evoluer', title: 'Faire évoluer un outil existant' },
-  { href: '/services/#automatiser', title: 'Automatiser des tâches et des échanges de données' },
+  { href: '/services/#automatiser', title: 'Automatiser vos tâches et intégrer l’IA' },
   { href: '/services/#cadrer', title: 'Cadrer et piloter un projet numérique' },
 ];
 ---
@@ -23,31 +23,75 @@ const services = [
   jsonLd={[personLd, websiteLd]}
 >
   <section class="hero">
-    <div class="hero-inner reveal">
-      <p class="eyebrow eyebrow--pill">
-        <span class="eyebrow-dot" aria-hidden="true"></span>
-        Développeur freelance · 20 ans d'expérience
-      </p>
-      <h1>
-        Des applications sur mesure, <span class="text-gradient">utiles aujourd'hui</span> et durables
-        dans le temps.
-      </h1>
-      <p class="lead">
-        J'accompagne vos projets de l'idée à une solution concrète et durable, adaptée aux enjeux réels
-        de votre activité.
-      </p>
-      <p class="body">
-        Freelance développeur multiplateforme avec 20 ans d'expérience, je travaille à distance sur des
-        projets web, mobile et desktop.
-      </p>
-      <div class="hero-actions">
-        <a class="btn-primary" href="/contact/">
-          Parlons de votre projet
-          <Icon name="arrow-right" size={18} />
-        </a>
-        <a class="btn-secondary" href="/services/">Voir les services</a>
+    <div class="hero-layout">
+      <div class="hero-copy reveal">
+        <p class="eyebrow eyebrow--pill">
+          <span class="eyebrow-dot" aria-hidden="true"></span>
+          Développeur freelance · 20 ans d'expérience
+        </p>
+        <h1>
+          Des applications métier sur mesure, avec <span class="text-gradient">l’IA au service</span> de
+          vos projets.
+        </h1>
+        <p class="lead">
+          Je conçois et fais évoluer vos outils, automatise vos tâches et intègre l’IA là où elle
+          apporte une réponse concrète à vos besoins.
+        </p>
+        <p class="body">
+          Développeur freelance avec 20 ans d’expérience, j’associe expertise métier et outils d’IA
+          pour accompagner vos projets, du cadrage à la mise en œuvre.
+        </p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="/contact/">
+            Parlons de votre projet
+            <Icon name="arrow-right" size={18} />
+          </a>
+          <a class="btn-secondary" href="/services/">Voir les services</a>
+        </div>
+        <p class="hint">Un premier échange pour clarifier votre besoin et définir la suite.</p>
       </div>
-      <p class="hint">Un premier échange pour clarifier votre besoin et définir la suite.</p>
+      <div class="hero-visual reveal" aria-hidden="true">
+        <div class="activity">
+          <ol class="activity-steps">
+            <li class="activity-step">
+              <span class="activity-index">1</span>
+              <span class="activity-label">
+                <strong>Cadrer</strong>
+                <span>Le besoin</span>
+              </span>
+            </li>
+            <li class="activity-step">
+              <span class="activity-index">2</span>
+              <span class="activity-label">
+                <strong>Créer</strong>
+                <span>L’application</span>
+              </span>
+            </li>
+            <li class="activity-step">
+              <span class="activity-index">3</span>
+              <span class="activity-label">
+                <strong>Faire évoluer</strong>
+                <span>L’outil</span>
+              </span>
+            </li>
+            <li class="activity-step">
+              <span class="activity-index">4</span>
+              <span class="activity-label">
+                <strong>Automatiser</strong>
+                <span>Tâches et IA</span>
+              </span>
+            </li>
+          </ol>
+          <div class="activity-app">
+            <p class="activity-app-title">Application métier</p>
+            <span class="activity-bar"></span>
+            <span class="activity-bar"></span>
+            <span class="activity-bar"></span>
+            <span class="activity-ai">IA</span>
+          </div>
+        </div>
+        <p class="hero-visual-caption">Du cadrage à un outil en service</p>
+      </div>
     </div>
   </section>
 
@@ -67,8 +111,11 @@ const services = [
           ))
         }
       </ul>
-      <p class="reveal">
-        <a class="btn-secondary" href="/services/">Voir le détail des services</a>
+      <p class="section-more reveal">
+        <a href="/services/">
+          Voir le détail des services
+          <Icon name="arrow-right" size={18} />
+        </a>
       </p>
     </div>
   </section>
@@ -98,23 +145,12 @@ const services = [
           </ul>
         </article>
       </div>
-      <div class="project-grid reveal">
-        <article class="card project-card">
-          <p class="project-kicker">Applications et outils métier</p>
-          <h3>Projets professionnels</h3>
-          <p>Contextes menés en entreprise, du cadrage à la mise en production.</p>
-          <div class="card-footer">
-            <a class="card-link" href="/projets/professionnels/">
-              Voir les projets professionnels <Icon name="arrow-right" size={18} />
-            </a>
-          </div>
-        </article>
-        <article class="card project-card">
-          <p class="project-kicker">Cas de projet</p>
-          <h3>Élan</h3>
-          <p>Présentation à venir. Pas de démo publique.</p>
-        </article>
-      </div>
+      <p class="section-more reveal">
+        <a href="/projets/">
+          Voir les projets
+          <Icon name="arrow-right" size={18} />
+        </a>
+      </p>
     </div>
   </section>
 
@@ -123,20 +159,19 @@ const services = [
       <div class="section-header reveal">
         <p class="eyebrow">Collaboration</p>
         <h2>Façon de travailler</h2>
-        <p>Du sur-mesure, de la clarté, et des outils qui restent utiles dans le temps.</p>
       </div>
       <ul class="check-list reveal">
         <li>
-          <strong>Sur-mesure utile.</strong> Chaque solution est pensée pour répondre à un besoin précis.
-          Juste ce qui sert vraiment.
+          <strong>Partir de vos usages.</strong> Comprendre vos besoins et vos contraintes pour
+          construire un outil adapté au travail de vos équipes.
         </li>
         <li>
-          <strong>Clarté et simplicité.</strong> Un cadre clair, des échanges directs, des décisions
-          compréhensibles. Vous savez à tout moment où en est le projet.
+          <strong>Utiliser l’IA à bon escient.</strong> Associer mon expérience aux outils d’IA pour
+          concevoir vos applications et intégrer les fonctions utiles à votre activité.
         </li>
         <li>
-          <strong>Pensé pour durer.</strong> Des bases solides, une maintenance raisonnable et des
-          évolutions possibles.
+          <strong>Préparer la suite.</strong> Penser dès le départ à la maintenance, aux évolutions et
+          à la reprise de l’outil par d’autres intervenants.
         </li>
       </ul>
     </div>

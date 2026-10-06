@@ -1,0 +1,197 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageHero from '../../../components/PageHero.astro';
+import CtaPanel from '../../../components/CtaPanel.astro';
+
+/* Title et description : proposition, non validée en séance. */
+const title = 'Élan — L’IA au service du projet professionnel | Fabien Blasquez';
+const description =
+  'Application d’aide à l’orientation et à l’évolution professionnelle. Premier MVP terminé, sans accès public.';
+
+const shots = [
+  {
+    src: '/images/elan/profil.webp',
+    width: 1556,
+    height: 1011,
+    alt: 'Écran Élan : profil à gauche, conversation au centre et piste professionnelle à droite.',
+    caption: 'Profil, échange et pistes réunis dans un même espace.',
+  },
+  {
+    src: '/images/elan/fiche-metier.webp',
+    width: 1184,
+    height: 769,
+    alt: 'Fiche du métier de chef de projet, avec les rubriques compétences, transition, marché et formations.',
+    caption: 'Approfondir une piste métier.',
+  },
+  {
+    src: '/images/elan/formations.webp',
+    width: 1184,
+    height: 769,
+    alt: 'Recherche de formations : périmètre géographique, résultats et actions de comparaison.',
+    caption: 'Rechercher et comparer des formations.',
+  },
+  {
+    src: '/images/elan/accompagnement.webp',
+    width: 1184,
+    height: 769,
+    alt: 'Écran d’accompagnement : objectif professionnel, brouillon du plan d’action et étape modifiable.',
+    caption: 'Un objectif choisi et un plan d’action modifiable.',
+  },
+];
+---
+
+<BaseLayout title={title} description={description} path="/projets/elan/">
+  <PageHero
+    back={{ href: '/projets/', label: 'Retour aux projets' }}
+    eyebrow="Projet personnel · Conception & IA"
+    title="Élan — L’IA au service du projet professionnel"
+    lead="Comprendre sa situation, explorer des métiers et des formations, puis avancer avec un plan d’action."
+  >
+    <p class="hero-follow">
+      Né de ma propre réflexion sur une évolution professionnelle, Élan s’adresse aux personnes qui
+      construisent leur projet et aux professionnels qui les accompagnent. J’en assure le cadrage, la
+      conception et le développement.
+    </p>
+    <p class="elan-status">Premier MVP achevé</p>
+  </PageHero>
+
+  <div class="page-body">
+    <section class="elan-block">
+      <div class="elan-block-head reveal">
+        <div>
+          <p class="elan-step">01 · Comprendre</p>
+          <h2>Partir de la personne</h2>
+        </div>
+        <p>
+          La conversation aide à préciser le parcours, les envies et les contraintes. L’IA structure un
+          profil que l’utilisateur peut corriger et compléter : il garde la main sur ce qu’Élan comprend
+          de lui.
+        </p>
+      </div>
+      <figure class="elan-shot reveal">
+        <img src={shots[0].src} alt={shots[0].alt} width={shots[0].width} height={shots[0].height} />
+        <figcaption>
+          <span>{shots[0].caption}</span>
+          <button type="button" class="elan-zoom" data-elan-zoom>Agrandir</button>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="elan-block">
+      <div class="elan-block-head reveal">
+        <div>
+          <p class="elan-step">02 · Explorer</p>
+          <h2>Passer aux possibilités concrètes</h2>
+        </div>
+        <p>
+          L’utilisateur examine les pistes, approfondit les métiers ou les écarte, puis recherche des
+          formations. Les données métiers, formations et marché de l’emploi donnent des repères pour
+          confronter ses envies aux possibilités sur le territoire choisi.
+        </p>
+      </div>
+      <div class="elan-pair">
+        <figure class="reveal">
+          <img src={shots[1].src} alt={shots[1].alt} width={shots[1].width} height={shots[1].height} />
+          <figcaption>
+            <span>{shots[1].caption}</span>
+            <button type="button" class="elan-zoom" data-elan-zoom>Agrandir</button>
+          </figcaption>
+        </figure>
+        <figure class="reveal">
+          <img src={shots[2].src} alt={shots[2].alt} width={shots[2].width} height={shots[2].height} />
+          <figcaption>
+            <span>{shots[2].caption}</span>
+            <button type="button" class="elan-zoom" data-elan-zoom>Agrandir</button>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="elan-block">
+      <div class="elan-block-head reveal">
+        <div>
+          <p class="elan-step">03 · Accompagner</p>
+          <h2>Organiser le passage à l’action</h2>
+        </div>
+        <p>
+          Une fois l’objectif choisi, Élan aide à définir les étapes, organiser les actions et suivre
+          l’avancement. Le plan peut être ajusté avant son adoption, selon les priorités de la personne.
+        </p>
+      </div>
+      <figure class="elan-shot reveal">
+        <img src={shots[3].src} alt={shots[3].alt} width={shots[3].width} height={shots[3].height} />
+        <figcaption>
+          <span>{shots[3].caption}</span>
+          <button type="button" class="elan-zoom" data-elan-zoom>Agrandir</button>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="elan-block">
+      <h2 class="reveal">Mon savoir-faire en IA, appliqué à un produit</h2>
+      <div class="elan-expertise">
+        <div class="reveal">
+          <h3>L’IA dans l’application</h3>
+          <p>
+            J’articule la conversation, les données et les actions du parcours. L’IA aide à structurer la
+            réflexion et à explorer des pistes ; l’utilisateur valide son profil et choisit sa direction.
+          </p>
+        </div>
+        <div class="reveal">
+          <h3>L’IA dans ma méthode</h3>
+          <p>
+            Je l’utilise pour explorer des solutions, développer et documenter. Je cadre les objectifs,
+            vérifie les propositions et teste le comportement obtenu. Je reste responsable des choix et de
+            la réalisation.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="elan-block reveal">
+      <h2>Une première version, une base pour la suite</h2>
+      <p>
+        Le premier MVP couvre le parcours initial. Les retours d’usage orientent les prochaines
+        évolutions : fiabiliser l’expérience, enrichir la recherche de formations et fluidifier les
+        interactions avec l’IA.
+      </p>
+    </section>
+
+    <CtaPanel compact />
+  </div>
+
+  <dialog id="elan-zoom" class="elan-dialog" aria-label="Capture Élan agrandie">
+    <button type="button" data-close>Fermer</button>
+    <img alt="" />
+  </dialog>
+
+  <script>
+    const dialog = document.getElementById('elan-zoom');
+    const zoomImg = dialog?.querySelector('img');
+    const closeButton = dialog?.querySelector('[data-close]');
+    let opener: HTMLElement | null = null;
+
+    if (dialog instanceof HTMLDialogElement && zoomImg instanceof HTMLImageElement && closeButton) {
+      document.querySelectorAll('[data-elan-zoom]').forEach((button) => {
+        button.addEventListener('click', () => {
+          const source = button.closest('figure')?.querySelector('img');
+          if (!(button instanceof HTMLElement) || !source) return;
+          opener = button;
+          zoomImg.src = source.currentSrc || source.src;
+          zoomImg.alt = source.alt;
+          dialog.showModal();
+        });
+      });
+
+      closeButton.addEventListener('click', () => dialog.close());
+      dialog.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') dialog.close();
+      });
+      dialog.addEventListener('close', () => {
+        zoomImg.removeAttribute('src');
+        zoomImg.alt = '';
+        opener?.focus();
+      });
+    }
+  </script>
+</BaseLayout>

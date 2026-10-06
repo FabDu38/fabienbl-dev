@@ -6,13 +6,14 @@ export interface Props {
   eyebrow?: string;
   lead?: string;
   back?: { href: string; label: string };
+  portrait?: { src: string; alt: string };
 }
 
-const { title, eyebrow, lead, back } = Astro.props;
-const showEyebrow = eyebrow && !back;
+const { title, eyebrow, lead, back, portrait } = Astro.props;
+const showEyebrow = Boolean(eyebrow);
 ---
 
-<header class="page-hero" class:list={{ 'page-hero--sub': Boolean(back) }}>
+<header class="page-hero" class:list={{ 'page-hero--sub': Boolean(back), 'page-hero--portrait': Boolean(portrait) }}>
   <div class="page-hero-inner">
     {
       back && (
@@ -24,11 +25,24 @@ const showEyebrow = eyebrow && !back;
         </nav>
       )
     }
-    <div class="page-hero-content reveal">
-      {showEyebrow && <p class="eyebrow">{eyebrow}</p>}
-      <h1>{title}</h1>
-      {lead && <p class="page-lead">{lead}</p>}
-      <slot />
+    <div class="page-hero-row">
+      <div class="page-hero-content reveal">
+        {showEyebrow && <p class="eyebrow">{eyebrow}</p>}
+        <h1>{title}</h1>
+        {lead && <p class="page-lead">{lead}</p>}
+        <slot />
+      </div>
+      {
+        portrait && (
+          <img
+            class="page-hero-portrait"
+            src={portrait.src}
+            alt={portrait.alt}
+            width="640"
+            height="640"
+          />
+        )
+      }
     </div>
   </div>
 </header>
