@@ -69,10 +69,10 @@ Textes posés le 01/10/2026. Source : [`Messages_et_projets`](brainstorming/sess
 - [x] Projets : introduction ; page professionnelle dans l’ordre Supplyframe, Schneider Montbonnot, Schneider Fontanil, Alfa Laval, BF Web Création
 - [x] Dates Schneider et Alfa Laval non affichées
 - [x] Page réalisations : paragraphes du 06/10/2026, sans dates ; « huit ans » encore à vérifier avant correction
-- [x] Compte Umami Cloud Hobby et variable `PUBLIC_UMAMI_WEBSITE_ID` (08/10/2026). Actif au prochain tag, pas sur `V1.6.0`
+- [x] Compte Umami Cloud Hobby. Visite de test confirmée en production le 08/10/2026 (`V1.7.1`)
 - [x] Contrôles Better Stack : accueil et Contact, toutes les 3 minutes (08/10/2026)
 - [ ] Téléphone des mentions : vérifier avant publication
-- [ ] Test réel du formulaire après la prochaine mise en production, puis suppression du message de test
+- [x] Test réel du formulaire en production, message de test supprimé (08/10/2026)
 - [ ] Métadonnées des autres pages : propositions posées au fil de l’intégration, non validées en séance (Élan compris)
 
 ### Direction visuelle — exécution
@@ -81,9 +81,9 @@ Visuel d’accueil et mouvement posés sans assets photo. Décisions : [`Directi
 
 - [x] Visuel graphique original du premier écran (SVG ; sur mobile, titre, présentation et CTA avant le visuel)
 - [x] Photo de Fabien sur À propos
-- [ ] Captures réelles autorisées, ou schémas légendés, pour les projets professionnels
+- [x] Captures des projets professionnels : laissées de côté pour cette version (08/10/2026)
 - [x] Captures Élan : profil (retouché), fiche métier, formations, accompagnement, avec légende et agrandissement
-- [ ] Image Open Graph — reportée pour le moment
+- [x] Image Open Graph : laissée de côté pour cette version (08/10/2026)
 - [ ] Recette mouvement et performance sur la préversion (`prefers-reduced-motion`, sans JavaScript, clair/sombre, mobile, Lighthouse ≥ 90)
 
 ### Jalon 1 — Migration complète vers Astro

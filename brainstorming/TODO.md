@@ -20,7 +20,7 @@
 |---|--------|---------|--------|
 | 7 | Revue de la préversion | [`sessions/Revue_preversion.md`](sessions/Revue_preversion.md) | **Prochaine** |
 
-La revue est la séance restante. Photo, captures des projets professionnels et image Open Graph restent à collecter avant la revue. Umami et Better Stack sont configurés : [`../TODO.md`](../TODO.md).
+La revue de la préversion est la séance en cours. Captures des projets professionnels et image Open Graph sont écartées pour cette version. Umami est testé en production (`V1.7.1`) : [`../TODO.md`](../TODO.md).
 
 **Chantier direction visuelle** : visuel d’accueil et mouvement posés sans photo ni captures. Assets restants : [`../TODO.md`](../TODO.md).
 
