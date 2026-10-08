@@ -37,6 +37,8 @@ jobs:
 
       - name: Build Astro site
         run: npm run build
+        env:
+          PUBLIC_UMAMI_WEBSITE_ID: 6e1a95bb-8189-4564-af35-a44ac650d21f
 
       - name: Upload Astro build artifact
         uses: actions/upload-artifact@v4

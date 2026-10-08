@@ -15,7 +15,7 @@ Décisions de structure : séance [Parcours et structure](../brainstorming/sessi
 | Élan `/projets/elan/` | Présenter le produit et la démarche comme cas de projet | Produit, parcours, méthode ; pas de démo | Parlons de votre projet | Non |
 | À propos `/a-propos/` | Présenter le parcours et la collaboration | Parcours, expérience, IA et méthode | Parlons de votre projet | Oui |
 | Contact `/contact/` | Permettre un premier échange | Formulaire, email, LinkedIn | Envoyer mon message | Oui |
-| Mentions légales `/mentions-legales/`, CGU `/cgu/` | Informations propres à ces pages | Contenu légal | — | Footer |
+| Mentions légales `/mentions-legales/`, Confidentialité `/confidentialite/` | Informations propres à ces pages | Éditeur, hébergeur ; formulaire, mesure d’audience, droits | — | Footer |
 
 `/projets/portfolio/` n'est plus une page publique : **301 vers `/projets/`**. Le code source de l'étude est conservé hors des routes.
 
@@ -74,7 +74,7 @@ Introduction : des réalisations professionnelles et un projet personnel pour il
 
 **Carte 1 — Projets professionnels** (lien `/projets/professionnels/`)
 
-Introduction de la page : du développement au pilotage technique, ces réalisations présentent les besoins auxquels Fabien a répondu et les responsabilités exercées en entreprise.
+La carte sur `/projets/` garde ce titre. La page dédiée s’intitule « Réalisations professionnelles » (6 octobre 2026). Introduction : des outils métier développés et transformés au contact des équipes, dans l’industrie et en indépendant. Textes en paragraphes, sans bandeaux de compétences ni dates affichées. « Pendant huit ans » est repris ; la période exacte reste à vérifier avant correction.
 
 1. **Supplyframe / Siemens (2017–2025)** — Faire évoluer un logiciel d’achats industriels (consultations fournisseurs, comparaison des offres, calcul des coûts). Responsabilité technique, participation aux choix techniques, coordination, management direct de petites équipes. Module web de consultation fournisseurs, puis migration lors du rachat par Supplyframe, avec des équipes à l’international. Intégration de données tarifaires via plusieurs API. Pas de recueil des besoins clients sur cette mission. Ne pas nommer le produit. La migration n’est pas liée à Siemens.
 2. **Schneider Electric, Montbonnot** — Outil couvrant l’ensemble de la supply chain du site (commercial, approvisionnement, ordonnancement, pilotage des lignes, expédition). Maintenance et évolutions, puis migration vers une application web interne sur l’intranet, jusqu’à la mise en production. Recueil des besoins auprès des équipes. Homologation par le service informatique ; maintenance ensuite confiée à un prestataire. **Dates à vérifier avant affichage.**

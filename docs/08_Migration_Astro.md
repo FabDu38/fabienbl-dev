@@ -21,7 +21,7 @@
 | `/a-propos`, `/contact`, `/mentions-legales`, `/cgu` | Même chemin + **barre finale** | **301**               |
 
 
-**URL cibles (séance 28/09, ajustées le 29/09)** : `/services/`, `/projets/`, `/projets/professionnels/`, `/cgu/`, landing freelance → `/`. `/projets/portfolio/` n'est plus canonique (**301** vers `/projets/`).
+**URL cibles (séance 28/09, ajustées le 29/09, CGU retirées le 06/10)** : `/services/`, `/projets/`, `/projets/professionnels/`, `/confidentialite/`, landing freelance → `/`. `/cgu/` redirige vers `/mentions-legales/`. `/projets/portfolio/` n'est plus canonique (**301** vers `/projets/`).
 
 ## Inventaire routes Flutter (`lib/core/router.dart`)
 

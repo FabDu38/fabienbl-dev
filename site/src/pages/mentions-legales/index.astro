@@ -1,22 +1,58 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
-import Icon from '../../components/Icon.astro';
 ---
 
 <BaseLayout
   title="Mentions légales | Fabien Blasquez"
-  description="Mentions légales du site fabien-blasquez.dev."
+  description="Éditeur, responsable de publication et hébergeur du site fabien-blasquez.dev."
   path="/mentions-legales/"
 >
   <PageHero eyebrow="Informations" title="Mentions légales" />
   <div class="page-body">
-    <div class="card empty-state reveal">
-      <div class="card-icon"><Icon name="file" size={24} /></div>
-      <div class="empty-state-body">
-        <h2>En cours de rédaction</h2>
-        <p>Mentions légales à venir.</p>
+    <section class="prose-section">
+      <h2>Éditeur</h2>
+      <div class="prose">
+        <p>Fabien Blasquez, entrepreneur individuel, régime du micro-entrepreneur.</p>
+        <p>9 rue du Drac, 38120 Saint-Égrève, France.</p>
+        <p>SIREN 501 712 913. SIRET 501 712 913 00026.</p>
+        <p>Immatriculation au registre national des entreprises le 24 juin 2025.</p>
+        <p>
+          Contact : <a href="mailto:contact@fabien-blasquez.dev">contact@fabien-blasquez.dev</a>.
+        </p>
       </div>
-    </div>
+    </section>
+    <section class="prose-section">
+      <h2>Publication</h2>
+      <div class="prose">
+        <p>Responsable de la publication : Fabien Blasquez.</p>
+      </div>
+    </section>
+    <section class="prose-section">
+      <h2>Hébergeur</h2>
+      <div class="prose">
+        <p>
+          Netlify, Inc., 101 2nd Street, San Francisco, CA 94105, États-Unis. Contact :
+          <a href="mailto:support@netlify.com">support@netlify.com</a>.
+        </p>
+        <p>
+          Adresse indiquée dans les conditions d’utilisation et la déclaration de confidentialité
+          publiques de Netlify, consultées le 6 octobre 2026.
+        </p>
+      </div>
+    </section>
+    <section class="prose-section">
+      <h2>Contenus</h2>
+      <div class="prose">
+        <p>
+          Les textes de ce site et le portrait sont ceux de Fabien Blasquez, sauf mention contraire. Les
+          sites vers lesquels des liens renvoient restent ceux de leurs auteurs.
+        </p>
+        <p>
+          <a href="/confidentialite/">Politique de confidentialité</a>.
+          <a href="/contact/">Contact</a>.
+        </p>
+      </div>
+    </section>
   </div>
 </BaseLayout>

@@ -5,7 +5,7 @@
 ## Phase
 
 - **MVP1** — ✅ terminé
-- **MVP2** — 🔵 en cours — **jalon 1 migration Astro ✅** (recette prod validée, tag **`V1.5.2`**) ; **parcours, direction visuelle, messages et Élan ✅** (29/09 et 01/10/2026) ; textes et visuel d’accueil intégrés sans captures ; **prochaine séance : Mesure** ([`brainstorming/sessions/Mesure_surveillance_donnees.md`](brainstorming/sessions/Mesure_surveillance_donnees.md))
+- **MVP2** — 🔵 en cours — **jalon 1 migration Astro ✅** (recette prod validée, tag **`V1.5.2`**) ; **parcours, direction visuelle, messages, Élan et mesure ✅** (29/09 au 06/10/2026) ; production **`V1.6.0`** ; Umami et Better Stack configurés le 08/10/2026 (script Umami actif au prochain tag) ; **prochaine séance : revue de la préversion**
 
 ## État actuel
 
@@ -25,10 +25,9 @@ Constats historiques sur la stack Flutter + `/seo`. Traitement révisé : migrat
 
 ## MVP2 — ordre jusqu’à la publication
 
-1. **Séance Mesure, surveillance et données**, puis mise en place ([`brainstorming/TODO.md`](brainstorming/TODO.md))
-2. **Assets encore ouverts** — captures des projets professionnels ([`TODO.md`](TODO.md)). Page Élan condensée intégrée le 06/10/2026 (captures et agrandissement). Image de partage reportée.
-3. **Revue de la préversion**
-4. **Publication** — tag **`V2.0.0`**
+1. **Assets encore ouverts** — captures des projets professionnels. Page Élan condensée en production depuis `V1.6.0`. Image de partage reportée.
+2. **Revue de la préversion**
+3. **Publication** — tag **`V2.0.0`**. Le script Umami, déjà configuré, part avec ce tag.
 
 ## Jalons produit
 

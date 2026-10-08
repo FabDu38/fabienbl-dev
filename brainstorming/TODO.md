@@ -12,15 +12,15 @@
 | Direction visuelle (29/09/2026) | [`sessions/Direction_visuelle.md`](sessions/Direction_visuelle.md) |
 | Messages et projets (01/10/2026) | [`sessions/Messages_et_projets.md`](sessions/Messages_et_projets.md) |
 | Cas Projet Élan (01/10/2026) | [`sessions/Cas_Projet_Elan.md`](sessions/Cas_Projet_Elan.md) |
+| Mesure, surveillance et données (06/10/2026) | [`sessions/Mesure_surveillance_donnees.md`](sessions/Mesure_surveillance_donnees.md) |
 
 ## Sessions à venir (ordre recommandé)
 
 | # | Séance | Fichier | Statut |
 |---|--------|---------|--------|
-| 6 | Mesure, surveillance et données | [`sessions/Mesure_surveillance_donnees.md`](sessions/Mesure_surveillance_donnees.md) | **Prochaine** |
-| 7 | Revue de la préversion | [`sessions/Revue_preversion.md`](sessions/Revue_preversion.md) | À démarrer |
+| 7 | Revue de la préversion | [`sessions/Revue_preversion.md`](sessions/Revue_preversion.md) | **Prochaine** |
 
-Les séances restantes et la revue sont distinctes. Photo, captures et image Open Graph restent à collecter avant la revue.
+La revue est la séance restante. Photo, captures des projets professionnels et image Open Graph restent à collecter avant la revue. Umami et Better Stack sont configurés : [`../TODO.md`](../TODO.md).
 
 **Chantier direction visuelle** : visuel d’accueil et mouvement posés sans photo ni captures. Assets restants : [`../TODO.md`](../TODO.md).
 

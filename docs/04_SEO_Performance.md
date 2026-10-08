@@ -20,10 +20,10 @@ site/ (Astro → dist/)
 ├── /a-propos/
 ├── /contact/
 ├── /mentions-legales/
-└── /cgu/
+└── /confidentialite/
 ```
 
-`/projets/portfolio/` n'est plus une URL canonique : **301 vers `/projets/`** (séance Parcours, 29/09/2026). Page Élan : **`/projets/elan/`** (séance Élan, 01/10/2026), hors menu, incluse dans le sitemap au build. Title et description de cette page : proposition, non validés en séance.
+`/projets/portfolio/` n'est plus une URL canonique : **301 vers `/projets/`** (séance Parcours, 29/09/2026). `/cgu/` redirige vers `/mentions-legales/` (séance Mesure, 06/10/2026). Page Élan : **`/projets/elan/`** (séance Élan, 01/10/2026), hors menu, incluse dans le sitemap au build. Title et description de cette page : proposition, non validés en séance.
 
 - **URL canoniques :** sans `.html`, **barre finale** sur les pages internes (`/projets/`, etc.).
 - **Sitemap :** généré via `@astrojs/sitemap` à la racine du domaine.
@@ -39,7 +39,7 @@ site/ (Astro → dist/)
 
 - Site unique Astro : métadonnées, JSON-LD, Open Graph, Twitter Cards par page
 - Accessibilité : zoom autorisé, HTML sémantique, clavier (critères de recette)
-- Analytics + Consent Mode (séance mesure)
+- Mesure d’audience : Umami Cloud Hobby, script seulement après accord et seulement sur fabien-blasquez.dev. Identifiant configuré le 08/10/2026. Search Console reste l’outil de référencement.
 - Lighthouse SEO ≥ 90 sur la préversion puis la prod
 
 ## SEO technique

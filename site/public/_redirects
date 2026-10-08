@@ -12,7 +12,9 @@
 /a-propos  /a-propos/  301
 /contact  /contact/  301
 /mentions-legales  /mentions-legales/  301
-/cgu  /cgu/  301
+/cgu  /mentions-legales/  301
+/cgu/  /mentions-legales/  301
+/confidentialite  /confidentialite/  301
 /projets/portfolio  /projets/  301
 /projets/portfolio/  /projets/  301
 /projets/professionnels  /projets/professionnels/  301
