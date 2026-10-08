@@ -6,4 +6,8 @@ export default defineConfig({
   site: 'https://fabien-blasquez.dev',
   trailingSlash: 'always',
   integrations: [sitemap()],
+  redirects: {
+    '/cgu': '/mentions-legales/',
+    '/cgu/': '/mentions-legales/',
+  },
 });

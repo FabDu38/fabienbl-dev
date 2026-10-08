@@ -45,8 +45,10 @@ import Icon from './Icon.astro';
   <p class="form-privacy">
     <Icon name="lock" size={16} />
     <span>
-      Les données saisies servent uniquement à répondre à votre demande. Elles ne sont pas conservées
-      au-delà de l’échange.
+      Les informations saisies sont utilisées pour répondre à votre demande et suivre votre projet
+      éventuel. Les demandes sans suite sont conservées pendant 12 mois après le dernier échange. Pour
+      en savoir plus sur le traitement de vos données et vos droits, consultez la
+      <a href="/confidentialite/">politique de confidentialité</a>.
     </span>
   </p>
   <div id="form-status" class="form-status" hidden role="status" aria-live="polite"></div>
@@ -109,6 +111,7 @@ import Icon from './Icon.astro';
       if (res.ok) {
         showStatus('Message envoyé. Je vous réponds rapidement.', 'success');
         form.reset();
+        document.dispatchEvent(new CustomEvent('contact-sent'));
         return;
       }
 

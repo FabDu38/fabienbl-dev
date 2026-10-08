@@ -30,12 +30,12 @@
 
 ## Cadre réglementaire
 
-- **RGPD** : consentement explicite, finalité et durée de conservation documentées, droit d'accès/modification/suppression
+- **Données** : la base juridique dépend de chaque traitement. L’envoi du formulaire n’a pas de case. La mesure d’audience Umami ne se charge qu’après accord, et seulement sur fabien-blasquez.dev. Finalité et durée sont documentées. Droits d’accès, de rectification et d’effacement selon le traitement.
 - **RC Pro** : assurance responsabilité civile professionnelle souscrite (1 800 €/an)
 - **Propriété du code** : à définir dans chaque contrat client (cession ou non du code source)
 - **Licences** : vérifier les licences (MIT, GPL…) de chaque framework/outil utilisé
 - **Accessibilité** : normes WCAG 2.1 à respecter (obligatoire si secteur public ou demande client)
-- **Statut** : micro-entrepreneur, franchise en base de TVA (seuil 36 800 €)
+- **Statut** : micro-entrepreneur. Le coût de RC Pro et l’ancien seuil de TVA ne vont pas sur les pages publiques sans vérification.
 
 ## Versioning & Git
 

@@ -55,6 +55,7 @@ Les idées encore exploratoires restent dans [`brainstorming/TODO.md`](brainstor
 - [x] **Direction visuelle** (29/09/2026 — [`Direction_visuelle`](brainstorming/sessions/Direction_visuelle.md)) — piste équilibrée, mouvement, visuels ; maquettes et assets encore à produire
 - [x] **Messages et projets** (01/10/2026 — [`Messages_et_projets`](brainstorming/sessions/Messages_et_projets.md)) — textes intégrés ; dates Schneider et Alfa Laval encore à vérifier avant affichage
 - [x] **Cas Projet Élan** (01/10/2026 — [`Cas_Projet_Elan`](brainstorming/sessions/Cas_Projet_Elan.md)) — page `/projets/elan/` ; version condensée du 06/10/2026 intégrée, captures et agrandissement vérifiés
+- [x] **Mesure, surveillance et données** (06/10/2026 — [`Mesure_surveillance_donnees`](brainstorming/sessions/Mesure_surveillance_donnees.md)) — décisions intégrées en local ; Umami et Better Stack configurés le 08/10/2026
 
 Suivre et cocher dans [`brainstorming/TODO.md`](brainstorming/TODO.md).
 
@@ -67,6 +68,11 @@ Textes posés le 01/10/2026. Source : [`Messages_et_projets`](brainstorming/sess
 - [x] À propos : parcours et double usage de l’IA, sans répéter les cas
 - [x] Projets : introduction ; page professionnelle dans l’ordre Supplyframe, Schneider Montbonnot, Schneider Fontanil, Alfa Laval, BF Web Création
 - [x] Dates Schneider et Alfa Laval non affichées
+- [x] Page réalisations : paragraphes du 06/10/2026, sans dates ; « huit ans » encore à vérifier avant correction
+- [x] Compte Umami Cloud Hobby et variable `PUBLIC_UMAMI_WEBSITE_ID` (08/10/2026). Actif au prochain tag, pas sur `V1.6.0`
+- [x] Contrôles Better Stack : accueil et Contact, toutes les 3 minutes (08/10/2026)
+- [ ] Téléphone des mentions : vérifier avant publication
+- [ ] Test réel du formulaire après la prochaine mise en production, puis suppression du message de test
 - [ ] Métadonnées des autres pages : propositions posées au fil de l’intégration, non validées en séance (Élan compris)
 
 ### Direction visuelle — exécution

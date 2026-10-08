@@ -1,0 +1,119 @@
+---
+const websiteId = import.meta.env.PUBLIC_UMAMI_WEBSITE_ID ?? '';
+---
+
+<div id="audience-notice" class="audience-notice" data-website-id={websiteId} hidden>
+  <div class="audience-notice-inner">
+    <div>
+      <p class="audience-notice-title" id="audience-notice-title">Mesure d'audience</p>
+      <p>
+        Avec votre accord, un outil de mesure d'audience compte les visites, les pages consultées et
+        les envois réussis du formulaire. Vous pouvez refuser ou modifier votre choix à tout moment.{' '}
+        <a href="/confidentialite/">En savoir plus</a>
+      </p>
+    </div>
+    <div class="audience-notice-actions">
+      <button type="button" class="btn-secondary" data-audience-refuse>Refuser</button>
+      <button type="button" class="btn-primary" data-audience-accept>Accepter</button>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  const STORAGE_KEY = 'fabien.audience';
+  const SIX_MONTHS_MS = 1000 * 60 * 60 * 24 * 183;
+  const PRODUCTION_HOST = 'fabien-blasquez.dev';
+
+  function startAudience() {
+  const notice = document.getElementById('audience-notice');
+  if (!notice) return;
+  const websiteId = notice.dataset.websiteId || '';
+  const acceptButton = notice.querySelector('[data-audience-accept]');
+  const refuseButton = notice.querySelector('[data-audience-refuse]');
+
+  function readChoice() {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) return null;
+      const data = JSON.parse(raw);
+      if (!data || (data.choice !== 'accept' && data.choice !== 'refuse') || typeof data.at !== 'number') {
+        return null;
+      }
+      if (Date.now() - data.at > SIX_MONTHS_MS) {
+        localStorage.removeItem(STORAGE_KEY);
+        return null;
+      }
+      return data.choice;
+    } catch {
+      return null;
+    }
+  }
+
+  function saveChoice(choice) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({ choice, at: Date.now() }));
+  }
+
+  function canMeasure() {
+    return window.location.hostname === PRODUCTION_HOST && Boolean(websiteId);
+  }
+
+  function umamiScript() {
+    return document.querySelector('script[data-umami]');
+  }
+
+  function loadUmami() {
+    if (!canMeasure() || umamiScript()) return;
+    const script = document.createElement('script');
+    script.defer = true;
+    script.src = 'https://cloud.umami.is/script.js';
+    script.dataset.websiteId = websiteId;
+    script.dataset.domains = PRODUCTION_HOST;
+    script.dataset.umami = 'true';
+    document.head.appendChild(script);
+  }
+
+  function showNotice() {
+    if (notice) notice.hidden = false;
+  }
+
+  function hideNotice() {
+    if (notice) notice.hidden = true;
+  }
+
+  const choice = readChoice();
+  if (choice === 'accept') loadUmami();
+  else if (choice !== 'refuse') showNotice();
+
+  acceptButton?.addEventListener('click', () => {
+    saveChoice('accept');
+    hideNotice();
+    loadUmami();
+  });
+
+  refuseButton?.addEventListener('click', () => {
+    const wasLoaded = Boolean(umamiScript());
+    saveChoice('refuse');
+    hideNotice();
+    if (wasLoaded) window.location.reload();
+  });
+
+  document.addEventListener('click', (event) => {
+    const target = event.target;
+    if (!(target instanceof Element) || !target.closest('[data-audience-manage]')) return;
+    event.preventDefault();
+    showNotice();
+  });
+
+  document.addEventListener('contact-sent', () => {
+    if (readChoice() !== 'accept' || !canMeasure()) return;
+    const tracker = window.umami;
+    if (tracker && typeof tracker.track === 'function') tracker.track('contact_envoye');
+  });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', startAudience);
+  } else {
+    startAudience();
+  }
+</script>
