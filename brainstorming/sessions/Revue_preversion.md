@@ -1,7 +1,7 @@
 # Séance — Revue de la préversion
 
-> **Statut :** À démarrer  
-> **Prérequis :** implémentation des décisions des séances précédentes ; préversion à jour.
+> **Statut :** En cours le 8 octobre 2026.  
+> **Base :** production `V1.7.1`, https://fabien-blasquez.dev. Mesure testée, formulaire testé puis message supprimé. Captures des projets professionnels et image de partage écartées pour cette version.
 
 ## Objectif
 

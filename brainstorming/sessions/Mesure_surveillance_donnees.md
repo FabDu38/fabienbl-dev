@@ -20,7 +20,7 @@
 - Confirmer la durée de 6 mois du choix de consentement.
 - Vérifier le compte EmailJS : la page confidentialité cite seulement la politique publique (30 jours, serveurs aux États-Unis, consultée le 6 octobre 2026).
 - Préciser les durées des dossiers clients et des journaux Netlify.
-- Tester le formulaire après la prochaine mise en production, puis supprimer le message de test.
+- Tester le formulaire : fait le 8 octobre 2026, message de test supprimé. La mesure a été confirmée en production (`V1.7.1`).
 
 ## Suivi documentaire
 

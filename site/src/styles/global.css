@@ -1048,6 +1048,44 @@ ul.bullet-list li::marker {
   font-size: 1.0625rem;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  .service-steps li,
+  .service-links a {
+    animation: service-glow 8s var(--ease) infinite;
+  }
+
+  .service-steps li:nth-child(2),
+  .service-links li:nth-child(2) a {
+    animation-delay: 2s;
+  }
+
+  .service-steps li:nth-child(3),
+  .service-links li:nth-child(3) a {
+    animation-delay: 4s;
+  }
+
+  .service-steps li:nth-child(4),
+  .service-links li:nth-child(4) a {
+    animation-delay: 6s;
+  }
+}
+
+@keyframes service-glow {
+  0%,
+  20% {
+    border-color: var(--color-primary);
+    background: color-mix(in srgb, var(--color-primary) 10%, var(--color-surface-card));
+    box-shadow: 0 0 0 3px var(--color-primary-soft);
+  }
+
+  32%,
+  100% {
+    border-color: var(--color-outline-variant);
+    background: var(--color-surface-card);
+    box-shadow: none;
+  }
+}
+
 .service-links {
   display: grid;
   gap: 12px;
