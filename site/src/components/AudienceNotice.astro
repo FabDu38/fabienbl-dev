@@ -1,5 +1,6 @@
 ---
-const websiteId = import.meta.env.PUBLIC_UMAMI_WEBSITE_ID ?? '';
+const websiteId =
+  import.meta.env.PUBLIC_UMAMI_WEBSITE_ID || '6e1a95bb-8189-4564-af35-a44ac650d21f';
 ---
 
 <div id="audience-notice" class="audience-notice" data-website-id={websiteId} hidden>
